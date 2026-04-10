@@ -17,7 +17,8 @@ export const siteContent = {
       'Even though my professional path started in science, I have always been drawn to energy healing. I tried many different energy healing approaches as a client in my 20s and 30s. In 2013, I did my first formal energy healing training in a modality called Bi-Aura Therapy. I received my certification as a Level 2 Sekhem energy healer in 2024 and completed Level 3 Sekhem Self-Mastery course in 2025. Training in Sekhem energy healing felt like remembering what I already knew how to do for the most part; the main learning and practice was to get out of my own way to allow the energy and knowing to flow through me unimpeded.',
       "Science and spirituality have never stood in opposition for me - they are different ways of exploring the mysteries of life and consciousness. In my healing sessions, I combine the scientific understanding of the function and structure of the human brain and body, metaphysical knowledge, intuitive guidance, and channelled information. My approach to energy healing rests on attuning myself to being a pure and clear channel of my Higher Self, the client's Higher Self, and the Highest Beings of Light who assist with the sessions. Hence, each session is bespoke and fluid, guided by the needs of the client's Soul.",
       'In addition to Sekhem energy, I use sound and light language for healing and activations in my sessions.',
-      'I offer both in-person and distant healing sessions.'
+      'I offer both in-person and distant healing sessions.',
+      '"There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle." - Elbert Einstein'
     ]
   },
   energyHealing: {
@@ -36,7 +37,8 @@ export const siteContent = {
       'Sekhem energy is associated with turquoise colour. In ancient Egypt, turquoise (mefkat) was one of the most prized gemstones. Pharaohs and priests wore turquoise to ensure divine protection and spiritual power, believing it made them invulnerable to harm. The blue-green hue was seen as a reflection of the heavens and the primordial waters of creation, symbolising eternal life and rebirth.',
       'Energetically, turquoise is the synergy of blue (transformation) and green (healing) energy frequencies. Like water, it washes away energetic blockages and toxins, whilst calming the nervous system and bringing a state of serene awareness. The turquoise frequency perfectly mirrors the balance between the heart and the mind.',
       "While turquoise is the most common expression of Sekhem energy, it can also be experienced as a swirling electric blue, yellow golden plasma or diamond white rainbow light, depending on the energetic state of the practitioner and the needs of the client's physical and subtle bodies.",
-      'In addition to channelling the energy, Sekhem energy healing uses symbols, some of which are similar to the Reiki symbols. The symbols act as powerful portals for flowing Sekhem in specific patterned ways to potentise the energy as per the client\'s needs.'
+      'In addition to channelling the energy, Sekhem energy healing uses symbols, some of which are similar to the Reiki symbols. The symbols act as powerful portals for flowing Sekhem in specific patterned ways to potentise the energy as per the client\'s needs.',
+      '"When a living system is suffering from ill health, the remedy is found by connecting with more of itself." - Francisco Varela'
     ]
   },
   contact: {
