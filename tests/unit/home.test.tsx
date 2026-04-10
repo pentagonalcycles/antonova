@@ -4,9 +4,9 @@ import { describe, it, expect } from 'vitest'
 import HomePage from '@/app/page'
 
 describe('home page', () => {
-  it('renders testimonials empty state text', () => {
+  it('renders testimonial quote content', () => {
     render(<HomePage />)
-    expect(screen.getByText(/testimonials coming soon/i)).toBeInTheDocument()
+    expect(screen.getByText(/amazing healing with elena/i)).toBeInTheDocument()
   })
 
   it('renders mapped homepage images', () => {

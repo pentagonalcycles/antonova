@@ -38,13 +38,13 @@ export default function HomePage() {
             title: 'Why Remembrance?',
             text: 'The greatest awakening occurs when we remember that we are eternal beings of pure love and light having this earthly experience to expand our wisdom and compassion. This remembrance changes everything.',
             imageSrc: '/images/LandingPage.png',
-            imageAlt: 'Landing visual'
+            imageAlt: 'Remembrance visual'
           },
           {
             title: 'Why Alchemy?',
             text: 'The deepest and most transformative healing occurs when we transmute all we have suppressed, denied, judged as negative or painful back into unity and wholeness.',
             imageSrc: '/images/Testimonials.png',
-            imageAlt: 'Testimonials visual'
+            imageAlt: 'Alchemy visual'
           }
         ]}
       />
@@ -53,7 +53,14 @@ export default function HomePage() {
           <img src="/images/Testimonials.png" alt="Testimonials visual" className="page-image" />
         </div>
       </section>
-      <TestimonialsCarousel items={[]} />
+      <TestimonialsCarousel
+        items={[
+          {
+            quote: 'Amazing healing with Elena, which cannot be described in words. I am very grateful.',
+            author: 'Marco, London'
+          }
+        ]}
+      />
     </>
   )
 }
