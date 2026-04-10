@@ -24,15 +24,27 @@ export default function HomePage() {
         items={[
           {
             title: 'Why Temple?',
-            text: 'The healing session is a sacred container for restoration of body and spirit.',
+            text: 'The space I create in my healing sessions is a sacred container, a temple, for the restoration of your body and spirit.',
             imageSrc: '/images/SessionInPerson.png',
             imageAlt: 'In-person session'
           },
           {
             title: 'Why Embodied Soul?',
-            text: 'The soul anchors into the body so joy and harmony can be fully lived in this realm.',
+            text: 'For the Soul to have truly joyous and harmonious experiences in this physical realm, it needs to be anchored into and aligned with its physical vessel - the body.',
             imageSrc: '/images/SessionRemote.png',
             imageAlt: 'Remote session'
+          },
+          {
+            title: 'Why Remembrance?',
+            text: 'The greatest awakening occurs when we remember that we are eternal beings of pure love and light having this earthly experience to expand our wisdom and compassion. This remembrance changes everything.',
+            imageSrc: '/images/LandingPage.png',
+            imageAlt: 'Landing visual'
+          },
+          {
+            title: 'Why Alchemy?',
+            text: 'The deepest and most transformative healing occurs when we transmute all we have suppressed, denied, judged as negative or painful back into unity and wholeness.',
+            imageSrc: '/images/Testimonials.png',
+            imageAlt: 'Testimonials visual'
           }
         ]}
       />

@@ -2,11 +2,10 @@ export const siteContent = {
   home: {
     title: "Welcome to TESoul'RA - Temple of Embodied Soul Remembrance & Alchemy",
     subtitle:
-      'A sacred container for restoration of body and spirit, remembrance, and healing alchemy.',
+      'The space I create in my healing sessions is a sacred container for remembrance, embodiment, and transformative alchemy.',
     sections: [
-      'Welcome to my website, where you will find my healing offerings.',
-      'I am an energy healer, channel, metaphysics teacher, and experienced mindfulness instructor.',
-      'Science and spirituality have never stood in opposition for me. In my sessions I combine grounded understanding with intuitive and channelled guidance.'
+      'Welcome to TESoul\'RA - Temple of Embodied Soul Remembrance & Alchemy.',
+      'The space I create in my healing sessions is a sacred container, a temple, for the restoration of your body and spirit.'
     ]
   },
   about: {
