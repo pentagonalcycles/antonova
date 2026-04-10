@@ -3,7 +3,7 @@
 Date: 2026-04-10
 Project: Client website for TESoul'RA
 Platform: Next.js on Vercel (primary)
-Status: Approved design baseline, pre-implementation planning
+Status: Implemented baseline (content and imagery updated), with one known visual gap remaining
 
 ## 1. Goals and Scope
 
@@ -12,16 +12,19 @@ Status: Approved design baseline, pre-implementation planning
 - Preserve source copy fidelity from the LibreOffice document while improving structure and readability.
 - Launch on Vercel using the user's standard client workflow.
 
-### In-scope (Phase 1)
+### In-scope (Phase 1) implemented
 - Core pages:
   - Landing/Welcome
   - About
   - What is Energy Healing
   - What is Sekhem Energy
   - Contact
-- Testimonials carousel scaffolding with intentional empty state (content to be added later).
-- Visual system implementation with palette, typography, spacing, and atmospheric background direction from brief.
-- Parallax-style hero treatment with performance-aware motion.
+- Visual system implementation with approved palette and atmospheric treatment.
+- Testimonials section now populated with client-provided testimonials (no longer empty scaffolding).
+- Contact page with pricing and contact details:
+  - 80 pounds for 1 hour distant healing session
+  - 120 pounds for 1 hour and 30 minutes session in person
+  - WhatsApp and email details included
 
 ### Out of scope (Phase 1)
 - Booking/payment flow integrations.
@@ -33,6 +36,7 @@ Status: Approved design baseline, pre-implementation planning
 ### Content source
 - Primary source document: `Website layout and text.odt`.
 - Working extracted text: `Website layout and text.txt`.
+- Follow-up client copy updates (About, Energy Healing, Sekhem, testimonials, pricing, contact details) applied.
 
 ### Visual direction from source
 - Lapis lazuli background direction with gold speck atmosphere.
@@ -45,8 +49,8 @@ Status: Approved design baseline, pre-implementation planning
 
 ### Deployment model
 - Framework: Next.js (App Router).
-- Hosting: Vercel project under the user's existing Vercel workspace.
-- Domain/DNS: mapped through existing client setup; Hostinger only used where necessary for DNS/email/legacy hosting coordination.
+- Hosting: Vercel project connected to repository with branch-based preview deployments.
+- Domain/DNS: Vercel project workflow active; Hostinger retained only for external services if needed.
 
 ### Route structure
 - `/` - Landing/Welcome
@@ -55,99 +59,99 @@ Status: Approved design baseline, pre-implementation planning
 - `/what-is-sekhem-energy`
 - `/contact`
 
-### Component structure (planned)
+### Component structure (implemented)
 - `HeroParallax` (layered atmospheric hero)
 - `ContentSection` (long-form section wrapper with consistent rhythm)
-- `SplitRectangles` (2-up cards that collapse to 1 column)
-- `TestimonialsCarousel` (empty-state capable)
+- `SplitRectangles` (responsive card grid with optional images)
+- `TestimonialsCarousel` (renders full testimonial list)
 - `ContactForm` (submission + success/error states)
 - `SiteHeader` / `SiteFooter`
 
 ### Styling strategy
-- Tokenized design layer (colors, typography, spacing, motion timing).
-- Scoped reusable section primitives to avoid one-off styling drift.
-- Mobile-first responsive behavior with progressive enhancements for larger screens.
+- Tokenized design layer (colors, typography, spacing).
+- Reusable section/image classes to keep visual consistency.
+- Mobile-first responsive behavior with progressive enhancements.
 
 ## 4. Content and Information Design
 
 ### Content handling principles
-- Preserve client language and terminology exactly where meaningful (including names and spiritual terms).
-- Normalize long-form text into readable paragraphs/sections without changing meaning.
-- Mark incomplete sections from source as placeholders with clear editorial labels.
+- Preserve client language and terminology exactly where meaningful.
+- Keep long-form blocks readable while retaining meaning.
+- Keep client quotes and testimonial names as provided.
 
-### Planned page composition
-- Landing: welcome narrative + purpose framing + visual hero/parallax.
-- About: practitioner profile, background, modality experience.
-- Energy Healing: explanatory long-form educational content.
-- Sekhem Energy: dedicated explanatory section (content placeholder if source remains incomplete).
-- Contact: concise contact pathway and expectation-setting text.
+### Implemented page composition
+- Landing: welcome narrative, purpose framing, visual hero treatment, 4 “Why ...” cards, testimonial section.
+- About: full long-form practitioner profile copy plus quote.
+- Energy Healing: full explanatory long-form copy.
+- Sekhem Energy: full explanatory long-form copy plus quote.
+- Contact: pricing, WhatsApp, email, social links, and contact form.
 
-### Testimonials scaffolding
-- Add carousel container and controls with an explicit empty state.
-- Support easy future insertion of testimonial entries without structural refactor.
+### Testimonials status
+- Testimonials section is populated with all client-provided entries:
+  - Claire P
+  - Emma S
+  - Natasha K
+  - Ash K
+  - Steve B
+  - Marco, London
 
 ## 5. Motion, Accessibility, and Performance
 
 ### Motion
-- Use restrained parallax and reveal motion, tuned for readability and calm tone.
-- Respect reduced-motion preferences.
+- Current implementation uses layered hero visuals and restrained styling.
+- Known gap: true scroll-speed differential parallax (foreground text vs background layer movement) is not yet implemented.
+- Reduced-motion preference handling is implemented.
 
 ### Accessibility baseline
 - Semantic heading hierarchy and landmarks.
-- Sufficient contrast for selected palette.
-- Keyboard-focus visibility for interactive elements.
-- Form labels and accessible status messaging.
+- Focus and skip-link support.
+- Form labels and status messaging.
+- Alt text coverage for mapped imagery.
 
 ### Performance baseline
-- Favor optimized assets, minimal JS overhead for static content pages.
-- Avoid heavy animation libraries unless needed.
-- Verify key pages load quickly on mobile networks.
+- Static-first pages for content routes.
+- Minimal client-side logic.
+- Build/test verification in place for release checks.
 
 ## 6. Contact Flow and Ops
 
 ### Contact flow
-- Implement contact submission path with server-side handling suitable for Vercel deployment.
-- Include anti-spam measure (honeypot and/or challenge service as needed).
-- Provide user-facing success and failure states.
+- Server-side contact submission route implemented.
+- Validation + honeypot anti-spam baseline implemented.
+- User-facing success/failure states implemented.
 
 ### Credentials and security handling
-- Do not store Hostinger or Vercel credentials in repository files.
-- Keep secrets in environment configuration only.
-- Use least-privilege/project-specific accounts where possible.
-- Rotate shared credentials after setup and handoff.
+- Secrets not committed to repo.
+- `.env.example` used for variable guidance.
+- Git pushes and Vercel deployments handled through connected branch workflow.
 
 ## 7. QA and Acceptance Criteria
 
-### QA checklist
-- Visual fidelity against approved direction on desktop and mobile.
-- Copy fidelity against source document.
-- Responsive behavior for side-by-side rectangle sections.
-- Testimonials scaffold renders correctly in empty state.
-- Contact flow successfully submits and reports outcome.
+### QA checklist (current)
+- Visual palette direction implemented and verified.
+- Copy fidelity updated to latest client-provided text blocks.
+- Responsive rectangle behavior implemented.
+- Testimonials content rendered on page.
+- Contact pricing/details/form visible and functioning.
+- Unit/e2e/build checks passing in branch workflow.
 
 ### Acceptance criteria
-- All Phase 1 routes are present and internally navigable.
-- Design language is consistent and intentional, not template-generic.
-- Motion effects are smooth and non-disruptive.
-- Deployment is live on Vercel with production URL and rollback-capable history.
+- All core routes are present and internally navigable.
+- Design language is consistent and intentional.
+- Deployment is live through Vercel branch workflow.
+- Remaining parity item: implement true scroll parallax behavior per client instruction.
 
-## 8. Delivery Sequence (Implementation Planning Input)
+## 8. Remaining Work
 
-1. Project scaffold and deployment baseline on Vercel.
-2. Design token system and global layout shell.
-3. Landing page hero/parallax and visual foundation.
-4. Long-form content pages and typography rhythm.
-5. Testimonials scaffold and contact flow.
-6. QA pass (responsive, accessibility, performance, content fidelity).
-7. Production release and handoff checklist.
+1. Implement true parallax scrolling behavior on the landing hero (text moving faster than background).
+2. Final visual pass against client expectation once parallax is implemented.
+3. Final production sign-off and merge to main.
 
 ## 9. Risks and Mitigations
 
-- Risk: Source content gaps (e.g., incomplete Sekhem section).
-  - Mitigation: explicit placeholders and content-ready structure.
-- Risk: Heavy parallax harming performance/readability.
-  - Mitigation: restrained implementation + reduced-motion handling.
-- Risk: Palette contrast issues.
-  - Mitigation: early contrast validation and token adjustment before full page rollout.
-- Risk: Credential sprawl across tools.
-  - Mitigation: centralized secret handling and post-setup credential rotation.
+- Risk: Client expects strict parallax behavior and perceives current hero as incomplete.
+  - Mitigation: Implement scroll-driven parallax transforms with reduced-motion fallback.
+- Risk: Ongoing copy updates can drift from source consistency.
+  - Mitigation: Keep `lib/content.ts` as single source and re-run QA checks after each update.
+- Risk: Social links are currently generic placeholders.
+  - Mitigation: Replace with final account URLs when provided.
