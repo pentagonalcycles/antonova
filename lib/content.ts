@@ -41,6 +41,10 @@ export const siteContent = {
   },
   contact: {
     title: 'Contact',
-    sections: ['Use the form below to request session details or submit general enquiries.']
+    sections: [
+      'Use the form below to request session details or submit general enquiries.',
+      '80 pounds for 1 hour distant healing session.',
+      '120 pounds for 1 hour and 30 minutes session in person.'
+    ]
   }
 } as const

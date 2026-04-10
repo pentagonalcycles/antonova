@@ -24,13 +24,13 @@ export default function HomePage() {
         items={[
           {
             title: 'Why Temple?',
-            text: 'The space I create in my healing sessions is a sacred container, a temple, for the restoration of your body and spirit.',
+            text: 'The space I create in my healing sessions is a sacred container, a temple, for the restoration of your body and spirit. In-person healing session pricing: 120 pounds for 1 hour and 30 minutes.',
             imageSrc: '/images/SessionInPerson.png',
             imageAlt: 'In-person session'
           },
           {
             title: 'Why Embodied Soul?',
-            text: 'For the Soul to have truly joyous and harmonious experiences in this physical realm, it needs to be anchored into and aligned with its physical vessel - the body.',
+            text: 'For the Soul to have truly joyous and harmonious experiences in this physical realm, it needs to be anchored into and aligned with its physical vessel - the body. Distant healing session pricing: 80 pounds for 1 hour.',
             imageSrc: '/images/SessionRemote.png',
             imageAlt: 'Remote session'
           },
