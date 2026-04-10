@@ -1,0 +1,26 @@
+import Link from 'next/link'
+
+const links = [
+  ['Home', '/'],
+  ['About', '/about'],
+  ['Energy Healing', '/what-is-energy-healing'],
+  ['Sekhem Energy', '/what-is-sekhem-energy'],
+  ['Contact', '/contact']
+] as const
+
+export function SiteHeader() {
+  return (
+    <header className="site-header">
+      <nav aria-label="Main navigation" className="nav">
+        <Link href="/" className="brand">TESoul'RA</Link>
+        <ul className="nav-links">
+          {links.map(([label, href]) => (
+            <li key={href}>
+              <Link href={href}>{label}</Link>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </header>
+  )
+}
