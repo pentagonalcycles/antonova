@@ -84,6 +84,20 @@ h3 {
   letter-spacing: 0.06em;
 }
 
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.brand-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
@@ -161,6 +175,16 @@ h3 {
   border: 1px solid rgba(215, 182, 99, 0.3);
   background: rgba(26, 45, 102, 0.6);
   padding: var(--space-3);
+}
+
+.rectangle-image,
+.page-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  border: 1px solid rgba(215, 182, 99, 0.35);
+  margin-bottom: var(--space-2);
 }
 
 .contact-form {

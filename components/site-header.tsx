@@ -12,7 +12,10 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <nav aria-label="Main navigation" className="nav">
-        <Link href="/" className="brand">TESoul'RA</Link>
+        <Link href="/" className="brand">
+          <img src="/images/Logo.png" alt="TESoul'RA logo" className="brand-logo" />
+          <span>TESoul'RA</span>
+        </Link>
         <ul className="nav-links">
           {links.map(([label, href]) => (
             <li key={href}>

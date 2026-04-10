@@ -8,4 +8,9 @@ describe('header baseline', () => {
     render(<SiteHeader />)
     expect(screen.getByRole('navigation', { name: /main navigation/i })).toBeInTheDocument()
   })
+
+  it('renders brand logo image', () => {
+    render(<SiteHeader />)
+    expect(screen.getAllByAltText(/tesoul'ra logo/i).length).toBeGreaterThan(0)
+  })
 })

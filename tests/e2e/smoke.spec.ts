@@ -15,3 +15,21 @@ test('home has top-level heading and contact path is reachable', async ({ page }
   await page.goto('/contact')
   await expect(page.getByRole('button', { name: /send/i })).toBeVisible()
 })
+
+test('named images are mapped to intended pages', async ({ page }) => {
+  await page.goto('/')
+  await expect(page.getByAltText(/landing visual/i)).toBeVisible()
+  await expect(page.getByAltText(/testimonials visual/i)).toBeVisible()
+
+  await page.goto('/about')
+  await expect(page.getByAltText(/about me portrait/i)).toBeVisible()
+
+  await page.goto('/what-is-energy-healing')
+  await expect(page.getByAltText(/what is energy healing visual/i)).toBeVisible()
+
+  await page.goto('/what-is-sekhem-energy')
+  await expect(page.getByAltText(/what is sekhem energy visual/i)).toBeVisible()
+
+  await page.goto('/contact')
+  await expect(page.getByAltText(/free phone session visual/i)).toBeVisible()
+})
