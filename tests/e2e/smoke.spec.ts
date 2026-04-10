@@ -31,5 +31,5 @@ test('named images are mapped to intended pages', async ({ page }) => {
   await expect(page.getByAltText(/what is sekhem energy visual/i)).toBeVisible()
 
   await page.goto('/contact')
-  await expect(page.getByAltText(/free phone session visual/i)).toBeVisible()
+  await expect(page.getByAltText(/contact visual/i)).toBeVisible()
 })
