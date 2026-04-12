@@ -3,7 +3,7 @@
 Date: 2026-04-10
 Project: Client website for TESoul'RA
 Platform: Next.js on Vercel (primary)
-Status: Implemented and updated through latest client-approved landing and testimonial refinements
+Status: Implemented and updated through latest client-approved landing, About/Contact linking, and dedicated testimonials-page refinements
 
 ## 1. Goals and Scope
 
@@ -18,12 +18,14 @@ Status: Implemented and updated through latest client-approved landing and testi
   - About
   - What is Energy Healing
   - What is Sekhem Energy
+  - Testimonials
   - Contact
 - Visual system implementation with approved palette and atmospheric treatment.
-- Testimonials section now populated with client-provided testimonials (no longer empty scaffolding).
-- Contact page with pricing and contact details:
-  - 80 pounds for 1 hour distant healing session
-  - 120 pounds for 1 hour and 30 minutes session in person
+- Dedicated testimonials page now populated with client-provided testimonials (no longer empty scaffolding).
+- Contact page with pricing/contact details and session booking blocks:
+  - Distant healing session (1 hour): 80 GBP
+  - In-person healing session (1.5 hours): 120 GBP
+  - Free 15 min consultation row included with dedicated anchor target
   - WhatsApp and email details included
 
 ### Out of scope (Phase 1)
@@ -57,6 +59,7 @@ Status: Implemented and updated through latest client-approved landing and testi
 - `/about`
 - `/what-is-energy-healing`
 - `/what-is-sekhem-energy`
+- `/testimonials`
 - `/contact`
 
 ### Component structure (implemented)
@@ -80,20 +83,21 @@ Status: Implemented and updated through latest client-approved landing and testi
 - Keep client quotes and testimonial names as provided.
 
 ### Implemented page composition
-- Landing: welcome narrative, purpose framing, visual hero treatment, 4 “Why ...” cards, testimonial section.
-- About: full long-form practitioner profile copy plus quote.
+- Landing: welcome narrative, purpose framing, visual hero treatment, and 4 “Why ...” cards (testimonials removed from Home).
+- About: full long-form practitioner profile copy, Sekhem word-linking, consultation anchor links, and styled quote.
 - Energy Healing: full explanatory long-form copy.
-- Sekhem Energy: full explanatory long-form copy plus quote.
-- Contact: pricing, WhatsApp, email, social links, and contact form.
+- Sekhem Energy: full explanatory long-form copy plus quote styled to match About quote treatment.
+- Testimonials: dedicated route rendering full testimonial list.
+- Contact: pricing, WhatsApp, email, social links, anchored session-type blocks, and contact form.
 
 ### Testimonials status
-- Testimonials section is populated with all client-provided entries:
+- Testimonials are now hosted on dedicated `/testimonials` page and include all approved entries in current order:
+  - Marco B
   - Claire P
   - Emma S
   - Natasha K
   - Ash K
   - Steve B
-  - Marco
 
 ## 5. Motion, Accessibility, and Performance
 
@@ -131,15 +135,18 @@ Status: Implemented and updated through latest client-approved landing and testi
 - Visual palette direction implemented and verified.
 - Copy fidelity updated to latest client-provided text blocks.
 - Responsive rectangle behavior implemented.
-- Testimonials content rendered on page.
-- Contact pricing/details/form visible and functioning.
+- Testimonials route (`/testimonials`) rendered and linked from nav before Contact.
+- About inline link behavior implemented (`Sekhem`, consultation anchors).
+- Sekhem page quote formatting aligned with About quote style.
+- Contact pricing/session blocks/details/form visible and functioning.
 - Unit/e2e/build checks passing in branch workflow.
 
 ### Acceptance criteria
-- All core routes are present and internally navigable.
+- All core routes are present and internally navigable, including `/testimonials`.
 - Design language is consistent and intentional.
 - Landing hero shows full image visibility with smaller floating headline text overlay.
-- Testimonials include client-approved ordering/content updates (Marco quote first, right-aligned author labels).
+- Testimonials are presented on dedicated page with approved order/content and right-aligned author labels.
+- About links and Contact session anchors navigate correctly.
 - Deployment is live through Vercel branch workflow.
 
 ## 8. Remaining Work
