@@ -2,8 +2,10 @@ import Link from 'next/link'
 import { ContentSection } from '@/components/content-section'
 import { siteContent } from '@/lib/content'
 
-const consultationSentence =
-  'I offer both in-person and distant healing sessions and free 15 min consultations.'
+const ABOUT_SECTION_INDEX = {
+  consultation: 6,
+  quote: 7
+} as const
 
 function renderSekhemLinks(paragraph: string) {
   return paragraph.split(/(\bSekhem\b)/gi).map((part, index) => {
@@ -19,24 +21,50 @@ function renderSekhemLinks(paragraph: string) {
   })
 }
 
+function renderConsultationLinks(paragraph: string) {
+  return paragraph
+    .split(/(in-person|distant|free 15)/gi)
+    .map((part, index) => {
+      if (/^in-person$/i.test(part)) {
+        return (
+          <Link key={`${part}-${index}`} href="/contact#session-inperson">
+            {part}
+          </Link>
+        )
+      }
+
+      if (/^distant$/i.test(part)) {
+        return (
+          <Link key={`${part}-${index}`} href="/contact#session-distant">
+            {part}
+          </Link>
+        )
+      }
+
+      if (/^free 15$/i.test(part)) {
+        return (
+          <Link key={`${part}-${index}`} href="/contact#session-free">
+            {part}
+          </Link>
+        )
+      }
+
+      return part
+    })
+}
+
 export default function AboutPage() {
   const about = siteContent.about
 
   return (
     <ContentSection title={about.title}>
       <img src="/images/AboutMe.png" alt="About me portrait" className="page-image" />
-      {about.sections.map((paragraph) => {
-        if (paragraph === consultationSentence) {
-          return (
-            <p key={paragraph}>
-              I offer both <Link href="/contact#session-inperson">in-person</Link> and{' '}
-              <Link href="/contact#session-distant">distant</Link> healing sessions and{' '}
-              <Link href="/contact#session-free">free 15</Link> min consultations.
-            </p>
-          )
+      {about.sections.map((paragraph, index) => {
+        if (index === ABOUT_SECTION_INDEX.consultation) {
+          return <p key={paragraph}>{renderConsultationLinks(paragraph)}</p>
         }
 
-        if (paragraph.includes('There are only two ways to live your life.')) {
+        if (index === ABOUT_SECTION_INDEX.quote) {
           return (
             <p key={paragraph} className="about-quote">
               {paragraph}

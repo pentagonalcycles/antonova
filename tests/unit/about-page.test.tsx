@@ -21,28 +21,50 @@ describe('about page', () => {
     })
   })
 
-  it('renders consultation sentence with required contact anchor links', () => {
-    render(<AboutPage />)
+  it('renders consultation paragraph with required contact anchor links', () => {
+    const { container } = render(<AboutPage />)
 
-    const consultationParagraph = screen.getByText((_, element) =>
-      element?.tagName.toLowerCase() === 'p' &&
-      /I offer both in-person and distant healing sessions and free 15 min consultations\./i.test(
-        element.textContent ?? ''
+    const paragraphs = Array.from(container.querySelectorAll('p'))
+    const consultationParagraph = paragraphs.find((paragraph) => {
+      const links = Array.from(paragraph.querySelectorAll('a')).map((link) => link.getAttribute('href'))
+      return (
+        links.includes('/contact#session-inperson') &&
+        links.includes('/contact#session-distant') &&
+        links.includes('/contact#session-free')
       )
-    )
+    })
 
-    expect(within(consultationParagraph).getByRole('link', { name: /in-person/i })).toHaveAttribute(
+    expect(consultationParagraph).toBeDefined()
+    expect(within(consultationParagraph as HTMLParagraphElement).getByRole('link', { name: /in-person/i })).toHaveAttribute(
       'href',
       '/contact#session-inperson'
     )
-    expect(within(consultationParagraph).getByRole('link', { name: /^distant$/i })).toHaveAttribute(
+    expect(within(consultationParagraph as HTMLParagraphElement).getByRole('link', { name: /^distant$/i })).toHaveAttribute(
       'href',
       '/contact#session-distant'
     )
-    expect(within(consultationParagraph).getByRole('link', { name: /free 15/i })).toHaveAttribute(
+    expect(within(consultationParagraph as HTMLParagraphElement).getByRole('link', { name: /free 15/i })).toHaveAttribute(
       'href',
       '/contact#session-free'
     )
+  })
+
+  it('links punctuation-adjacent Sekhem token in sentence ending with punctuation', () => {
+    const { container } = render(<AboutPage />)
+
+    const punctuationParagraph = Array.from(container.querySelectorAll('p')).find((paragraph) =>
+      /the word\s+sekhem\s+at the time;/i.test(paragraph.textContent ?? '')
+    )
+
+    expect(punctuationParagraph).toBeDefined()
+    const sekhemLinks = within(punctuationParagraph as HTMLParagraphElement).getAllByRole('link', {
+      name: /^sekhem$/i
+    })
+    expect(sekhemLinks).toHaveLength(2)
+    expect(punctuationParagraph).toHaveTextContent(/sekhem at the time;/i)
+    sekhemLinks.forEach((link) => {
+      expect(link).toHaveAttribute('href', '/what-is-sekhem-energy')
+    })
   })
 
   it('styles Einstein quote with dedicated class for visual accent', () => {
