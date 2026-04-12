@@ -5,6 +5,7 @@ const links = [
   ['About', '/about'],
   ['Energy Healing', '/what-is-energy-healing'],
   ['Sekhem Energy', '/what-is-sekhem-energy'],
+  ['Testimonials', '/testimonials'],
   ['Contact', '/contact']
 ] as const
 

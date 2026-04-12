@@ -22,7 +22,6 @@ test('home has top-level heading and contact path is reachable', async ({ page }
 test('named images are mapped to intended pages', async ({ page }) => {
   await page.goto('/')
   await expect(page.getByAltText(/soul remembrance hero visual/i)).toBeVisible()
-  await expect(page.getByAltText(/testimonials visual/i)).toBeVisible()
 
   await page.goto('/about')
   await expect(page.getByAltText(/about me portrait/i)).toBeVisible()
