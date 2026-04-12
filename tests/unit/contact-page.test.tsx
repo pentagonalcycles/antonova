@@ -6,8 +6,20 @@ import ContactPage from '@/app/contact/page'
 describe('contact page', () => {
   it('shows pricing for distant and in-person sessions', () => {
     render(<ContactPage />)
-    expect(screen.getByText(/80 pounds for 1 hour distant healing session/i)).toBeInTheDocument()
-    expect(screen.getByText(/120 pounds for 1 hour and 30 minutes session in person/i)).toBeInTheDocument()
+    expect(screen.getByText(/Distant healing session \(1 hour\): 80 GBP/i)).toBeInTheDocument()
+    expect(screen.getByText(/In person session \(1h 30min\): 120 GBP/i)).toBeInTheDocument()
+  })
+
+  it('shows session types block with anchors and visuals', () => {
+    const { container } = render(<ContactPage />)
+
+    expect(screen.getByRole('heading', { name: /session types/i })).toBeInTheDocument()
+    expect(container.querySelector('#session-inperson')).toBeInTheDocument()
+    expect(container.querySelector('#session-distant')).toBeInTheDocument()
+    expect(container.querySelector('#session-free')).toBeInTheDocument()
+    expect(screen.getByAltText(/In-person session visual/i)).toBeInTheDocument()
+    expect(screen.getByAltText(/Distant session visual/i)).toBeInTheDocument()
+    expect(screen.getByAltText(/Free consultation visual/i)).toBeInTheDocument()
   })
 
   it('shows contact details and links', () => {
