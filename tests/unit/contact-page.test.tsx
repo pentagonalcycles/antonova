@@ -1,22 +1,30 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen, within } from '@testing-library/react'
 import { describe, it, expect } from 'vitest'
 import ContactPage from '@/app/contact/page'
 
 describe('contact page', () => {
-  it('shows pricing for distant and in-person sessions', () => {
-    render(<ContactPage />)
-    expect(screen.getByText(/Distant healing session \(1 hour\): 80 GBP/i)).toBeInTheDocument()
-    expect(screen.getByText(/In person session \(1h 30min\): 120 GBP/i)).toBeInTheDocument()
-  })
-
-  it('shows session types block with anchors and visuals', () => {
+  it('shows session types rows in required order with scoped pricing', () => {
     const { container } = render(<ContactPage />)
 
     expect(screen.getByRole('heading', { name: /session types/i })).toBeInTheDocument()
-    expect(container.querySelector('#session-inperson')).toBeInTheDocument()
-    expect(container.querySelector('#session-distant')).toBeInTheDocument()
-    expect(container.querySelector('#session-free')).toBeInTheDocument()
+
+    const inPersonRow = container.querySelector('#session-inperson')
+    const distantRow = container.querySelector('#session-distant')
+    const freeRow = container.querySelector('#session-free')
+
+    expect(inPersonRow).toBeInTheDocument()
+    expect(distantRow).toBeInTheDocument()
+    expect(freeRow).toBeInTheDocument()
+
+    expect(within(inPersonRow as HTMLElement).getByText(/\(1\.5 hours; £120\)/i)).toBeInTheDocument()
+    expect(within(distantRow as HTMLElement).getByText(/\(1 hour; £80\)/i)).toBeInTheDocument()
+
+    const sessionRows = Array.from(container.querySelectorAll('#session-inperson, #session-distant, #session-free'))
+    expect(sessionRows[0]).toHaveAttribute('id', 'session-inperson')
+    expect(sessionRows[1]).toHaveAttribute('id', 'session-distant')
+    expect(sessionRows[2]).toHaveAttribute('id', 'session-free')
+
     expect(screen.getByAltText(/In-person session visual/i)).toBeInTheDocument()
     expect(screen.getByAltText(/Distant session visual/i)).toBeInTheDocument()
     expect(screen.getByAltText(/Free consultation visual/i)).toBeInTheDocument()
