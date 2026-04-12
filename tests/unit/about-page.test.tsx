@@ -24,8 +24,11 @@ describe('about page', () => {
   it('renders consultation sentence with required contact anchor links', () => {
     render(<AboutPage />)
 
-    const consultationParagraph = screen.getByText(
-      /I offer both in-person and distant healing sessions\. Contact me to book a paid session or request a free 15-minute consultation\./i
+    const consultationParagraph = screen.getByText((_, element) =>
+      element?.tagName.toLowerCase() === 'p' &&
+      /I offer both in-person and distant healing sessions and free 15 min consultations\./i.test(
+        element.textContent ?? ''
+      )
     )
 
     expect(within(consultationParagraph).getByRole('link', { name: /in-person/i })).toHaveAttribute(
