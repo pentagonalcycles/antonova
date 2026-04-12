@@ -17,13 +17,15 @@ describe('header baseline', () => {
   it('renders Testimonials nav link before Contact', () => {
     render(<SiteHeader />)
 
-    const testimonialsLink = screen.getByRole('link', { name: /testimonials/i })
-    const contactLink = screen.getByRole('link', { name: /contact/i })
+    const navLinkTexts = screen
+      .getAllByRole('link')
+      .map((link) => link.textContent?.replace(/\s+/g, ' ').trim() ?? '')
 
-    expect(testimonialsLink).toBeInTheDocument()
-    expect(contactLink).toBeInTheDocument()
-    expect(
-      testimonialsLink.compareDocumentPosition(contactLink) & Node.DOCUMENT_POSITION_FOLLOWING
-    ).toBeTruthy()
+    const testimonialsIndex = navLinkTexts.findIndex((text) => /testimonials/i.test(text))
+    const contactIndex = navLinkTexts.findIndex((text) => /^contact$/i.test(text))
+
+    expect(testimonialsIndex).toBeGreaterThanOrEqual(0)
+    expect(contactIndex).toBeGreaterThanOrEqual(0)
+    expect(testimonialsIndex).toBeLessThan(contactIndex)
   })
 })
