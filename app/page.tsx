@@ -9,12 +9,7 @@ export default function HomePage() {
 
   return (
     <>
-      <HeroParallax title={home.title} subtitle={home.subtitle} />
-      <section className="content-section">
-        <div className="container narrow">
-          <img src="/images/LandingPage.png" alt="Landing visual" className="page-image" />
-        </div>
-      </section>
+      <HeroParallax title={home.title} />
       <ContentSection title="Welcome">
         {home.sections.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
