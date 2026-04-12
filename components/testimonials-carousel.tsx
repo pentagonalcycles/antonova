@@ -12,7 +12,7 @@ export function TestimonialsCarousel({ items }: { items: Testimonial[] }) {
             {items.map((item) => (
               <li key={item.author}>
                 <blockquote>{item.quote}</blockquote>
-                <p>{item.author}</p>
+                <p className="testimonial-author">{item.author}</p>
               </li>
             ))}
           </ul>

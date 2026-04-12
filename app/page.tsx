@@ -52,6 +52,11 @@ export default function HomePage() {
         items={[
           {
             quote:
+              "Amazing healing with T'iam'arhat that cannot describe in words. I am very grateful.",
+            author: 'Marco'
+          },
+          {
+            quote:
               "I've been seeing T'iam'arhat for healing for a few years now and every session blows me away. Her healing range is incredible - nothing seems to be off limits for her. I've experienced health issues resolving spontaneously, puzzling the medical professionals, ancestral healing, past life trauma healing, soul fragment retrieval, implant removal, Galactic consciousness activation, and so much more. After each session I feel reborn, with flow and synchronicities flooding back into my life. Thank you, T'iam'arhat, for all the magic you brought into my life.",
             author: 'Claire P'
           },
@@ -74,11 +79,6 @@ export default function HomePage() {
             quote:
               "I had a session with T'iam'arhat, and it was a powerful experience. She's warm, professional and instantly puts you at ease. Her energy work is deeply effective, leaving me feeling lighter and more grounded. I couldn't recommend her more highly.",
             author: 'Steve B'
-          },
-          {
-            quote:
-              "Amazing healing with T'iam'arhat, which cannot be described in words. I am very grateful.",
-            author: 'Marco, London'
           }
         ]}
       />
