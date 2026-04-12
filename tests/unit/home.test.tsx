@@ -5,23 +5,24 @@ import HomePage from '@/app/page'
 import { siteContent } from '@/lib/content'
 
 describe('home page', () => {
-  it('renders updated testimonial content set', () => {
+  it('does not render testimonials content on home page', () => {
     render(<HomePage />)
-    expect(screen.getByText(/amazing healing with t'iam'arhat/i)).toBeInTheDocument()
-    expect(screen.getByText(/claire p/i)).toBeInTheDocument()
-    expect(screen.getByText(/emma s/i)).toBeInTheDocument()
-    expect(screen.getByText(/natasha k/i)).toBeInTheDocument()
-    expect(screen.getByText(/ash k/i)).toBeInTheDocument()
-    expect(screen.getByText(/steve b/i)).toBeInTheDocument()
+    expect(screen.queryByText(/amazing healing with t'iam'arhat/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/claire p/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/emma s/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/natasha k/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/ash k/i)).not.toBeInTheDocument()
+    expect(screen.queryByText(/steve b/i)).not.toBeInTheDocument()
   })
 
-  it('renders mapped homepage images', () => {
+  it('renders mapped homepage images without testimonials visual', () => {
     render(<HomePage />)
     expect(screen.getByRole('img', { name: /soul remembrance hero visual/i })).toBeInTheDocument()
     expect(screen.getByRole('img', { name: /in-person session/i })).toBeInTheDocument()
     expect(screen.getByRole('img', { name: /remote session/i })).toBeInTheDocument()
     expect(screen.getByRole('img', { name: /remembrance visual/i })).toBeInTheDocument()
     expect(screen.getByRole('img', { name: /alchemy visual/i })).toBeInTheDocument()
+    expect(screen.queryByRole('img', { name: /testimonials visual/i })).not.toBeInTheDocument()
   })
 
   it('removes kicker and subtitle, and renders image-led floating hero headline', () => {
