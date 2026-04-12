@@ -5,7 +5,19 @@ const paths = ['/', '/about', '/what-is-energy-healing', '/what-is-sekhem-energy
 test('all core routes load and show header nav', async ({ page }) => {
   for (const path of paths) {
     await page.goto(path)
-    await expect(page.getByRole('navigation', { name: /main navigation/i })).toBeVisible()
+    const nav = page.getByRole('navigation', { name: /main navigation/i })
+    await expect(nav).toBeVisible()
+
+    const navLinkTexts = await nav
+      .getByRole('link')
+      .allTextContents()
+    const normalizedTexts = navLinkTexts.map((text) => text.replace(/\s+/g, ' ').trim())
+    const testimonialsIndex = normalizedTexts.findIndex((text) => /testimonials/i.test(text))
+    const contactIndex = normalizedTexts.findIndex((text) => /^contact$/i.test(text))
+
+    expect(testimonialsIndex).toBeGreaterThanOrEqual(0)
+    expect(contactIndex).toBeGreaterThanOrEqual(0)
+    expect(testimonialsIndex).toBeLessThan(contactIndex)
   }
 })
 
