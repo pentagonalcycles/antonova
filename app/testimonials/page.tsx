@@ -33,5 +33,14 @@ const testimonials = [
 ]
 
 export default function TestimonialsPage() {
-  return <TestimonialsCarousel items={testimonials} />
+  return (
+    <main aria-label="Testimonials page">
+      <section className="content-section">
+        <div className="container narrow">
+          <h1>Testimonials</h1>
+        </div>
+      </section>
+      <TestimonialsCarousel items={testimonials} />
+    </main>
+  )
 }
