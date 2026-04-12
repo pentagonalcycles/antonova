@@ -3,7 +3,7 @@
 Date: 2026-04-10
 Project: Client website for TESoul'RA
 Platform: Next.js on Vercel (primary)
-Status: Implemented baseline (content and imagery updated), with one known visual gap remaining
+Status: Implemented and updated through latest client-approved landing and testimonial refinements
 
 ## 1. Goals and Scope
 
@@ -60,7 +60,7 @@ Status: Implemented baseline (content and imagery updated), with one known visua
 - `/contact`
 
 ### Component structure (implemented)
-- `HeroParallax` (layered atmospheric hero)
+- `HeroParallax` (image-led hero with floating, word-level title motion)
 - `ContentSection` (long-form section wrapper with consistent rhythm)
 - `SplitRectangles` (responsive card grid with optional images)
 - `TestimonialsCarousel` (renders full testimonial list)
@@ -93,14 +93,14 @@ Status: Implemented baseline (content and imagery updated), with one known visua
   - Natasha K
   - Ash K
   - Steve B
-  - Marco, London
+  - Marco
 
 ## 5. Motion, Accessibility, and Performance
 
 ### Motion
-- Current implementation uses layered hero visuals and restrained styling.
-- Known gap: true scroll-speed differential parallax (foreground text vs background layer movement) is not yet implemented.
-- Reduced-motion preference handling is implemented.
+- Landing hero now uses image-led composition with floating, word-level headline motion over the hero image.
+- Hero readability is controlled with overlay contrast and reduced headline scale tuned from client feedback.
+- Reduced-motion behavior is implemented for both smaller screens and `prefers-reduced-motion`.
 
 ### Accessibility baseline
 - Semantic heading hierarchy and landmarks.
@@ -138,19 +138,19 @@ Status: Implemented baseline (content and imagery updated), with one known visua
 ### Acceptance criteria
 - All core routes are present and internally navigable.
 - Design language is consistent and intentional.
+- Landing hero shows full image visibility with smaller floating headline text overlay.
+- Testimonials include client-approved ordering/content updates (Marco quote first, right-aligned author labels).
 - Deployment is live through Vercel branch workflow.
-- Remaining parity item: implement true scroll parallax behavior per client instruction.
 
 ## 8. Remaining Work
 
-1. Implement true parallax scrolling behavior on the landing hero (text moving faster than background).
-2. Final visual pass against client expectation once parallax is implemented.
-3. Final production sign-off and merge to main.
+1. Monitor Vercel preview feedback for any final copy/layout polish requests.
+2. Prepare final production sign-off and merge to main when approved.
 
 ## 9. Risks and Mitigations
 
-- Risk: Client expects strict parallax behavior and perceives current hero as incomplete.
-  - Mitigation: Implement scroll-driven parallax transforms with reduced-motion fallback.
+- Risk: Additional visual tuning requests may emerge after live preview review.
+  - Mitigation: Keep hero motion and typography values centralized in `app/globals.css` for quick, low-risk adjustments.
 - Risk: Ongoing copy updates can drift from source consistency.
   - Mitigation: Keep `lib/content.ts` as single source and re-run QA checks after each update.
 - Risk: Social links are currently generic placeholders.
