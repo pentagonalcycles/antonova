@@ -9,10 +9,10 @@ export default function HomePage() {
   return (
     <>
       <HeroParallax title={home.title} />
-      <ContentSection title="Welcome">
-        {home.sections.map((paragraph) => (
-          <p key={paragraph}>{paragraph}</p>
-        ))}
+      <ContentSection title="">
+        <p className="landing-intro-emphasis">
+          The space I create in my healing sessions is a sacred container, a temple, for the restoration of your body and spirit.
+        </p>
       </ContentSection>
       <SplitRectangles
         items={[

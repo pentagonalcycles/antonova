@@ -48,9 +48,10 @@ describe('home page', () => {
       screen.queryByText(/welcome to tesoul'ra - temple of embodied soul remembrance & alchemy\./i)
     ).not.toBeInTheDocument()
 
-    const emphasis = screen.getByText(
+    const emphasis = document.querySelector('.landing-intro-emphasis')
+    expect(emphasis).not.toBeNull()
+    expect(emphasis).toHaveTextContent(
       /the space i create in my healing sessions is a sacred container, a temple, for the restoration of your body and spirit\./i
     )
-    expect(emphasis).toHaveClass('landing-intro-emphasis')
   })
 })
