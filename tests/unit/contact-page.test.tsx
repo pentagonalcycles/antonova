@@ -4,30 +4,35 @@ import { describe, it, expect } from 'vitest'
 import ContactPage from '@/app/contact/page'
 
 describe('contact page', () => {
-  it('shows session types rows in required order with scoped pricing', () => {
+  it('shows session types rows with required structure, order, and pricing', () => {
     const { container } = render(<ContactPage />)
 
-    expect(screen.getByRole('heading', { name: /session types/i })).toBeInTheDocument()
+    const sessionSection = container.querySelector('section.session-types[aria-label="Session types"]')
+    expect(sessionSection).toBeInTheDocument()
 
-    const inPersonRow = container.querySelector('#session-inperson')
-    const distantRow = container.querySelector('#session-distant')
-    const freeRow = container.querySelector('#session-free')
-
-    expect(inPersonRow).toBeInTheDocument()
-    expect(distantRow).toBeInTheDocument()
-    expect(freeRow).toBeInTheDocument()
-
-    expect(within(inPersonRow as HTMLElement).getByText(/\(1\.5 hours; £120\)/i)).toBeInTheDocument()
-    expect(within(distantRow as HTMLElement).getByText(/\(1 hour; £80\)/i)).toBeInTheDocument()
-
-    const sessionRows = Array.from(container.querySelectorAll('#session-inperson, #session-distant, #session-free'))
+    const sessionRows = Array.from(container.querySelectorAll('article.session-row'))
+    expect(sessionRows).toHaveLength(3)
     expect(sessionRows[0]).toHaveAttribute('id', 'session-inperson')
     expect(sessionRows[1]).toHaveAttribute('id', 'session-distant')
     expect(sessionRows[2]).toHaveAttribute('id', 'session-free')
 
-    expect(screen.getByAltText(/In-person session visual/i)).toBeInTheDocument()
-    expect(screen.getByAltText(/Distant session visual/i)).toBeInTheDocument()
-    expect(screen.getByAltText(/Free consultation visual/i)).toBeInTheDocument()
+    const inPersonRow = container.querySelector('#session-inperson.session-row') as HTMLElement
+    const distantRow = container.querySelector('#session-distant.session-row') as HTMLElement
+    const freeRow = container.querySelector('#session-free.session-row') as HTMLElement
+
+    expect(within(inPersonRow).getByText(/Book an in-person healing session/i)).toBeInTheDocument()
+    expect(within(inPersonRow).getByText(/\(1\.5 hours; £120\)/i)).toBeInTheDocument()
+    expect(within(distantRow).getByText(/Book a distant healing session/i)).toBeInTheDocument()
+    expect(within(distantRow).getByText(/\(1 hour; £80\)/i)).toBeInTheDocument()
+    expect(within(freeRow).getByText(/Book a free 15 min consultation/i)).toBeInTheDocument()
+
+    expect(within(inPersonRow).getByAltText(/In-person session visual/i)).toHaveClass('session-row-image')
+    expect(within(distantRow).getByAltText(/Distant session visual/i)).toHaveClass('session-row-image')
+    expect(within(freeRow).getByAltText(/Free consultation visual/i)).toHaveClass('session-row-image')
+
+    expect(inPersonRow.querySelector('.session-row-panel')).toBeInTheDocument()
+    expect(distantRow.querySelector('.session-row-panel')).toBeInTheDocument()
+    expect(freeRow.querySelector('.session-row-panel')).toBeInTheDocument()
   })
 
   it('shows contact details and links', () => {
