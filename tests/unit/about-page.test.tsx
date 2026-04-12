@@ -4,7 +4,7 @@ import { describe, it, expect } from 'vitest'
 import AboutPage from '@/app/about/page'
 
 describe('about page', () => {
-  it('links every visible Sekhem token to the Sekhem page', () => {
+  it('links every Sekhem token rendered in about paragraphs to the Sekhem page', () => {
     const { container } = render(<AboutPage />)
 
     const paragraphs = Array.from(container.querySelectorAll('p'))
@@ -24,13 +24,9 @@ describe('about page', () => {
   it('renders consultation sentence with required contact anchor links', () => {
     render(<AboutPage />)
 
-    const consultationParagraph = screen.getByText((_, element) => {
-      return (
-        element?.tagName.toLowerCase() === 'p' &&
-        /in-person/i.test(element.textContent ?? '') &&
-        /distant/i.test(element.textContent ?? '')
-      )
-    })
+    const consultationParagraph = screen.getByText(
+      /I offer both in-person and distant healing sessions\. Contact me to book a paid session or request a free 15-minute consultation\./i
+    )
 
     expect(within(consultationParagraph).getByRole('link', { name: /in-person/i })).toHaveAttribute(
       'href',
@@ -49,7 +45,8 @@ describe('about page', () => {
   it('styles Einstein quote with dedicated class for visual accent', () => {
     render(<AboutPage />)
 
-    const quote = screen.getByText(/einstein/i, { selector: '.about-quote' })
-    expect(quote.textContent).toMatch(/".+"/)
+    const quote = screen.getByText(/there are only two ways to live your life/i)
+    expect(quote).toHaveClass('about-quote')
+    expect(quote).toHaveTextContent(/as though everything is a miracle/i)
   })
 })
