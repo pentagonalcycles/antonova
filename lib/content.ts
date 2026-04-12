@@ -45,8 +45,8 @@ export const siteContent = {
     title: 'Contact',
     sections: [
       'Use the form below to request session details or submit general enquiries.',
-      '80 pounds for 1 hour distant healing session.',
-      '120 pounds for 1 hour and 30 minutes session in person.'
+      'Distant healing session (1 hour): 80 GBP',
+      'In person session (1h 30min): 120 GBP'
     ]
   }
 } as const

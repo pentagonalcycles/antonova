@@ -52,8 +52,8 @@ export default function HomePage() {
         items={[
           {
             quote:
-              "Amazing healing with T'iam'arhat that cannot describe in words. I am very grateful.",
-            author: 'Marco'
+              "Amazing healing with T'iam'arhat that cannot describe in words. I am forever grateful.",
+            author: 'Marco B'
           },
           {
             quote:
