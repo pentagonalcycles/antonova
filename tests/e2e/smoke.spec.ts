@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test'
 
-const paths = ['/', '/about', '/what-is-energy-healing', '/what-is-sekhem-energy', '/contact']
+const paths = ['/', '/about', '/what-is-energy-healing', '/what-is-sekhem-energy', '/testimonials', '/contact']
 
 test('all core routes load and show header nav', async ({ page }) => {
   for (const path of paths) {

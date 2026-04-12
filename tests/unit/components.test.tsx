@@ -13,4 +13,17 @@ describe('header baseline', () => {
     render(<SiteHeader />)
     expect(screen.getAllByAltText(/tesoul'ra logo/i).length).toBeGreaterThan(0)
   })
+
+  it('renders Testimonials nav link before Contact', () => {
+    render(<SiteHeader />)
+
+    const testimonialsLink = screen.getByRole('link', { name: /testimonials/i })
+    const contactLink = screen.getByRole('link', { name: /contact/i })
+
+    expect(testimonialsLink).toBeInTheDocument()
+    expect(contactLink).toBeInTheDocument()
+    expect(
+      testimonialsLink.compareDocumentPosition(contactLink) & Node.DOCUMENT_POSITION_FOLLOWING
+    ).toBeTruthy()
+  })
 })
