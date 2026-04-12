@@ -213,6 +213,13 @@ h3 {
   padding: var(--space-5) var(--space-3);
 }
 
+.landing-intro-emphasis {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.1vw, 1.8rem);
+  line-height: 1.55;
+  text-align: center;
+}
+
 .testimonial-author {
   text-align: right;
 }
