@@ -14,6 +14,9 @@ test('home has top-level heading and contact path is reachable', async ({ page }
   await expect(page.getByRole('heading', { level: 1 })).toBeVisible()
   await page.goto('/contact')
   await expect(page.getByRole('button', { name: /send/i })).toBeVisible()
+  await expect(page.locator('#session-inperson')).toBeVisible()
+  await expect(page.locator('#session-distant')).toBeVisible()
+  await expect(page.locator('#session-free')).toBeVisible()
 })
 
 test('named images are mapped to intended pages', async ({ page }) => {
