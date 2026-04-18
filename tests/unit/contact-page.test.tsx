@@ -42,5 +42,6 @@ describe('contact page', () => {
     expect(screen.getByText(/contact@tesoulra.com/i)).toBeInTheDocument()
     expect(screen.getByRole('link', { name: /facebook/i })).toBeInTheDocument()
     expect(screen.getByRole('link', { name: /instagram/i })).toBeInTheDocument()
+    expect(screen.getByAltText(/tesoul'ra logo detailed view/i)).toHaveClass('contact-logo-image')
   })
 })

@@ -60,6 +60,7 @@ export default function ContactPage() {
         </a>
       </p>
       <ContactForm />
+      <img src="/images/Logo.png" alt="TESoul'RA logo detailed view" className="contact-logo-image" />
     </ContentSection>
   )
 }

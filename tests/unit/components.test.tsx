@@ -14,12 +14,11 @@ describe('header baseline', () => {
     expect(screen.getAllByAltText(/tesoul'ra logo/i).length).toBeGreaterThan(0)
   })
 
-  it('opens full-size logo in a separate window from logo icon', () => {
+  it('uses the top-left brand as a link back to home', () => {
     render(<SiteHeader />)
 
-    const logoLink = screen.getByRole('link', { name: /open tesoul'ra logo in full size/i })
-    expect(logoLink).toHaveAttribute('href', '/images/Logo.png')
-    expect(logoLink).toHaveAttribute('target', '_blank')
+    const logoLink = screen.getByRole('link', { name: /tesoul'ra home/i })
+    expect(logoLink).toHaveAttribute('href', '/')
   })
 
   it('renders Testimonials nav link before Contact', () => {
