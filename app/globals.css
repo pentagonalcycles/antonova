@@ -240,6 +240,10 @@ h3 {
   align-items: start;
 }
 
+.about-intro-copy {
+  margin: 0;
+}
+
 .about-quote {
   margin: 0;
   padding: var(--space-2) var(--space-3);

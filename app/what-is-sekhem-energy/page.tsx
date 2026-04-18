@@ -7,20 +7,21 @@ const SEKHEM_SECTION_INDEX = {
 
 export default function SekhemPage() {
   const page = siteContent.sekhemEnergy
+  const quoteParagraph = page.sections[SEKHEM_SECTION_INDEX.quote]
+
   return (
     <ContentSection title={page.title}>
-      <img
-        src="/images/WhatIsSekhemEnergy.png"
-        alt="What is sekhem energy visual"
-        className="page-image"
-      />
+      <div className="about-intro-layout">
+        <img
+          src="/images/WhatIsSekhemEnergy.png"
+          alt="What is sekhem energy visual"
+          className="page-image"
+        />
+        <p className="about-quote">{quoteParagraph}</p>
+      </div>
       {page.sections.map((paragraph, index) => {
         if (index === SEKHEM_SECTION_INDEX.quote) {
-          return (
-            <p key={paragraph} className="about-quote">
-              {paragraph}
-            </p>
-          )
+          return null
         }
 
         return <p key={paragraph}>{paragraph}</p>
