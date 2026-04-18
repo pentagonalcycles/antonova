@@ -2,7 +2,7 @@
 
 Date: 2026-04-12
 Project: TESoul'RA Next.js site
-Scope: Move testimonial content from Home to a new dedicated Testimonials page and update navigation/tests
+Scope: Move testimonial content from Home to a new dedicated Testimonials page and update navigation/tests (later refined with heading/image ordering updates)
 
 ## Objective
 
@@ -47,7 +47,10 @@ All testimonial content should exist only on `/testimonials` after the change.
 
 - New page should render `TestimonialsCarousel` with current approved testimonial entries in the same order and wording.
 - Keep existing author alignment behavior and overall component styling.
-- No additional layout redesign in this scope.
+- Final approved top-of-page order is:
+  1. `Testimonials` page heading (single occurrence)
+  2. `/images/Testimonials.png`
+  3. testimonial list content
 
 ### 4) Data Placement (Option 1 Scope)
 
@@ -67,7 +70,6 @@ All testimonial content should exist only on `/testimonials` after the change.
 
 - New testimonial filtering/searching UX.
 - Testimonial data normalization/refactor to `lib/content.ts`.
-- Visual redesign of testimonial component.
 - Copy updates to testimonial text.
 
 ## Acceptance Criteria
@@ -75,8 +77,9 @@ All testimonial content should exist only on `/testimonials` after the change.
 1. A `Testimonials` nav link appears before `Contact`.
 2. `/testimonials` route loads and displays all currently approved testimonials.
 3. Home page does not render testimonial image block or testimonial list.
-4. Existing routes continue to load correctly.
-5. Automated checks pass:
+4. `/testimonials` renders heading first, image second, and list content below, with only one visible `Testimonials` heading.
+5. Existing routes continue to load correctly.
+6. Automated checks pass:
    - `npm run test:unit`
    - `npm run test:e2e`
    - `npm run build`

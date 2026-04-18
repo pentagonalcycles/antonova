@@ -2,11 +2,19 @@
 
 Date: 2026-04-12
 Project: TESoul'RA Next.js site
-Scope: Landing page post-hero text cleanup and emphasis sizing
+Scope: Landing page post-hero text cleanup and emphasis sizing (later superseded by canonical full copy block request)
 
 ## Objective
 
-Simplify the post-hero content block on the landing page by removing redundant welcome text and retaining only the requested sacred-container sentence in a larger emphasis style.
+Original objective (2026-04-12): simplify the post-hero content block to one emphasized sacred-container sentence.
+
+Current implemented objective (superseding update): render only the client-provided canonical landing copy block after the hero image, containing:
+- `Welcome to TESoul’RA -Temple of Embodied Soul Remembrance & Alchemy`
+- `Why Temple? ...`
+- `Why Embodied Soul? ...`
+- `Why Remembrance? ...`
+- `Why Alchemy? ...`
+with no extra post-hero images or additional text.
 
 ## Approved Direction
 
@@ -57,10 +65,11 @@ User-approved approach: **Option 1 (Home-section-only update)**.
 
 ## Acceptance Criteria
 
-1. No visible post-hero `Welcome` heading.
-2. No visible post-hero `Welcome to TESoul'RA...` sentence.
-3. Required sacred-container sentence is visible once in post-hero section.
-4. Sentence uses larger emphasis style class.
+1. Hero section remains image-led and unchanged in structure.
+2. Post-hero section shows only the canonical five-paragraph copy block requested by client.
+3. No post-hero session cards or extra post-hero images are rendered.
+4. Content appears in the exact order provided by client (Welcome line, then four `Why ...` paragraphs).
 5. Verification passes:
    - `npm run test:unit -- tests/unit/home.test.tsx`
+   - `npm run test:e2e`
    - `npm run build`

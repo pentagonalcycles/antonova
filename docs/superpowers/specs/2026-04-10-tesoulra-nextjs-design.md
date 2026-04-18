@@ -3,7 +3,7 @@
 Date: 2026-04-10
 Project: Client website for TESoul'RA
 Platform: Next.js on Vercel (primary)
-Status: Implemented and updated through latest client-approved landing, About/Contact linking, and dedicated testimonials-page refinements
+Status: Implemented and updated through latest client-approved landing copy, About/Energy/Sekhem intro layout alignment, testimonials ordering refinements, and Contact/logo behavior updates
 
 ## 1. Goals and Scope
 
@@ -83,12 +83,12 @@ Status: Implemented and updated through latest client-approved landing, About/Co
 - Keep client quotes and testimonial names as provided.
 
 ### Implemented page composition
-- Landing: welcome narrative, purpose framing, visual hero treatment, and 4 “Why ...” cards (testimonials removed from Home).
-- About: full long-form practitioner profile copy, Sekhem word-linking, consultation anchor links, and styled quote.
-- Energy Healing: full explanatory long-form copy.
-- Sekhem Energy: full explanatory long-form copy plus quote styled to match About quote treatment.
-- Testimonials: dedicated route rendering full testimonial list.
-- Contact: pricing, WhatsApp, email, social links, anchored session-type blocks, and contact form.
+- Landing: image-led hero followed by a post-hero canonical copy block containing the Welcome line and the four `Why ...` statements as text-only content (no extra post-hero images).
+- About: full long-form practitioner profile copy with Sekhem word-linking, consultation anchor links, and quote moved to top intro layout at the right of the About image.
+- Energy Healing: full explanatory long-form copy with same split intro layout pattern as About (image left, first paragraph right).
+- Sekhem Energy: full explanatory long-form copy with split intro layout (image left, quote right), and quote removed from lower duplicate position.
+- Testimonials: dedicated route with one `Testimonials` heading at top, then `/images/Testimonials.png`, followed by testimonial list.
+- Contact: pricing, WhatsApp, email, social links, anchored session-type blocks, contact form, and enlarged TESoul'RA logo image at the end of the page.
 
 ### Testimonials status
 - Testimonials are now hosted on dedicated `/testimonials` page and include all approved entries in current order:
@@ -134,11 +134,11 @@ Status: Implemented and updated through latest client-approved landing, About/Co
 ### QA checklist (current)
 - Visual palette direction implemented and verified.
 - Copy fidelity updated to latest client-provided text blocks.
-- Responsive rectangle behavior implemented.
-- Testimonials route (`/testimonials`) rendered and linked from nav before Contact.
+- Testimonials route (`/testimonials`) rendered with heading-image-list order and single visible `Testimonials` heading.
 - About inline link behavior implemented (`Sekhem`, consultation anchors).
-- Sekhem page quote formatting aligned with About quote style.
-- Contact pricing/session blocks/details/form visible and functioning.
+- About, Energy Healing, and Sekhem intro blocks use consistent split image/text layout with responsive stacking.
+- Contact pricing/session blocks/details/form visible and functioning, with enlarged logo image rendered at end of page.
+- Header brand click behavior restored to home navigation (`/`).
 - Unit/e2e/build checks passing in branch workflow.
 
 ### Acceptance criteria

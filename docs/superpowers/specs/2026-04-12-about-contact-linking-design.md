@@ -2,7 +2,7 @@
 
 Date: 2026-04-12
 Project: TESoul'RA Next.js site
-Scope: About page inline linking/styling updates and Contact page session-type layout section
+Scope: About page inline linking/styling updates and Contact page session-type layout section (later refined with intro-layout and logo-detail updates)
 
 ## Objective
 
@@ -130,4 +130,6 @@ To align with `antonova01.png`:
 5. About links scroll to the correct Contact anchors.
 6. Desktop layout visually matches the screenshot pattern (image left, framed panel right).
 7. Mobile layout stacks cleanly and remains readable.
-8. Unit/e2e/build checks pass after implementation.
+8. About quote appears in top intro block (right of About image) rather than bottom duplicate placement.
+9. Contact page ends with an enlarged TESoul'RA logo image for detailed viewing.
+10. Unit/e2e/build checks pass after implementation.
