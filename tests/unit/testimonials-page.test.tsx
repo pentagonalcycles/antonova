@@ -4,12 +4,16 @@ import { describe, it, expect } from 'vitest'
 import TestimonialsPage from '@/app/testimonials/page'
 
 describe('testimonials page', () => {
-  it('renders page-level landmark and heading', () => {
+  it('renders testimonials image before the page heading', () => {
     render(<TestimonialsPage />)
 
     const main = screen.getByRole('main', { name: /testimonials page/i })
     expect(main).toBeInTheDocument()
-    expect(within(main).getByRole('heading', { level: 1, name: /testimonials/i })).toBeInTheDocument()
+
+    const image = within(main).getByRole('img', { name: /testimonials visual/i })
+    const heading = within(main).getByRole('heading', { level: 1, name: /testimonials/i })
+
+    expect(image.compareDocumentPosition(heading) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
   })
 
   it('renders testimonials carousel content with expected quote and author', () => {
