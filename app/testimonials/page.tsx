@@ -37,8 +37,8 @@ export default function TestimonialsPage() {
     <main aria-label="Testimonials page">
       <section className="content-section">
         <div className="container narrow">
-          <img src="/images/Testimonials.png" alt="Testimonials visual" />
           <h1>Testimonials</h1>
+          <img src="/images/Testimonials.png" alt="Testimonials visual" />
         </div>
       </section>
       <TestimonialsCarousel items={testimonials} />

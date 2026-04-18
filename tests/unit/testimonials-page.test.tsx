@@ -4,16 +4,17 @@ import { describe, it, expect } from 'vitest'
 import TestimonialsPage from '@/app/testimonials/page'
 
 describe('testimonials page', () => {
-  it('renders testimonials image before the page heading', () => {
+  it('renders a single testimonials heading followed by image', () => {
     render(<TestimonialsPage />)
 
     const main = screen.getByRole('main', { name: /testimonials page/i })
     expect(main).toBeInTheDocument()
 
-    const image = within(main).getByRole('img', { name: /testimonials visual/i })
     const heading = within(main).getByRole('heading', { level: 1, name: /testimonials/i })
+    const image = within(main).getByRole('img', { name: /testimonials visual/i })
 
-    expect(image.compareDocumentPosition(heading) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    expect(heading.compareDocumentPosition(image) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy()
+    expect(within(main).getAllByRole('heading', { name: /testimonials/i })).toHaveLength(1)
   })
 
   it('renders testimonials carousel content with expected quote and author', () => {

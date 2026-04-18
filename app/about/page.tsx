@@ -55,21 +55,21 @@ function renderConsultationLinks(paragraph: string) {
 
 export default function AboutPage() {
   const about = siteContent.about
+  const quoteParagraph = about.sections[ABOUT_SECTION_INDEX.quote]
 
   return (
     <ContentSection title={about.title}>
-      <img src="/images/AboutMe.png" alt="About me portrait" className="page-image" />
+      <div className="about-intro-layout">
+        <img src="/images/AboutMe.png" alt="About me portrait" className="page-image" />
+        <p className="about-quote">{quoteParagraph}</p>
+      </div>
       {about.sections.map((paragraph, index) => {
-        if (index === ABOUT_SECTION_INDEX.consultation) {
-          return <p key={paragraph}>{renderConsultationLinks(paragraph)}</p>
+        if (index === ABOUT_SECTION_INDEX.quote) {
+          return null
         }
 
-        if (index === ABOUT_SECTION_INDEX.quote) {
-          return (
-            <p key={paragraph} className="about-quote">
-              {paragraph}
-            </p>
-          )
+        if (index === ABOUT_SECTION_INDEX.consultation) {
+          return <p key={paragraph}>{renderConsultationLinks(paragraph)}</p>
         }
 
         return <p key={paragraph}>{renderSekhemLinks(paragraph)}</p>
