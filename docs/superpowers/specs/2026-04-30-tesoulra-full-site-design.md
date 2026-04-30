@@ -1,0 +1,222 @@
+# TESoul'RA — Site Design Specification
+
+Date: 2026-04-30
+Project: antonova
+Branch: `feat/tesoulra-nextjs`
+
+## Overview
+
+TESoul'RA is a website for an energy healing practice operating under the name T'iam'arhat. The site is built with Next.js 16 (App Router), React 19, and TypeScript, deployed to Vercel. All pages are server-rendered dynamically due to user-agent device detection.
+
+## Visual Identity
+
+### Color Palette
+
+| Token | Value | Use |
+|-------|-------|-----|
+| `--color-bg-lapis` | `#18327a` | Lighter end of page background gradient |
+| `--color-bg-deep` | `#0a1238` | Deeper end of page background gradient |
+| `--color-gold` | `#d7b663` | All headings, hero title/subtitle, brand, links, accents |
+| `--color-turquoise` | `#79d7da` | Body links (fallback) |
+| `--color-text` | `#d9f6f8` | Body text |
+| `--color-surface` | `#1a2d66` | Card and panel backgrounds |
+
+### Typography
+
+| Token | Value | Use |
+|-------|-------|-----|
+| `--font-display` | Cinzel, Georgia, serif | Headings, hero title, nav brand, testimonial authors |
+| `--font-body` | Cormorant Garamond, Georgia, serif | All body paragraphs, quote blocks |
+
+### Background
+
+The `body` uses a uniform linear gradient from deep blue (`#0a1238`) to lapis (`#18327a`). No radial overlays are applied (they were removed for visual uniformity).
+
+### Logo
+
+A circular gold/blue emblem with an egg outline, golden triangle containing a spiral. Used in:
+- Site header nav (top-left, 40px)
+- Hero header (above the hero image, 60–90px)
+- Contact page footer detail view
+
+## Site Structure & Navigation
+
+### Header
+
+Sticky top bar with gold border, semi-transparent dark background with backdrop blur. Contains:
+- Brand link (logo + "TESoul'RA" text) → links to `/`
+- Nav links: Home, About, Energy Healing, Sekhem Energy, Contact
+
+Note: The "Testimonials" nav link was removed; testimonials are now embedded on the landing page as a carousel.
+
+### Pages
+
+| Route | Content |
+|-------|---------|
+| `/` | Hero → "Why" paragraphs → About Me → Testimonials carousel → Bookings |
+| `/about` | About Me heading + full About Me content |
+| `/what-is-energy-healing` | Energy Healing content |
+| `/what-is-sekhem-energy` | Sekhem Energy content |
+| `/contact` | Contact details, session types, form, social links |
+
+No dedicated `/testimonials` route is used (the `/testimonials` page exists but the nav link was removed).
+
+## Landing Page (`/`) — Section by Section
+
+### 1. Hero Section
+
+**Component:** `HeroParallax`
+
+Structure (left-to-right, top-to-bottom):
+- **Logo** (60–90px, left-aligned)
+- **Title:** "WELCOME TO TES<small>oul</small>'RA" — gold, Cinzel, uppercase, single-line. The "oul" portion renders in small-caps style (lowercased, smaller font, `font-variant-caps: small-caps`).
+- **Subtitle:** "Temple of Soul Remembrance & Alchemy" — gold, Cinzel, sized to approximately match the title's visual line width.
+- **Hero image:** `LandingPage.jpg` displayed below the header text, using `background-size: contain` to show the full image without cropping, within the same column width (max 760px).
+
+The hero header text, image, and all subsequent content share a common column (`.hero-column`, max-width 760px) for consistent left-edge alignment.
+
+### 2. "Why" Paragraphs
+
+Four paragraphs explaining the meaning of Temple, Embodied Soul, Remembrance, and Alchemy. Rendered as `<p>` elements with:
+- Justified text alignment
+- Italic formatting on the term between "Why" and "?" (e.g., "Why *Temple*?")
+- The same column width as the hero
+
+### 3. About Me Section
+
+**Component:** `AboutContent` (shared with `/about` page)
+
+Renders an `<h2>` heading "About Me" (gold, Cinzel — matching all other h2s), followed by:
+- **Intro layout:** Two-column grid — AboutMe.jpg portrait on the left, Einstein quote (styled with gold left border accent) on the right
+- **Body paragraphs:** Full About Me text content
+- **Cross-links:** Every occurrence of "Sekhem" in the text is a link to `/what-is-sekhem-energy`. The paragraph about session types has links for "in-person" → `/contact#session-inperson`, "distant" → `/contact#session-distant`, "free 15" → `/contact#session-free`
+
+All paragraphs are justified.
+
+### 4. Testimonials Carousel
+
+**Component:** `TestimonialsCarousel` (client component)
+
+Displays 8 testimonials in a horizontal sliding carousel:
+- **Marco B** — "Amazing healing..."
+- **Claire P** — "I've been seeing T'iam'arhat for healing for a few years..."
+- **Emma S** — "T'iam'arhat was recommended to me..."
+- **Natasha K** — "I booked a session..."
+- **Ash K** — "Had the most incredible session..."
+- **Steve B** — "I had a session with T'iam'arhat..."
+- **Kunal M** — "I had a healing session..."
+- **Nicholas G** — "I was introduced to T'iam'arhat two years ago..."
+
+Features:
+- Left/right arrow buttons
+- Dot navigation (1 per testimonial)
+- Auto-rotation every 6 seconds (resets on user interaction)
+- Touch swipe support (50px minimum swipe distance)
+- Smooth CSS transition (0.5s ease)
+- Quotes styled in italic, justified text; author names right-aligned
+- Cards: dark semi-transparent background with gold border
+
+### 5. Bookings Section
+
+**Component:** `BookingsSection`
+
+Displays three session types as equal-sized cards in a 3-column row:
+1. **Free Consultation** — 15 minutes, Free — `SessionPhoneFree.png`
+2. **In-Person Session** — 1.5 hours, £120 — `SessionInPerson.png`
+3. **Distant Session** — 1 hour, £80 — `SessionRemote.png`
+
+Each card contains a square image (1:1 aspect ratio), a title (gold h3), and a description. On mobile (<768px), cards stack vertically.
+
+## Inner Pages
+
+### About Page (`/about`)
+
+Uses the same `AboutContent` component but renders with an `<h1>` "About Me" heading inside a `content-section` wrapper (narrow container, 760px max). The shared component omits the heading (`heading={false}` by default) when embedded on the landing page.
+
+### Energy Healing Page (`/what-is-energy-healing`)
+
+- Page heading: "What is Energy Healing" (gold, h2)
+- Hero image: `WhatIsEnergyHealing.jpg` (JPG, not PNG) alongside the intro paragraph
+- Remaining paragraphs below
+- All text justified
+
+### Sekhem Energy Page (`/what-is-sekhem-energy`)
+
+- Page heading: "What is Sekhem Energy" (gold, h2)
+- Hero image: `WhatIsSekhemEnergy.jpg` (JPG, not PNG) alongside the closing quote
+- Quote styled with gold left border accent
+- Remaining paragraphs below
+- All text justified
+
+### Contact Page (`/contact`)
+
+- Page heading: "Contact" (gold, h2)
+- Contact.jpg hero image
+- Contact intro text
+- Session types section with 3 rows (in-person, distant, free consultation), each with an image and description
+- WhatsApp number: +44 77 888 47 113
+- Email: contact@tesoulra.com
+- Social links: Facebook, Instagram (inline with SVG icons)
+- Contact form (client component) with honeypot spam protection
+- Logo detailed view image at the bottom
+
+## Device Detection
+
+The site implements server-side user-agent device detection:
+
+**Component:** `DeviceProvider` (React Context) + `useDevice()` hook
+**Utility:** `lib/device.ts` — parses User-Agent header to determine `{ isMobile, deviceType }`
+**Usage:** `getDevice()` is called in the root layout on every request, making pages dynamically server-rendered. The device info is provided via React Context for use by any client component.
+
+Current detection rules:
+- iPad or Android without "mobile" → tablet
+- Android/iPhone/iPod/BlackBerry/IE Mobile/Opera Mini → mobile
+- Everything else → desktop
+
+## Content Source
+
+All text content is stored in `lib/content.ts` as a single exported `siteContent` object with sections for: `home`, `about`, `energyHealing`, `sekhemEnergy`, `contact`. Each page's sections are rendered from this central data source.
+
+## Images
+
+All images are served from `/public/images/`. Five images use high-resolution JPG format; remaining images (logo, session types, testimonials, contact) use PNG:
+
+| File | Format | Use |
+|------|--------|-----|
+| `Logo.png` | PNG | Header, hero, contact page |
+| `LandingPage.jpg` | JPG | Landing page hero |
+| `AboutMe.jpg` | JPG | About Me portrait |
+| `WhatIsEnergyHealing.jpg` | JPG | Energy Healing page |
+| `WhatIsSekhemEnergy.jpg` | JPG | Sekhem Energy page |
+| `Contact.jpg` | JPG | Contact page |
+| `SessionInPerson.png` | PNG | Session type card |
+| `SessionRemote.png` | PNG | Session type card |
+| `SessionPhoneFree.png` | PNG | Session type card |
+| `Testimonials.png` | PNG | Testimonials page |
+
+## Testing
+
+**Framework:** Vitest + React Testing Library (jsdom environment)
+**Test files:** `tests/unit/*.test.{ts,tsx}`
+**18 tests total across 8 test files:**
+- `home.test.tsx` — hero, why paragraphs, testimonials
+- `about-page.test.tsx` — Sekhem links, consultation links, quote styling
+- `contact-page.test.tsx` — session rows, contact details
+- `testimonials-page.test.tsx` — heading order, carousel content
+- `components.test.tsx` — header nav, brand, link ordering
+- `content.test.ts` — page coverage
+- `contact.test.ts` — Zod schema validation
+- `validation.test.ts` — tooling bootstrap
+
+**Quality gates:** `npm run test:unit`, `npm run build`
+
+## Footer
+
+Simple footer: "Temple of Embodied Soul Remembrance & Alchemy" centered, gold border top.
+
+## Out of Scope (Not Implemented)
+
+- Actual booking/payment system (Bookings section is informational only)
+- Contact form backend (form posts to `/api/contact` which would need a server implementation)
+- E2E test coverage (Playwright config exists but no e2e tests written)
+- Parallax scroll effect (was attempted with CSS `background-attachment: fixed` but removed due to image distortion; may be revisited with JS-driven approach)
