@@ -127,29 +127,50 @@ h3 {
   box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
-  .hero-header {
-    flex-direction: row;
-    gap: var(--space-2);
-    padding: var(--space-3) var(--space-2) var(--space-2);
-  }
+.hero-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
 
-  .hero-title {
-    font-size: clamp(1.3rem, 6vw, 2rem);
-  }
+.hero-logo {
+  width: clamp(60px, 8vw, 90px);
+  height: clamp(60px, 8vw, 90px);
+  object-fit: contain;
+  flex-shrink: 0;
+}
 
-  .hero-subtitle {
-    font-size: clamp(0.85rem, 3.5vw, 1.1rem);
-  }
+.hero-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
 
+.hero-title {
+  margin: 0;
+  font-size: clamp(1.2rem, 3.5vw, 2.8rem);
+  letter-spacing: 0.04em;
+  line-height: 1.1;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
 
-  .session-row {
-    grid-template-columns: 1fr;
-  }
+.hero-title small {
+  text-transform: none;
+  font-size: 0.65em;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.08em;
+}
 
-  .session-row-image {
-    min-height: 180px;
-  }
+.hero-subtitle {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(0.72rem, 2.1vw, 1.6rem);
+  color: var(--color-gold);
+  letter-spacing: 0.03em;
+  font-weight: 600;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -158,6 +179,10 @@ h3 {
     transition: none !important;
     scroll-behavior: auto !important;
   }
+}
+
+.testimonials-section .testimonial-author {
+  text-align: right;
 }
 
 .testimonials-section {
@@ -245,8 +270,8 @@ h3 {
   background: var(--color-gold);
 }
 
-.carousel-dot.active {
-  background: var(--color-gold);
+.testimonials-section .testimonial-author {
+  text-align: right;
 }
 
 .bookings-section {
@@ -294,10 +319,17 @@ h3 {
   text-align: center;
 }
 
-@media (max-width: 768px) {
-  .bookings-grid {
-    grid-template-columns: 1fr;
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
+}
+
+.testimonials-section .testimonial-author {
+  text-align: right;
+}
 
   .carousel-slide { padding: var(--space-3); }
   .carousel-btn { width: 30px; height: 30px; font-size: 0.7rem; }
