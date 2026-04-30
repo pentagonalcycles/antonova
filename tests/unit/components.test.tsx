@@ -21,18 +21,18 @@ describe('header baseline', () => {
     expect(logoLink).toHaveAttribute('href', '/')
   })
 
-  it('renders Testimonials nav link before Contact', () => {
+  it('renders Sekhem Energy nav link before Contact', () => {
     render(<SiteHeader />)
 
     const navLinkTexts = screen
       .getAllByRole('link')
       .map((link) => link.textContent?.replace(/\s+/g, ' ').trim() ?? '')
 
-    const testimonialsIndex = navLinkTexts.findIndex((text) => /testimonials/i.test(text))
+    const sekhemIndex = navLinkTexts.findIndex((text) => /sekhem energy/i.test(text))
     const contactIndex = navLinkTexts.findIndex((text) => /^contact$/i.test(text))
 
-    expect(testimonialsIndex).toBeGreaterThanOrEqual(0)
+    expect(sekhemIndex).toBeGreaterThanOrEqual(0)
     expect(contactIndex).toBeGreaterThanOrEqual(0)
-    expect(testimonialsIndex).toBeLessThan(contactIndex)
+    expect(sekhemIndex).toBeLessThan(contactIndex)
   })
 })

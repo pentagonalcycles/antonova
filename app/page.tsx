@@ -1,6 +1,7 @@
 import { HeroParallax } from '@/components/hero-parallax'
 import { AboutContent } from '@/components/about-content'
 import { TestimonialsCarousel } from '@/components/testimonials-carousel'
+import { BookingsSection } from '@/components/bookings-section'
 import { siteContent } from '@/lib/content'
 
 const testimonials = [
@@ -68,6 +69,7 @@ export default function HomePage() {
       </div>
       <AboutContent heading />
       <TestimonialsCarousel items={testimonials} />
+      <BookingsSection />
     </>
   )
 }
