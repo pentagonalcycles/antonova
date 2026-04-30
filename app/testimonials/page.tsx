@@ -29,6 +29,16 @@ const testimonials = [
     quote:
       "I had a session with T'iam'arhat, and it was a powerful experience. She's warm, professional and instantly puts you at ease. Her energy work is deeply effective, leaving me feeling lighter and more grounded. I couldn't recommend her more highly.",
     author: 'Steve B'
+  },
+  {
+    quote:
+      "I had a healing session with T'iam'arhat, I have to say it was the most powerful healing I have had, ever! It is difficult to put it into words, it felt as if I was being healed on a level beyond this incarnation. I felt strong divine feminine energy from Isis, amongst many other things. To experience such energies by simply lying on her healing table is very special. She really is a conduit for really powerful beings. I feel like I am on an entirely different timeline, already after just one session. She also used tarot cards to get a read on the progress done on the chakras which was great to understand. All in all, it was a genuine gift to experience such a healing.",
+    author: 'Kunal M'
+  },
+  {
+    quote:
+      "I was introduced to T'iam'arhat two years ago at what was an extremely challenging point in my life. The help I received has changed my life forever! From clearing blockages, to teaching me how to transmute energy and even giving me a very simple but important message from my father (who passed away in 2020) and helping my 3-year-old daughter to regulate her emotions. I highly recommend her services!",
+    author: 'Nicholas G'
   }
 ]
 
