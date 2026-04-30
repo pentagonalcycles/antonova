@@ -85,9 +85,6 @@ h3 {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-}
-
-.brand {
   text-decoration: none;
 }
 
@@ -113,6 +110,8 @@ h3 {
   text-decoration: none;
 }
 
+/* ========== HERO ========== */
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -120,7 +119,6 @@ h3 {
   padding: var(--space-4) var(--space-3) 0;
 }
 
-/* Shared column used by hero and home body text — keeps everything aligned */
 .hero-column {
   width: 100%;
   max-width: 760px;
@@ -173,16 +171,88 @@ h3 {
   font-weight: 600;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
+.hero-parallax-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-image: url('/images/LandingPage.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+}
+
+.home-body {
+  padding: var(--space-4) var(--space-3);
+  margin: 0 auto;
+}
+
+.home-why {
+  text-align: justify;
+  margin: 0 0 var(--space-2);
+  line-height: 1.7;
+}
+
+.about-content {
+  width: 100%;
+  max-width: 760px;
+  box-sizing: border-box;
+  padding: 0 var(--space-3) var(--space-5);
+  margin: 0 auto;
+}
+
+.about-content p {
+  text-align: justify;
+}
+
+.content-section {
+  padding: var(--space-5) var(--space-3);
+}
+
+.content-section p,
+.content-section blockquote {
+  text-align: justify;
+}
+
+.landing-intro-emphasis {
+  margin: 0;
+  font-size: clamp(1.2rem, 2.1vw, 1.8rem);
+  line-height: 1.55;
+  text-align: center;
 }
 
 .testimonials-section .testimonial-author {
   text-align: right;
+}
+
+.about-intro-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.95fr) minmax(0, 1.05fr);
+  gap: var(--space-3);
+  align-items: start;
+}
+
+.about-intro-copy {
+  line-height: 1.75;
+}
+
+.about-quote {
+  border-left: 3px solid var(--color-gold);
+  padding-left: var(--space-2);
+  font-style: italic;
+}
+
+.page-image {
+  width: 100%;
+  border-radius: 4px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.container.narrow {
+  max-width: 760px;
 }
 
 .testimonials-section {
@@ -270,10 +340,6 @@ h3 {
   background: var(--color-gold);
 }
 
-.testimonials-section .testimonial-author {
-  text-align: right;
-}
-
 .bookings-section {
   width: 100%;
   max-width: 760px;
@@ -319,21 +385,107 @@ h3 {
   text-align: center;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation: none !important;
-    transition: none !important;
-    scroll-behavior: auto !important;
-  }
+/* ========== CONTACT ========== */
+
+.contact-form {
+  max-width: 540px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-top: var(--space-3);
 }
 
-.testimonials-section .testimonial-author {
-  text-align: right;
+.contact-form label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
 }
 
-  .carousel-slide { padding: var(--space-3); }
-  .carousel-btn { width: 30px; height: 30px; font-size: 0.7rem; }
+.contact-form input,
+.contact-form textarea {
+  background: rgba(10, 18, 56, 0.55);
+  border: 1px solid rgba(215, 182, 99, 0.35);
+  color: var(--color-text);
+  padding: var(--space-1);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
 
+.contact-form button {
+  align-self: flex-start;
+  margin-top: var(--space-1);
+  background: var(--color-gold);
+  color: var(--color-bg-deep);
+  border: none;
+  padding: var(--space-1) var(--space-2);
+  cursor: pointer;
+  font-family: var(--font-display);
+  letter-spacing: 0.08em;
+}
+
+.honeypot {
+  display: none;
+}
+
+.contact-logo-image {
+  width: clamp(120px, 35%, 260px);
+  margin-top: var(--space-5);
+}
+
+.social-links-inline {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+}
+
+.session-types {
+  margin-top: var(--space-4);
+  border-top: 1px solid rgba(215, 182, 99, 0.25);
+  padding-top: var(--space-4);
+}
+
+.session-row {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) minmax(0, 1fr);
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.session-row-image {
+  width: 100%;
+  min-height: 220px;
+  object-fit: contain;
+  background: rgba(10, 18, 56, 0.35);
+  border-radius: 4px;
+}
+
+.session-row-panel {
+  display: grid;
+  align-content: center;
+  gap: 0.4rem;
+  padding: var(--space-3);
+  background: linear-gradient(165deg, rgba(10, 18, 56, 0.72), rgba(26, 45, 102, 0.52));
+}
+
+.session-row-panel p {
+  margin: 0;
+}
+
+/* ========== FOOTER ========== */
+
+.site-footer {
+  border-top: 1px solid rgba(215, 182, 99, 0.35);
+  padding: var(--space-3);
+  text-align: center;
+  font-family: var(--font-display);
+  color: var(--color-gold);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+}
+
+/* ========== MOBILE ========== */
+
+@media (max-width: 768px) {
   .hero-header {
     flex-direction: column;
     align-items: center;
@@ -353,7 +505,32 @@ h3 {
     width: 50px;
     height: 50px;
   }
+
+  .bookings-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .carousel-slide { padding: var(--space-3); }
+  .carousel-btn { width: 30px; height: 30px; font-size: 0.7rem; }
+
+  .session-row {
+    grid-template-columns: 1fr;
+  }
+
+  .session-row-image {
+    min-height: 180px;
+  }
+
+  .nav {
+    flex-direction: column;
+  }
+
+  .rectangles {
+    grid-template-columns: 1fr;
+  }
 }
+
+/* ========== DESKTOP WIDE ========== */
 
 @media (min-width: 769px) {
   .hero-column,
@@ -362,5 +539,15 @@ h3 {
   .bookings-section,
   .container.narrow {
     max-width: min(1024px, 92vw);
+  }
+}
+
+/* ========== REDUCED MOTION ========== */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }
