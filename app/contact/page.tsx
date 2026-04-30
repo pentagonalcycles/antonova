@@ -5,7 +5,7 @@ import { siteContent } from '@/lib/content'
 export default function ContactPage() {
   return (
     <ContentSection title={siteContent.contact.title}>
-      <img src="/images/Contact.png" alt="Contact visual" className="page-image" />
+      <img src="/images/Contact.jpg" alt="Contact visual" className="page-image" />
       {siteContent.contact.sections.map((paragraph) => (
         <p key={paragraph}>{paragraph}</p>
       ))}

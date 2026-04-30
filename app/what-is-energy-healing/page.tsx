@@ -9,7 +9,7 @@ export default function EnergyHealingPage() {
     <ContentSection title={page.title}>
       <div className="about-intro-layout">
         <img
-          src="/images/WhatIsEnergyHealing.png"
+          src="/images/WhatIsEnergyHealing.jpg"
           alt="What is energy healing visual"
           className="page-image"
         />

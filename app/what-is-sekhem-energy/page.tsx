@@ -13,7 +13,7 @@ export default function SekhemPage() {
     <ContentSection title={page.title}>
       <div className="about-intro-layout">
         <img
-          src="/images/WhatIsSekhemEnergy.png"
+          src="/images/WhatIsSekhemEnergy.jpg"
           alt="What is sekhem energy visual"
           className="page-image"
         />

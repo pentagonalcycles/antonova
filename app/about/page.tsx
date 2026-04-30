@@ -60,7 +60,7 @@ export default function AboutPage() {
   return (
     <ContentSection title={about.title}>
       <div className="about-intro-layout">
-        <img src="/images/AboutMe.png" alt="About me portrait" className="page-image" />
+        <img src="/images/AboutMe.jpg" alt="About me portrait" className="page-image" />
         <p className="about-quote">{quoteParagraph}</p>
       </div>
       {about.sections.map((paragraph, index) => {

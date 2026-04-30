@@ -162,7 +162,7 @@ h3 {
   width: 100%;
   max-width: 700px;
   height: clamp(300px, 55vw, 480px);
-  background-image: url('/images/LandingPage.png');
+  background-image: url('/images/LandingPage.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
