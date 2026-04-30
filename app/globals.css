@@ -191,6 +191,10 @@ h3 {
   padding: var(--space-5) var(--space-3);
 }
 
+.content-section p {
+  text-align: justify;
+}
+
 .landing-intro-emphasis {
   margin: 0;
   font-size: clamp(1.2rem, 2.1vw, 1.8rem);
