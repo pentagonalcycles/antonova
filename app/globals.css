@@ -161,11 +161,11 @@ h3 {
 .hero-parallax-image {
   width: 100%;
   max-width: 700px;
-  height: clamp(300px, 55vw, 480px);
+  aspect-ratio: 16 / 10;
   background-image: url('/images/LandingPage.jpg');
-  background-size: cover;
+  background-size: contain;
   background-position: center;
-  background-attachment: fixed;
+  background-repeat: no-repeat;
   border-radius: 4px;
 }
 
@@ -345,10 +345,6 @@ h3 {
     font-size: clamp(0.85rem, 3.5vw, 1.1rem);
   }
 
-  .hero-parallax-image {
-    background-attachment: scroll;
-    height: clamp(220px, 60vw, 360px);
-  }
 
   .session-row {
     grid-template-columns: 1fr;
