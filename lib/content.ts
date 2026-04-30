@@ -1,8 +1,7 @@
 export const siteContent = {
   home: {
-    title: "Welcome to TESoul'RA - Temple of Embodied Soul Remembrance & Alchemy",
-    subtitle:
-      'The space I create in my healing sessions is a sacred container for remembrance, embodiment, and transformative alchemy.',
+    title: "Welcome to TESoul'RA",
+    subtitle: "Temple of Soul Remembrance & Alchemy",
     sections: [
       'Welcome to TESoul\'RA - Temple of Embodied Soul Remembrance & Alchemy.',
       'The space I create in my healing sessions is a sacred container, a temple, for the restoration of your body and spirit.'
