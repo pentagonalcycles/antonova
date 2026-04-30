@@ -194,6 +194,14 @@ h3 {
   line-height: 1.7;
 }
 
+.about-content {
+  width: 100%;
+  max-width: 760px;
+  box-sizing: border-box;
+  padding: 0 var(--space-3) var(--space-5);
+  margin: 0 auto;
+}
+
 .content-section {
   padding: var(--space-5) var(--space-3);
 }

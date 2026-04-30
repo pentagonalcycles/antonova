@@ -1,8 +1,8 @@
 import { HeroParallax } from '@/components/hero-parallax'
+import { AboutContent } from '@/components/about-content'
 import { siteContent } from '@/lib/content'
 
 function formatWhyParagraph(text: string) {
-  // Italicise the word(s) between "Why " and "?"
   return text.replace(/^(Why )([^?]+)(\?)/, (_, why, term, q) => (
     `${why}<em>${term}</em>${q}`
   ))
@@ -23,6 +23,7 @@ export default function HomePage() {
           />
         ))}
       </div>
+      <AboutContent />
     </>
   )
 }
