@@ -544,9 +544,27 @@ h3 {
   .bookings-grid {
     grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 768px) {
   .carousel-slide { padding: var(--space-3); }
   .carousel-btn { width: 30px; height: 30px; font-size: 0.7rem; }
+
+  .hero-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-title {
+    white-space: normal;
+    font-size: clamp(1rem, 5.5vw, 1.6rem);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(0.7rem, 4vw, 1.1rem);
+  }
+
+  .hero-logo {
+    width: 50px;
+    height: 50px;
+  }
 }
