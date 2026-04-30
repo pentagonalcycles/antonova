@@ -57,7 +57,7 @@ Note: The "Testimonials" nav link was removed; testimonials are now embedded on 
 | `/about` | About Me heading + full About Me content |
 | `/what-is-energy-healing` | Energy Healing content |
 | `/what-is-sekhem-energy` | Sekhem Energy content |
-| `/contact` | Contact details, session types, form, social links |
+| `/contact` | Contact details (WhatsApp, email, social links), contact form |
 
 No dedicated `/testimonials` route is used (the `/testimonials` page exists but the nav link was removed).
 
@@ -72,6 +72,8 @@ Structure (left-to-right, top-to-bottom):
 - **Title:** "WELCOME TO TES<small>oul</small>'RA" — gold, Cinzel, uppercase, single-line. The "oul" portion renders in small-caps style (lowercased, smaller font, `font-variant-caps: small-caps`).
 - **Subtitle:** "Temple of Soul Remembrance & Alchemy" — gold, Cinzel, sized to approximately match the title's visual line width.
 - **Hero image:** `LandingPage.jpg` displayed below the header text, using `background-size: contain` to show the full image without cropping, within the same column width (max 760px).
+
+**Mobile behavior (<768px):** The hero header stacks vertically — logo (50px) centered above the title and subtitle, all center-aligned. The title wraps naturally (`white-space: normal`) and scales down to `clamp(1rem, 5.5vw, 1.6rem)` to fit narrow screens.
 
 The hero header text, image, and all subsequent content share a common column (`.hero-column`, max-width 760px) for consistent left-edge alignment.
 
@@ -151,14 +153,15 @@ Uses the same `AboutContent` component but renders with an `<h1>` "About Me" hea
 ### Contact Page (`/contact`)
 
 - Page heading: "Contact" (gold, h2)
-- Contact.jpg hero image
-- Contact intro text
-- Session types section with 3 rows (in-person, distant, free consultation), each with an image and description
 - WhatsApp number: +44 77 888 47 113
 - Email: contact@tesoulra.com
 - Social links: Facebook, Instagram (inline with SVG icons)
 - Contact form (client component) with honeypot spam protection
 - Logo detailed view image at the bottom
+
+Note: The Contact page was simplified — the hero image, intro text, and session types rows were removed since that information now lives on the landing page Bookings section.
+
+Note: The Contact page was simplified — the hero image, intro text, and session types rows were removed since that information now lives on the landing page Bookings section.
 
 ## Device Detection
 
@@ -198,10 +201,10 @@ All images are served from `/public/images/`. Five images use high-resolution JP
 
 **Framework:** Vitest + React Testing Library (jsdom environment)
 **Test files:** `tests/unit/*.test.{ts,tsx}`
-**18 tests total across 8 test files:**
+**17 tests total across 8 test files:**
 - `home.test.tsx` — hero, why paragraphs, testimonials
 - `about-page.test.tsx` — Sekhem links, consultation links, quote styling
-- `contact-page.test.tsx` — session rows, contact details
+- `contact-page.test.tsx` — contact details and links
 - `testimonials-page.test.tsx` — heading order, carousel content
 - `components.test.tsx` — header nav, brand, link ordering
 - `content.test.ts` — page coverage
