@@ -22,12 +22,13 @@ describe('home page', () => {
     expect(within(heroRegion).getByText(siteContent.home.subtitle)).toBeInTheDocument()
   })
 
-  it('does not render the old content section paragraphs', () => {
+  it('renders the Why paragraphs with italic terms', () => {
     render(<HomePage />)
-    expect(screen.queryByText(/why temple\?/i)).not.toBeInTheDocument()
-    expect(screen.queryByText(/why embodied soul\?/i)).not.toBeInTheDocument()
-    expect(screen.queryByText(/why remembrance\?/i)).not.toBeInTheDocument()
-    expect(screen.queryByText(/why alchemy\?/i)).not.toBeInTheDocument()
-    expect(screen.queryByText(/sacred container/i)).not.toBeInTheDocument()
+    expect(screen.getByText(/sacred container/i)).toBeInTheDocument()
+    expect(screen.getByText(/physical vessel/i)).toBeInTheDocument()
+    expect(screen.getByText(/remembrance changes everything/i)).toBeInTheDocument()
+    expect(screen.getByText(/unity and wholeness/i)).toBeInTheDocument()
+    // italic terms are rendered inside <em> elements
+    expect(document.querySelector('em')).toBeInTheDocument()
   })
 })
