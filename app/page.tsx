@@ -23,7 +23,7 @@ export default function HomePage() {
           />
         ))}
       </div>
-      <AboutContent />
+      <AboutContent heading />
     </>
   )
 }
