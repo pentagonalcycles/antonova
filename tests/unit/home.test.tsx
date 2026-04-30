@@ -5,14 +5,10 @@ import HomePage from '@/app/page'
 import { siteContent } from '@/lib/content'
 
 describe('home page', () => {
-  it('does not render testimonials content on home page', () => {
+  it('renders testimonials carousel on home page', () => {
     render(<HomePage />)
-    expect(screen.queryByText(/amazing healing with t'iam'arhat/i)).not.toBeInTheDocument()
-    expect(screen.queryByText(/claire p/i)).not.toBeInTheDocument()
-    expect(screen.queryByText(/emma s/i)).not.toBeInTheDocument()
-    expect(screen.queryByText(/natasha k/i)).not.toBeInTheDocument()
-    expect(screen.queryByText(/ash k/i)).not.toBeInTheDocument()
-    expect(screen.queryByText(/steve b/i)).not.toBeInTheDocument()
+    expect(screen.getByText(/amazing healing with t'iam'arhat/i)).toBeInTheDocument()
+    expect(screen.getByText(/marco b/i)).toBeInTheDocument()
   })
 
   it('renders the hero title and subtitle', () => {
