@@ -127,6 +127,16 @@ h3 {
   box-sizing: border-box;
 }
 
+@media (min-width: 769px) {
+  .hero-column,
+  .about-content,
+  .testimonials-section,
+  .bookings-section,
+  .container.narrow {
+    max-width: min(1024px, 92vw);
+  }
+}
+
 .hero-header {
   display: flex;
   align-items: center;
