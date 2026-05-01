@@ -276,6 +276,7 @@ h3 {
 
 .testimonials-section .testimonial-author {
   text-align: right;
+  color: var(--color-turquoise);
 }
 
 .about-intro-layout {
@@ -381,22 +382,24 @@ h3 {
 }
 
 .carousel-dot {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-  background: rgba(121, 215, 218, 0.4);
+  background: rgba(217, 246, 248, 0.3);
   border: none;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.2s;
   padding: 0;
 }
 
 .carousel-dot.active {
   background: var(--color-turquoise);
+  transform: scale(1.2);
 }
 
 .carousel-dot.active {
   background: var(--color-turquoise);
+  transform: scale(1.2);
 }
 
 .bookings-section {

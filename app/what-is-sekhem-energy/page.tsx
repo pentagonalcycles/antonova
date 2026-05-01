@@ -1,5 +1,6 @@
 import { ContentSection } from '@/components/content-section'
 import { siteContent } from '@/lib/content'
+import { renderSekhemInline } from '@/lib/sekhem-links'
 
 export default function SekhemPage() {
   const page = siteContent.sekhemEnergy
@@ -12,7 +13,7 @@ export default function SekhemPage() {
         className="page-image"
       />
       {page.sections.map((paragraph) => (
-        <p key={paragraph}>{paragraph}</p>
+        <p key={paragraph}>{renderSekhemInline(paragraph)}</p>
       ))}
     </ContentSection>
   )

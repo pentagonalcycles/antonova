@@ -1,23 +1,11 @@
 import Link from 'next/link'
 import { siteContent } from '@/lib/content'
+import { renderSekhemInline } from '@/lib/sekhem-links'
 
 const ABOUT_SECTION_INDEX = {
   consultation: 6,
   quote: 7
 } as const
-
-function renderSekhemLinks(paragraph: string) {
-  return paragraph.split(/(\bSekhem\b)/gi).map((part, index) => {
-    if (/^sekhem$/i.test(part)) {
-      return (
-        <Link key={`${part}-${index}`} href="/what-is-sekhem-energy" style={{ fontStyle: 'italic' }}>
-          {part}
-        </Link>
-      )
-    }
-    return part
-  })
-}
 
 function renderConsultationLinks(paragraph: string) {
   return paragraph
@@ -57,7 +45,7 @@ export function AboutContent({ heading = false }: { heading?: boolean }) {
         if (index === ABOUT_SECTION_INDEX.consultation) {
           return <p key={paragraph}>{renderConsultationLinks(paragraph)}</p>
         }
-        return <p key={paragraph}>{renderSekhemLinks(paragraph)}</p>
+        return <p key={paragraph}>{renderSekhemInline(paragraph)}</p>
       })}
     </div>
   )
