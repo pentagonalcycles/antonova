@@ -21,7 +21,7 @@ function renderSekhemLinks(paragraph: string) {
 
 function renderConsultationLinks(paragraph: string) {
   return paragraph
-    .split(/(in-person|distant|free 15)/gi)
+    .split(/(in-person|distant)/gi)
     .map((part, index) => {
       if (/^in-person$/i.test(part)) {
         return (
@@ -33,13 +33,6 @@ function renderConsultationLinks(paragraph: string) {
       if (/^distant$/i.test(part)) {
         return (
           <Link key={`${part}-${index}`} href="/contact#session-distant">
-            {part}
-          </Link>
-        )
-      }
-      if (/^free 15$/i.test(part)) {
-        return (
-          <Link key={`${part}-${index}`} href="/contact#session-free">
             {part}
           </Link>
         )

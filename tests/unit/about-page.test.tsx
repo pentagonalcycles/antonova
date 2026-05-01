@@ -29,8 +29,7 @@ describe('about page', () => {
       const links = Array.from(paragraph.querySelectorAll('a')).map((link) => link.getAttribute('href'))
       return (
         links.includes('/contact#session-inperson') &&
-        links.includes('/contact#session-distant') &&
-        links.includes('/contact#session-free')
+        links.includes('/contact#session-distant')
       )
     })
 
@@ -42,10 +41,6 @@ describe('about page', () => {
     expect(within(consultationParagraph as HTMLParagraphElement).getByRole('link', { name: /^distant$/i })).toHaveAttribute(
       'href',
       '/contact#session-distant'
-    )
-    expect(within(consultationParagraph as HTMLParagraphElement).getByRole('link', { name: /free 15/i })).toHaveAttribute(
-      'href',
-      '/contact#session-free'
     )
   })
 
