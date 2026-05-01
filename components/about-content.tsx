@@ -50,14 +50,12 @@ function renderConsultationLinks(paragraph: string) {
 
 export function AboutContent({ heading = false }: { heading?: boolean }) {
   const about = siteContent.about
-  const quoteParagraph = about.sections[ABOUT_SECTION_INDEX.quote]
 
   return (
     <div className="about-content">
       {heading && <h2>{about.title}</h2>}
       <div className="about-intro-layout">
         <img src="/images/AboutMe.jpg" alt="About me portrait" className="page-image" />
-        <p className="about-quote">{quoteParagraph}</p>
       </div>
       {about.sections.map((paragraph, index) => {
         if (index === ABOUT_SECTION_INDEX.quote) {

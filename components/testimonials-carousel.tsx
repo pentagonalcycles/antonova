@@ -59,7 +59,7 @@ export function TestimonialsCarousel({ items }: { items: Testimonial[] }) {
         <div className="carousel-track" style={{ transform: `translateX(-${active * 100}%)` }}>
           {items.map((item, i) => (
             <div key={item.author} className="carousel-slide" aria-hidden={i !== active}>
-              <blockquote>{item.quote}</blockquote>
+              <blockquote>&ldquo;{item.quote}&rdquo;</blockquote>
               <p className="testimonial-author">{item.author}</p>
             </div>
           ))}

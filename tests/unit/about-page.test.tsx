@@ -66,12 +66,4 @@ describe('about page', () => {
       expect(link).toHaveAttribute('href', '/what-is-sekhem-energy')
     })
   })
-
-  it('styles Einstein quote with dedicated class for visual accent', () => {
-    render(<AboutPage />)
-
-    const quote = screen.getByText(/there are only two ways to live your life/i)
-    expect(quote).toHaveClass('about-quote')
-    expect(quote).toHaveTextContent(/as though everything is a miracle/i)
-  })
 })
