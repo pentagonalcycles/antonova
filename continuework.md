@@ -21,10 +21,10 @@ All 16 unit tests pass. CSS is clean (`globals.css`).
 
 The user wants the two session images in the Bookings section (`SessionInPerson.png`, `SessionRemote.png`) to be clickable, leading to a booking flow where users can:
 
-1. **Book a session on a calendar** — select date/time from an appointments calendar
-2. **Pay for the session** — handle payment transactions
+1. **Book a session on a calendar** — select date/time from an appointments calendar (e.g., Calendly, Cal.com, or custom solution)
+2. **Pay for the session** — handle payment transactions (Stripe, PayPal, or similar)
 
-The user will provide more details about payment transaction modalities.
+The user will provide more details about preferred payment provider and calendar integration modality.
 
 ## Landing Page Updates Completed (May 1, 2026)
 
@@ -41,17 +41,28 @@ The user will provide more details about payment transaction modalities.
 - About Me description updated: "a channel of sound and light language"
 - About Me text revisions ("remembering rather than learning", em dash, removed "15 min consultations")
 - Footer: added "Art is by Damian Nola" credit in turquoise with link
-- Testimonial carousel dots: smaller turquoise circles
+- Testimonial carousel dots: fixed class name mismatch, all dots turquoise (inactive 35% opacity, active full opacity with scale)
+- Testimonial author names: turquoise
+- Testimonial quote text: turquoise
+- Sekhem links in body text: turquoise + italic, linking to /what-is-sekhem-energy (headings remain gold)
+- Page titles: "What is Energy Healing?" and "What is Sekhem Energy?" now include question marks
+- Booking card pricing text: turquoise
+- About Me image: full-width (matching Energy Healing and Sekhem Energy pages)
+- Alchemy paragraph updated with new text about "golden light of our Soul"
+- Contact page: WhatsApp number is now a clickable tel: link
 - Contact page logo: centered and enlarged
 - Energy Healing page: text moved below image (no side text)
 - Sekhem Energy page: quote removed, text moved below image
 
 ## Key Files
 
-- `components/bookings-section.tsx` — the component to modify (make images clickable)
-- `app/page.tsx` — landing page that uses BookingsSection
-- `app/globals.css` — styles for `.booking-card`, `.booking-image`
-- `lib/device.ts` + `components/device-provider.tsx` — device detection
+- `components/bookings-section.tsx` — booking cards component (to be enhanced with booking flow)
+- `components/testimonials-carousel.tsx` — testimonials carousel (dot class name fixed)
+- `components/about-content.tsx` — shared About Me content
+- `lib/sekhem-links.tsx` — Sekhem inline link renderer (turquoise + italic)
+- `app/page.tsx` — landing page
+- `app/globals.css` — all styling
+- `lib/content.ts` — site text content
 
 ## Spec & Plan
 
