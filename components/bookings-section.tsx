@@ -24,7 +24,7 @@ export function BookingsSection() {
           <div key={s.id} id={s.id} className="booking-card">
             <img src={s.img} alt={s.alt} className="booking-image" />
             <h3>{s.title}</h3>
-            <p>{s.desc}</p>
+            <p className="booking-desc">{s.desc}</p>
           </div>
         ))}
       </div>

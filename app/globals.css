@@ -442,9 +442,10 @@ h3 {
   font-size: 1rem;
 }
 
-.booking-card p {
+.booking-desc {
   margin: 0;
   text-align: center;
+  color: var(--color-turquoise);
 }
 
 /* ========== CONTACT ========== */
