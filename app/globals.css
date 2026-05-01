@@ -321,8 +321,13 @@ h3 {
   margin: 0 auto;
 }
 
-.about-content p {
-  text-align: justify;
+.about-content > :first-child {
+  margin-top: 0;
+}
+
+.about-content .page-image {
+  display: block;
+  margin-bottom: var(--space-3);
 }
 
 .landing-quote {
