@@ -23,7 +23,7 @@ export const siteContent = {
     ]
   },
   energyHealing: {
-    title: 'What is Energy Healing',
+    title: 'What is Energy Healing?',
     sections: [
       "The mainstream western medicine is based on the principles and laws of Newtonian physics - one billiard ball hitting another to exert an effect (pharmacotherapy is a perfect example). All energy healing modalities are based on the principles or laws of quantum physics, which involve fields, vibrations, and frequencies. What we perceive as 'solid' matter is the condensation (particles) of the energy fields (waves) that vibrate at different frequencies (speed). EVERYTHING in the Universe, ABSOLUTELY EVERYTHING, vibrates. This is basic physics, not just a New Age notion.",
       "Many things can occur within an energy healing session. However, the main principle rests on a healer serving as a conduit for and an amplifier of the higher energy frequencies, thus 'lifting' up the client's energy field to a higher frequency, similar to how one tuning fork creates resonance in another tuning fork. The healer would also clear old, stagnant and distorted energies, allowing the space for the new pure energies to come in and facilitating an integration of these energies into the physical and subtle energy bodies, including emotional, mental, and spiritual.",
@@ -32,7 +32,7 @@ export const siteContent = {
     ]
   },
   sekhemEnergy: {
-    title: 'What is Sekhem Energy',
+    title: 'What is Sekhem Energy?',
     sections: [
       "Sekhem is an ancient Egyptian word for the universal vital life-force energy. Since its literal translation is 'power' or 'might', it is often referred to as 'Power of Powers'. In ancient Egyptian cosmology it is connected to and protected by Sekhmet - a lion-headed Goddess who transmutes ego-negativity and distorted energies back into the purity of one's Essence Being as Divine Light, so we can rise as the Phoenix, reborn and renewed, to actualise our highest Soul potential. Sekhmet's healing returns us to the state of personal empowerment, Soul sovereignty, and spiritual warrior, whose weapon is fearless unconditional love and compassion.",
       'Sekhem energy is associated with turquoise colour. In ancient Egypt, turquoise (mefkat) was one of the most prized gemstones. Pharaohs and priests wore turquoise to ensure divine protection and spiritual power, believing it made them invulnerable to harm. The blue-green hue was seen as a reflection of the heavens and the primordial waters of creation, symbolising eternal life and rebirth.',
