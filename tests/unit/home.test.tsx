@@ -15,7 +15,9 @@ describe('home page', () => {
     render(<HomePage />)
     const heroRegion = screen.getByRole('region', { name: /welcome hero/i })
     expect(within(heroRegion).getByRole('heading', { level: 1 })).toHaveTextContent(siteContent.home.title)
-    expect(within(heroRegion).getByText(siteContent.home.subtitle)).toBeInTheDocument()
+    siteContent.home.subtitle.forEach((line) => {
+      expect(within(heroRegion).getByText(line)).toBeInTheDocument()
+    })
   })
 
   it('renders the Why paragraphs with italic terms', () => {

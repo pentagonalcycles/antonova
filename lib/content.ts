@@ -1,7 +1,7 @@
 export const siteContent = {
   home: {
-    title: "Welcome to TESoul'RA",
-    subtitle: "Temple of Soul Remembrance & Alchemy",
+    title: "WELCOME TO TESoul'RA",
+    subtitle: ["Temple of Embodied Soul", "Remembrance & Alchemy"],
     sections: [
       'Why Temple? The space I create in my healing sessions is a sacred container, a temple, for the restoration of your body and spirit.',
       'Why Embodied Soul? For the Soul to have truly joyous and harmonious experiences in this physical realm, it needs to be anchored into and aligned with its physical vessel – the body.',
@@ -19,7 +19,7 @@ export const siteContent = {
       "Science and spirituality have never stood in opposition for me - they are different ways of exploring the mysteries of life and consciousness. In my healing sessions, I combine the scientific understanding of the function and structure of the human brain and body, metaphysical knowledge, intuitive guidance, and channelled information. My approach to energy healing rests on attuning myself to being a pure and clear channel of my Higher Self, the client's Higher Self, and the Highest Beings of Light who assist with the sessions. Hence, each session is bespoke and fluid, guided by the needs of the client's Soul.",
       'In addition to Sekhem energy, I use sound and light language for healing and activations in my sessions.',
       'I offer both in-person and distant healing sessions and free 15 min consultations.',
-      '"There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle." - Elbert Einstein'
+      '"There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle." - Albert Einstein'
     ]
   },
   energyHealing: {

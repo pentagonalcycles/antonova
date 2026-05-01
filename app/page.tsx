@@ -67,9 +67,15 @@ export default function HomePage() {
           />
         ))}
       </div>
+      <blockquote className="landing-quote">
+        "There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle." — Albert Einstein
+      </blockquote>
       <AboutContent heading />
-      <TestimonialsCarousel items={testimonials} />
+      <blockquote className="landing-quote">
+        "When a living system is suffering from ill health, the remedy is found by connecting with more of itself." — Francisco Varela
+      </blockquote>
       <BookingsSection />
+      <TestimonialsCarousel items={testimonials} />
     </>
   )
 }

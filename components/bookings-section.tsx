@@ -3,7 +3,7 @@ export function BookingsSection() {
     {
       img: '/images/SessionPhoneFree.png',
       alt: 'Free 15 min consultation',
-      title: 'Free Consultation',
+      title: 'Phone Consultation',
       desc: '15 minutes — Free',
       id: 'session-free'
     },
@@ -25,7 +25,7 @@ export function BookingsSection() {
 
   return (
     <section className="bookings-section" aria-label="Bookings">
-      <h2>Bookings</h2>
+      <h2>Book a session</h2>
       <div className="bookings-grid">
         {sessions.map((s) => (
           <div key={s.id} id={s.id} className="booking-card">
