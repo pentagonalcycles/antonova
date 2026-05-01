@@ -110,6 +110,42 @@ h3 {
   text-decoration: none;
 }
 
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-gold);
+  border-radius: 2px;
+}
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-gold);
+  border-radius: 2px;
+}
+
 /* ========== HERO ========== */
 
 .hero {
@@ -157,7 +193,7 @@ h3 {
 
 .hero-title small {
   text-transform: none;
-  font-size: 0.65em;
+  font-size: 0.8em;
   font-variant-caps: small-caps;
   letter-spacing: 0.08em;
 }
@@ -192,6 +228,16 @@ h3 {
   line-height: 1.7;
 }
 
+.home-why em {
+  color: var(--color-turquoise);
+  font-style: normal;
+}
+
+.home-why em {
+  color: var(--color-turquoise);
+  font-style: normal;
+}
+
 .about-content {
   width: 100%;
   max-width: 760px;
@@ -210,8 +256,53 @@ h3 {
   padding: var(--space-4) var(--space-3);
   font-style: italic;
   text-align: center;
-  border-left: none;
+  border: 1px solid rgba(215, 182, 99, 0.25);
+  border-radius: 8px;
+  background: rgba(26, 45, 102, 0.5);
   color: var(--color-turquoise);
+  position: relative;
+}
+
+.landing-quote::before,
+.landing-quote::after {
+  content: '\201C';
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--color-gold);
+  position: absolute;
+  line-height: 1;
+}
+
+.landing-quote::before {
+  top: -0.4rem;
+  left: var(--space-2);
+}
+
+.landing-quote::after {
+  content: '\201D';
+  bottom: -1.6rem;
+  right: var(--space-2);
+}
+
+.landing-quote::before,
+.landing-quote::after {
+  content: '\201C';
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  color: var(--color-gold);
+  position: absolute;
+  line-height: 1;
+}
+
+.landing-quote::before {
+  top: -0.4rem;
+  left: var(--space-2);
+}
+
+.landing-quote::after {
+  content: '\201D';
+  bottom: -1.6rem;
+  right: var(--space-2);
 }
 
 
@@ -532,8 +623,29 @@ h3 {
     min-height: 180px;
   }
 
-  .nav {
+  .burger {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
     flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: var(--space-2) 0;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links.open li {
+    padding: var(--space-1) 0;
+  }
+
+  .nav {
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .rectangles {
