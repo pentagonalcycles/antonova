@@ -71,7 +71,7 @@ export function TestimonialsCarousel({ items }: { items: Testimonial[] }) {
             <button className="carousel-btn next" onClick={() => { next(); resetTimer() }} aria-label="Next">&#9654;</button>
             <div className="carousel-dots" role="tablist">
               {items.map((_, i) => (
-                <button key={i} className={`dot${i === active ? ' active' : ''}`} onClick={() => { setActive(i); resetTimer() }} role="tab" aria-selected={i === active} aria-label={`Go to testimonial ${i + 1}`} />
+                <button key={i} className={`carousel-dot${i === active ? ' active' : ''}`} onClick={() => { setActive(i); resetTimer() }} role="tab" aria-selected={i === active} aria-label={`Go to testimonial ${i + 1}`} />
               ))}
             </div>
           </>
