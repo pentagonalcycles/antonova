@@ -395,7 +395,10 @@ h3 {
 
 .page-image {
   width: 100%;
+  max-width: 480px;
   border-radius: 4px;
+  display: block;
+  margin: 0 auto var(--space-3);
 }
 
 .container {
