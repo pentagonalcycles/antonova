@@ -6,7 +6,7 @@ export const siteContent = {
       'Why Temple? The space I create in my healing sessions is a sacred container, a temple, for the restoration of your body, mind and spirit.',
       'Why Embodied Soul? For the Soul to have truly joyous and harmonious experiences in this realm, it needs to be fully present in and aligned with its physical vessel – the body.',
       'Why Remembrance? The greatest awakening occurs when we remember that we are eternal beings of pure love and light, having this earthly experience to expand our wisdom and compassion. This remembrance changes everything.',
-      'Why Alchemy? The deepest and most transformative healing occurs when we distill the Soul\u2019s journey into the pearls of wisdom, transmuting all we have suppressed, denied, judged as negative or painful back into unity and wholeness.'
+      'Why Alchemy? The deepest and most transformative healing occurs when we distill the Soul\u2019s journey into the pearls of wisdom and transmute all we have suppressed, denied, rejected or judged as negative and painful back into unity and wholeness, revealing the primordial perfection and incorruptible purity of the golden light of our Soul.'
     ]
   },
   about: {
