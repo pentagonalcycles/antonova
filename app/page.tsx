@@ -75,6 +75,9 @@ export default function HomePage() {
         "When a living system is suffering from ill health, the remedy is found by connecting with more of itself." — Francisco Varela
       </blockquote>
       <BookingsSection />
+      <blockquote className="landing-quote">
+        "Love is truth. Truth is love" — Tahkamenon
+      </blockquote>
       <TestimonialsCarousel items={testimonials} />
     </>
   )
