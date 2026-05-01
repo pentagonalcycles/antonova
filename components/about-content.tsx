@@ -10,7 +10,7 @@ function renderSekhemLinks(paragraph: string) {
   return paragraph.split(/(\bSekhem\b)/gi).map((part, index) => {
     if (/^sekhem$/i.test(part)) {
       return (
-        <Link key={`${part}-${index}`} href="/what-is-sekhem-energy">
+        <Link key={`${part}-${index}`} href="/what-is-sekhem-energy" style={{ fontStyle: 'italic' }}>
           {part}
         </Link>
       )

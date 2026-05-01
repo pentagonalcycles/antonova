@@ -5,7 +5,7 @@ import { siteContent } from '@/lib/content'
 export default function ContactPage() {
   return (
     <ContentSection title={siteContent.contact.title}>
-      <p><strong>WhatsApp:</strong> +44 77 888 47 113</p>
+      <p><strong>WhatsApp:</strong> <a href="tel:+447788847113">+44 77 888 47 113</a></p>
       <p><strong>Email:</strong> <a href="mailto:contact@tesoulra.com">contact@tesoulra.com</a></p>
       <p className="social-links-inline">
         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
