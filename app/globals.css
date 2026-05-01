@@ -253,56 +253,13 @@ h3 {
 .landing-quote {
   max-width: 760px;
   margin: 0 auto;
-  padding: var(--space-4) var(--space-3);
+  padding: var(--space-4);
   font-style: italic;
   text-align: center;
-  border: 1px solid rgba(215, 182, 99, 0.25);
-  border-radius: 8px;
+  border-left: 3px solid var(--color-gold);
+  border-right: 3px solid var(--color-gold);
   background: rgba(26, 45, 102, 0.5);
   color: var(--color-turquoise);
-  position: relative;
-}
-
-.landing-quote::before,
-.landing-quote::after {
-  content: '\201C';
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  color: var(--color-gold);
-  position: absolute;
-  line-height: 1;
-}
-
-.landing-quote::before {
-  top: -0.4rem;
-  left: var(--space-2);
-}
-
-.landing-quote::after {
-  content: '\201D';
-  bottom: -1.6rem;
-  right: var(--space-2);
-}
-
-.landing-quote::before,
-.landing-quote::after {
-  content: '\201C';
-  font-family: var(--font-display);
-  font-size: 2.5rem;
-  color: var(--color-gold);
-  position: absolute;
-  line-height: 1;
-}
-
-.landing-quote::before {
-  top: -0.4rem;
-  left: var(--space-2);
-}
-
-.landing-quote::after {
-  content: '\201D';
-  bottom: -1.6rem;
-  right: var(--space-2);
 }
 
 
