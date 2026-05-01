@@ -3,10 +3,10 @@ export const siteContent = {
     title: "WELCOME TO TESoul'RA",
     subtitle: ["Temple of Embodied Soul", "Remembrance & Alchemy"],
     sections: [
-      'Why Temple? The space I create in my healing sessions is a sacred container, a temple, for the restoration of your body and spirit.',
-      'Why Embodied Soul? For the Soul to have truly joyous and harmonious experiences in this physical realm, it needs to be anchored into and aligned with its physical vessel – the body.',
-      'Why Remembrance? The greatest awakening occurs when we remember that we are eternal beings of pure love and light having this earthly experience to expand our wisdom and compassion. This remembrance changes everything.',
-      'Why Alchemy? The deepest and most transformative healing occurs when we transmute all we have suppressed, denied, judged as negative or painful back into unity and wholeness.'
+      'Why Temple? The space I create in my healing sessions is a sacred container, a temple, for the restoration of your body, mind and spirit.',
+      'Why Embodied Soul? For the Soul to have truly joyous and harmonious experiences in this realm, it needs to be fully present in and aligned with its physical vessel – the body.',
+      'Why Remembrance? The greatest awakening occurs when we remember that we are eternal beings of pure love and light, having this earthly experience to expand our wisdom and compassion. This remembrance changes everything.',
+      'Why Alchemy? The deepest and most transformative healing occurs when we distill the Soul\u2019s journey into the pearls of wisdom, transmuting all we have suppressed, denied, judged as negative or painful back into unity and wholeness.'
     ]
   },
   about: {
