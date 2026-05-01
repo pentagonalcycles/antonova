@@ -38,8 +38,7 @@ export const siteContent = {
       'Sekhem energy is associated with turquoise colour. In ancient Egypt, turquoise (mefkat) was one of the most prized gemstones. Pharaohs and priests wore turquoise to ensure divine protection and spiritual power, believing it made them invulnerable to harm. The blue-green hue was seen as a reflection of the heavens and the primordial waters of creation, symbolising eternal life and rebirth.',
       'Energetically, turquoise is the synergy of blue (transformation) and green (healing) energy frequencies. Like water, it washes away energetic blockages and toxins, whilst calming the nervous system and bringing a state of serene awareness. The turquoise frequency perfectly mirrors the balance between the heart and the mind.',
       "While turquoise is the most common expression of Sekhem energy, it can also be experienced as a swirling electric blue, yellow golden plasma or diamond white rainbow light, depending on the energetic state of the practitioner and the needs of the client's physical and subtle bodies.",
-      'In addition to channelling the energy, Sekhem energy healing uses symbols, some of which are similar to the Reiki symbols. The symbols act as powerful portals for flowing Sekhem in specific patterned ways to potentise the energy as per the client\'s needs.',
-      '"When a living system is suffering from ill health, the remedy is found by connecting with more of itself." - Francisco Varela'
+      'In addition to channelling the energy, Sekhem energy healing uses symbols, some of which are similar to the Reiki symbols. The symbols act as powerful portals for flowing Sekhem in specific patterned ways to potentise the energy as per the client\'s needs.'
     ]
   },
   contact: {

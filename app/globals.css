@@ -542,6 +542,24 @@ h3 {
   letter-spacing: 0.06em;
 }
 
+.footer-art-credit {
+  margin: 0;
+  color: var(--color-turquoise);
+}
+
+.footer-art-credit a {
+  color: var(--color-turquoise);
+}
+
+.footer-art-credit {
+  margin: 0;
+  color: var(--color-turquoise);
+}
+
+.footer-art-credit a {
+  color: var(--color-turquoise);
+}
+
 /* ========== MOBILE ========== */
 
 @media (max-width: 768px) {

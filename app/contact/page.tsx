@@ -6,7 +6,7 @@ export default function ContactPage() {
   return (
     <ContentSection title={siteContent.contact.title}>
       <p><strong>WhatsApp:</strong> +44 77 888 47 113</p>
-      <p><strong>Email:</strong> contact@tesoulra.com</p>
+      <p><strong>Email:</strong> <a href="mailto:contact@tesoulra.com">contact@tesoulra.com</a></p>
       <p className="social-links-inline">
         <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18">
