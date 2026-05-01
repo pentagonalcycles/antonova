@@ -35,9 +35,7 @@ export function AboutContent({ heading = false }: { heading?: boolean }) {
   return (
     <div className="about-content">
       {heading && <h2>{about.title}</h2>}
-      <div className="about-intro-layout">
-        <img src="/images/AboutMe.jpg" alt="About me portrait" className="page-image" />
-      </div>
+      <img src="/images/AboutMe.jpg" alt="About me portrait" className="page-image" />
       {about.sections.map((paragraph, index) => {
         if (index === ABOUT_SECTION_INDEX.quote) {
           return null
