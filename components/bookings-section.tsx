@@ -1,6 +1,13 @@
 export function BookingsSection() {
   const sessions = [
     {
+      img: '/images/SessionPhoneFree.png',
+      alt: 'Free phone consultation',
+      title: 'Phone Consultation',
+      desc: 'Free',
+      id: 'session-phone'
+    },
+    {
       img: '/images/SessionInPerson.png',
       alt: 'In-person healing session',
       title: 'In-Person Session',
