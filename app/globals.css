@@ -159,52 +159,33 @@ h3 {
   width: 100%;
   max-width: 760px;
   box-sizing: border-box;
-}
-
-.hero-header {
-  display: flex;
-  align-items: center;
-  gap: var(--space-3);
-  margin-bottom: var(--space-3);
-}
-
-.hero-logo {
-  width: clamp(60px, 8vw, 90px);
-  height: clamp(60px, 8vw, 90px);
-  object-fit: contain;
-  flex-shrink: 0;
-}
-
-.hero-header-text {
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  align-items: center;
 }
 
-.hero-title {
-  margin: 0;
-  font-size: clamp(1.2rem, 3.5vw, 2.8rem);
-  letter-spacing: 0.04em;
+.hero-logo-large {
+  width: clamp(120px, 20vw, 180px);
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.hero-title-standalone {
+  margin: 0 0 var(--space-3);
+  font-size: clamp(1.6rem, 4vw, 3.2rem);
+  letter-spacing: 0.06em;
   line-height: 1.1;
   color: var(--color-gold);
   text-transform: uppercase;
-  white-space: nowrap;
 }
 
-.hero-title small {
+.hero-title-standalone small {
   text-transform: none;
   font-size: 0.8em;
   font-variant-caps: small-caps;
   letter-spacing: 0.08em;
-}
-
-.hero-subtitle {
-  margin: 0;
-  font-family: var(--font-display);
-  font-size: clamp(0.85rem, 2.5vw, 1.85rem);
-  color: var(--color-gold);
-  letter-spacing: 0.03em;
-  font-weight: 600;
 }
 
 .hero-parallax-image {
@@ -215,6 +196,105 @@ h3 {
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 4px;
+}
+
+.hero-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--space-3);
+  text-align: center;
+}
+
+.hero-welcome-title {
+  margin: 0;
+  font-size: clamp(1.2rem, 3.5vw, 2.8rem);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  font-family: var(--font-display);
+}
+
+.hero-welcome-subtitle {
+  margin: var(--space-1) 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(0.85rem, 2.5vw, 1.85rem);
+  color: var(--color-gold);
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.hero-column {
+  width: 100%;
+  max-width: 760px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-logo-large {
+  width: clamp(120px, 20vw, 180px);
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin-bottom: var(--space-2);
+}
+
+.hero-title-standalone {
+  margin: 0 0 var(--space-3);
+  font-size: clamp(1.6rem, 4vw, 3.2rem);
+  letter-spacing: 0.06em;
+  line-height: 1.1;
+  color: var(--color-gold);
+  text-transform: uppercase;
+}
+
+.hero-title-standalone small {
+  text-transform: none;
+  font-size: 0.8em;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.08em;
+}
+
+.hero-parallax-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background-image: url('/images/LandingPage.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 4px;
+}
+
+.hero-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: var(--space-3);
+  text-align: center;
+}
+
+.hero-welcome-title {
+  margin: 0;
+  font-size: clamp(1.2rem, 3.5vw, 2.8rem);
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  font-family: var(--font-display);
+}
+
+.hero-welcome-subtitle {
+  margin: var(--space-1) 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(0.85rem, 2.5vw, 1.85rem);
+  color: var(--color-gold);
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  line-height: 1.4;
 }
 
 .home-body {
@@ -569,24 +649,32 @@ h3 {
 /* ========== MOBILE ========== */
 
 @media (max-width: 768px) {
-  .hero-header {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  .hero-logo-large {
+    width: 100px;
   }
 
-  .hero-title {
-    white-space: normal;
+  .hero-title-standalone {
     font-size: clamp(1rem, 5.5vw, 1.6rem);
   }
 
-  .hero-subtitle {
+  .hero-welcome-title {
+    font-size: clamp(0.9rem, 4.5vw, 1.4rem);
+  }
+
+  .hero-welcome-subtitle {
     font-size: clamp(0.7rem, 4vw, 1.1rem);
   }
 
-  .hero-logo {
-    width: 50px;
-    height: 50px;
+  .hero-title-standalone {
+    font-size: clamp(1rem, 5.5vw, 1.6rem);
+  }
+
+  .hero-welcome-title {
+    font-size: clamp(0.9rem, 4.5vw, 1.4rem);
+  }
+
+  .hero-welcome-subtitle {
+    font-size: clamp(0.7rem, 4vw, 1.1rem);
   }
 
   .bookings-grid {

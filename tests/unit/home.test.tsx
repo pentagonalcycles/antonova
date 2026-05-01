@@ -14,7 +14,8 @@ describe('home page', () => {
   it('renders the hero title and subtitle', () => {
     render(<HomePage />)
     const heroRegion = screen.getByRole('region', { name: /welcome hero/i })
-    expect(within(heroRegion).getByRole('heading', { level: 1 })).toHaveTextContent(siteContent.home.title)
+    expect(within(heroRegion).getByRole('heading', { level: 1 })).toHaveTextContent("TESoul'RA")
+    expect(within(heroRegion).getByRole('heading', { level: 2 })).toHaveTextContent('Welcome to TESoul\'RA')
     siteContent.home.subtitle.forEach((line) => {
       expect(within(heroRegion).getByText(line)).toBeInTheDocument()
     })

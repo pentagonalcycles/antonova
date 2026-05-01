@@ -9,19 +9,18 @@ export function HeroParallax({ title, subtitle }: { title: string; subtitle: rea
   return (
     <section aria-label="Welcome hero" className="hero">
       <div className="hero-column">
-        <div className="hero-header">
-          <img src="/images/Logo.png" alt="TESoul'RA logo" className="hero-logo" />
-          <div className="hero-header-text">
-            <h1 className="hero-title" dangerouslySetInnerHTML={{ __html: renderTitle(title) }} />
-            <p className="hero-subtitle">{subtitle.map((line, i) => (
-              <span key={i}>
-                {line}
-                {i < subtitle.length - 1 && <br />}
-              </span>
-            ))}</p>
-          </div>
-        </div>
+        <img src="/images/Logo.png" alt="TESoul'RA logo" className="hero-logo-large" />
+        <h1 className="hero-title-standalone" dangerouslySetInnerHTML={{ __html: renderTitle("TESoul'RA") }} />
         <div className="hero-parallax-image" aria-hidden="true" />
+        <div className="hero-welcome">
+          <h2 className="hero-welcome-title">Welcome to TESoul'RA</h2>
+          <p className="hero-welcome-subtitle">{subtitle.map((line, i) => (
+            <span key={i}>
+              {line}
+              {i < subtitle.length - 1 && <br />}
+            </span>
+          ))}</p>
+        </div>
       </div>
     </section>
   )
