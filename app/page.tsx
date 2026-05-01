@@ -43,6 +43,11 @@ const testimonials = [
     quote:
       "I was introduced to T'iam'arhat two years ago at what was an extremely challenging point in my life. The help I received has changed my life forever! From clearing blockages, to teaching me how to transmute energy and even giving me a very simple but important message from my father (who passed away in 2020) and helping my 3-year-old daughter to regulate her emotions. I highly recommend her services!",
     author: 'Nicholas G'
+  },
+  {
+    quote:
+      "I never felt so peaceful in my life as during and after the healing session with T'iam'arhat. Deeply grateful!",
+    author: 'Lee E'
   }
 ]
 
