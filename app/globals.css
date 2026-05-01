@@ -230,12 +230,7 @@ h3 {
 
 .home-why em {
   color: var(--color-turquoise);
-  font-style: normal;
-}
-
-.home-why em {
-  color: var(--color-turquoise);
-  font-style: normal;
+  font-style: italic;
 }
 
 .about-content {
