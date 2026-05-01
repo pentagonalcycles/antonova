@@ -129,6 +129,14 @@ Displays three session types as equal-sized cards in a 3-column row:
 
 Each card contains a square image (1:1 aspect ratio), a title (gold h3), and a description. On mobile (<768px), cards stack vertically.
 
+**Planned:** The three session images will become clickable links that open a booking calendar where users can select a time slot and pay online. Implementation approach TBD (likely Stripe integration for payments + a booking calendar solution).
+
+## Planned: Booking & Payment System
+
+**Planned:** The three session images will become clickable links that open a booking calendar where users can select a time slot and pay online. Implementation approach TBD (likely Stripe integration for payments + a booking calendar solution).
+
+## Planned: Booking & Payment System
+
 ## Inner Pages
 
 ### About Page (`/about`)
@@ -158,8 +166,6 @@ Uses the same `AboutContent` component but renders with an `<h1>` "About Me" hea
 - Social links: Facebook, Instagram (inline with SVG icons)
 - Contact form (client component) with honeypot spam protection
 - Logo detailed view image at the bottom
-
-Note: The Contact page was simplified — the hero image, intro text, and session types rows were removed since that information now lives on the landing page Bookings section.
 
 Note: The Contact page was simplified — the hero image, intro text, and session types rows were removed since that information now lives on the landing page Bookings section.
 
