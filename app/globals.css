@@ -344,6 +344,7 @@ h3 {
   line-height: 1.7;
   text-align: justify;
   hyphens: auto;
+  color: var(--color-turquoise);
 }
 
 .carousel-btn {
