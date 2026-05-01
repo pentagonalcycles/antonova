@@ -53,11 +53,11 @@ Note: The "Testimonials" nav link was removed; testimonials are now embedded on 
 
 | Route | Content |
 |-------|---------|
-| `/` | Hero → "Why" paragraphs → About Me → Testimonials carousel → Bookings |
+| `/` | Hero → "Why" paragraphs → Einstein quote → About Me → Varela quote → Book a session → Testimonials carousel |
 | `/about` | About Me heading + full About Me content |
-| `/what-is-energy-healing` | Energy Healing content |
-| `/what-is-sekhem-energy` | Sekhem Energy content |
-| `/contact` | Contact details (WhatsApp, email, social links), contact form |
+| `/what-is-energy-healing` | Energy Healing content (image above all text) |
+| `/what-is-sekhem-energy` | Sekhem Energy content (image above all text) |
+| `/contact` | Contact details (WhatsApp — clickable tel link, email — clickable mailto link, social links), contact form |
 
 No dedicated `/testimonials` route is used (the `/testimonials` page exists but the nav link was removed).
 
@@ -89,9 +89,9 @@ Four paragraphs explaining the meaning of Temple, Embodied Soul, Remembrance, an
 **Component:** `AboutContent` (shared with `/about` page)
 
 Renders an `<h2>` heading "About Me" (gold, Cinzel — matching all other h2s), followed by:
-- **Intro layout:** Two-column grid — AboutMe.jpg portrait on the left, Einstein quote (styled with gold left border accent) on the right
+- **Intro layout:** Image only (AboutMe.jpg portrait) — no side text
 - **Body paragraphs:** Full About Me text content
-- **Cross-links:** Every occurrence of "Sekhem" in the text is a link to `/what-is-sekhem-energy`. The paragraph about session types has links for "in-person" → `/contact#session-inperson`, "distant" → `/contact#session-distant`, "free 15" → `/contact#session-free`
+- **Cross-links:** Every occurrence of "Sekhem" in the text is a link to `/what-is-sekhem-energy`. The paragraph about session types has links for "in-person" → `/contact#session-inperson`, "distant" → `/contact#session-distant`
 
 All paragraphs are justified.
 
@@ -115,57 +115,67 @@ Features:
 - Auto-rotation every 6 seconds (resets on user interaction)
 - Touch swipe support (50px minimum swipe distance)
 - Smooth CSS transition (0.5s ease)
-- Quotes styled in italic, justified text; author names right-aligned
+- Quotes styled in italic, centered text with golden vertical side bars; author names right-aligned
 - Cards: dark semi-transparent background with gold border
+- Dot navigation (small turquoise circles, 6px)
 
-### 5. Bookings Section
+### 5. Quote Dividers
+
+Two blockquote elements with turquoise text, gold vertical side bars, and semi-transparent dark background:
+- Einstein quote ("There are only two ways to live your life...") between "Why" section and About Me
+- Francisco Varela quote ("When a living system is suffering...") between About Me and Book a session
+
+### 6. Bookings Section
 
 **Component:** `BookingsSection`
 
-Displays three session types as equal-sized cards in a 3-column row:
-1. **Free Consultation** — 15 minutes, Free — `SessionPhoneFree.png`
-2. **In-Person Session** — 1.5 hours, £120 — `SessionInPerson.png`
-3. **Distant Session** — 1 hour, £80 — `SessionRemote.png`
+Displays two session types as equal-sized cards in a 2-column row:
+1. **In-Person Session** — 1.5 hours, £120 — `SessionInPerson.png`
+2. **Distant Session** — 1 hour, £80 — `SessionRemote.png`
 
-Each card contains a square image (1:1 aspect ratio), a title (gold h3), and a description. On mobile (<768px), cards stack vertically.
+Each card contains a square image (1:1 aspect ratio, object-contain), a title (gold h3), and a description. On mobile (<768px), cards stack vertically.
 
-**Planned:** The three session images will become clickable links that open a booking calendar where users can select a time slot and pay online. Implementation approach TBD (likely Stripe integration for payments + a booking calendar solution).
-
-## Planned: Booking & Payment System
-
-**Planned:** The three session images will become clickable links that open a booking calendar where users can select a time slot and pay online. Implementation approach TBD (likely Stripe integration for payments + a booking calendar solution).
+**Planned:** The session images will become clickable links that open a booking calendar where users can select a time slot and pay online. Implementation approach TBD (likely Stripe integration for payments + a booking calendar solution).
 
 ## Planned: Booking & Payment System
+
+**Planned:** The session images will become clickable links that open a booking calendar where users can select a time slot and pay online. Implementation approach TBD.
 
 ## Inner Pages
 
 ### About Page (`/about`)
 
-Uses the same `AboutContent` component but renders with an `<h1>` "About Me" heading inside a `content-section` wrapper (narrow container, 760px max). The shared component omits the heading (`heading={false}` by default) when embedded on the landing page.
+Uses the same `AboutContent` component but renders with an `<h1>` "About Me" heading inside a `content-section` wrapper (narrow container, 760px max). The shared component omits the heading (`heading={false}` by default) when embedded on the landing page. Image only in intro layout (no side text).
 
 ### Energy Healing Page (`/what-is-energy-healing`)
 
 - Page heading: "What is Energy Healing" (gold, h2)
-- Hero image: `WhatIsEnergyHealing.jpg` (JPG, not PNG) alongside the intro paragraph
-- Remaining paragraphs below
+- Hero image: `WhatIsEnergyHealing.jpg` (JPG, not PNG) above all text paragraphs
+- All text below image
 - All text justified
 
 ### Sekhem Energy Page (`/what-is-sekhem-energy`)
 
 - Page heading: "What is Sekhem Energy" (gold, h2)
-- Hero image: `WhatIsSekhemEnergy.jpg` (JPG, not PNG) alongside the closing quote
-- Quote styled with gold left border accent
-- Remaining paragraphs below
+- Hero image: `WhatIsSekhemEnergy.jpg` (JPG, not PNG) above all text paragraphs
+- No closing quote
+- All text justified
+
+### Sekhem Energy Page (`/what-is-sekhem-energy`)
+
+- Page heading: "What is Sekhem Energy" (gold, h2)
+- Hero image: `WhatIsSekhemEnergy.jpg` (JPG, not PNG) above all text paragraphs
+- No closing quote
 - All text justified
 
 ### Contact Page (`/contact`)
 
 - Page heading: "Contact" (gold, h2)
-- WhatsApp number: +44 77 888 47 113
-- Email: contact@tesoulra.com
+- WhatsApp number: `+44 77 888 47 113` (clickable `tel:` link)
+- Email: `contact@tesoulra.com` (clickable `mailto:` link)
 - Social links: Facebook, Instagram (inline with SVG icons)
 - Contact form (client component) with honeypot spam protection
-- Logo detailed view image at the bottom
+- Logo detailed view image at the bottom (centered, larger size)
 
 Note: The Contact page was simplified — the hero image, intro text, and session types rows were removed since that information now lives on the landing page Bookings section.
 
@@ -207,9 +217,9 @@ All images are served from `/public/images/`. Five images use high-resolution JP
 
 **Framework:** Vitest + React Testing Library (jsdom environment)
 **Test files:** `tests/unit/*.test.{ts,tsx}`
-**17 tests total across 8 test files:**
+**16 tests total across 8 test files:**
 - `home.test.tsx` — hero, why paragraphs, testimonials
-- `about-page.test.tsx` — Sekhem links, consultation links, quote styling
+- `about-page.test.tsx` — Sekhem links, consultation links (in-person, distant)
 - `contact-page.test.tsx` — contact details and links
 - `testimonials-page.test.tsx` — heading order, carousel content
 - `components.test.tsx` — header nav, brand, link ordering
@@ -222,6 +232,16 @@ All images are served from `/public/images/`. Five images use high-resolution JP
 ## Footer
 
 Simple footer: "Temple of Embodied Soul Remembrance & Alchemy" centered, gold border top.
+Second line: "Art is by Damian Nola" in turquoise, linking to `https://www.merlinsheart.com`.
+
+## Header (Mobile)
+
+Responsive burger menu (golden yellow, 3-bar icon) replaces nav links on screens ≤768px. Tapping reveals nav links in a vertical dropdown.
+Second line: "Art is by Damian Nola" in turquoise, linking to `https://www.merlinsheart.com`.
+
+## Header (Mobile)
+
+Responsive burger menu (golden yellow, 3-bar icon) replaces nav links on screens ≤768px. Tapping reveals nav links in a vertical dropdown.
 
 ## Out of Scope (Not Implemented)
 
