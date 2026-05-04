@@ -2,6 +2,21 @@ import { TestimonialsCarousel } from '@/components/testimonials-carousel'
 
 const testimonials = [
   {
+    quote:
+      "Each session with T'iam'arhat feels like stepping into a multidimensional remembrance of what it means to be an embodied soul on a timeless journey - a blessing outside of ordinary space and time - to repair, connect, listen, feel, regenerate, and shift old individual and collective belief systems. From the warm opening greeting, sensing the landscape through the drawing of alchemical tarot cards for each chakra, to the cleansing ritual and journeying, she conducts and channels energies the way a virtuoso conducts and embodies music - with precision, attunement, and effortless fluidity. What I deeply value is how safe I feel in her sisterly presence, safe enough to venture into core existential places and suppressed forces I cannot address in ordinary life. She holds my humanity, body issues and highest subtle dimensions all together. Through her sounding, light language, touch and invocations, the body repairs itself as the soul receives wisdom for the next stage of the journey. No matter how vast the expansion, I always return more grounded, aligned and whole. And it is consistently uncanny how she puts the most ineffable experiences into words that resonate deeply. The effects are long lasting, translating into my ordinary and non-ordinary life.",
+    author: 'Candice M'
+  },
+  {
+    quote:
+      "I had a few healing sessions with T'iam'arhat over the past couple of years, but the one I want to specifically mention is when I saw her with a physical issue with my jaw. A conventional dentist referred me to a fractal surgeon as a bone growth in my jaw was preventing me from not just eating, but literally opening my mouth, and the clicking sound when talking was driving me to distraction… So, after seeing a surgeon at the Cromwell Clinic (waste of money), T'iam'arhat gave me a healing... oh, my goodness amazing... as all of a sudden, a wonderful feeling enveloped me and… the lock and click in my jaw – gone!! And to this very day, as much as the bone in my jaw is still there, I have no problems eating or talking… and more importantly, no more clicking when I move my jaw. My dentist can't understand how this has resolved itself. Amazing!",
+    author: 'Danielle L'
+  },
+  {
+    quote:
+      "T'iam'arhat is a very gifted and extraordinary healer. She has a deep understanding of energy and the multi-dimensional aspects of the body and spirit. Her sessions are profoundly peaceful, and you feel very cleansed and vibrant afterwards. I recommend her wholeheartedly.",
+    author: 'Camilla J'
+  },
+  {
     quote: "Amazing healing with T'iam'arhat that cannot describe in words. I am forever grateful.",
     author: 'Marco B'
   },
@@ -39,6 +54,16 @@ const testimonials = [
     quote:
       "I was introduced to T'iam'arhat two years ago at what was an extremely challenging point in my life. The help I received has changed my life forever! From clearing blockages, to teaching me how to transmute energy and even giving me a very simple but important message from my father (who passed away in 2020) and helping my 3-year-old daughter to regulate her emotions. I highly recommend her services!",
     author: 'Nicholas G'
+  },
+  {
+    quote:
+      "I never felt so peaceful in my life as during and after the healing session with T'iam'arhat. Deeply grateful!",
+    author: 'Lee E'
+  },
+  {
+    quote:
+      "I recently had a healing session with T'iam'arhat, and it was incredible. So much was released from my system and so grateful to T'iam'arhat for this amazing session. Many tools were used for this session, including alchemical tarot for chakra reading, Mayan astrology, sound healing, energy healing, and divine guidance. A beautifully profound meditative state came upon me at the end of peace and stillness, which allowed me to integrate this beautiful healing. T'iam'arhat is incredibly gifted, and I highly recommend a session with her.",
+    author: 'Darren D'
   }
 ]
 
