@@ -673,6 +673,10 @@ h3 {
 /* ========== MOBILE ========== */
 
 @media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+
   .hero-logo-large {
     width: 100px;
   }
