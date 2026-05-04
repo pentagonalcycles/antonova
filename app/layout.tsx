@@ -14,6 +14,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="en">
       <body>
+        <div className="fixed-background" aria-hidden="true" />
         <a href="#main-content" className="skip-link">Skip to main content</a>
         <DeviceProvider value={device}>
           <SiteHeader />
