@@ -4,7 +4,7 @@ export function BookingsSection() {
       img: '/images/SessionPhoneFree.png',
       alt: 'Free phone consultation',
       title: 'Phone Consultation',
-      desc: 'Free',
+      desc: '15 minutes — Free',
       id: 'session-phone'
     },
     {
