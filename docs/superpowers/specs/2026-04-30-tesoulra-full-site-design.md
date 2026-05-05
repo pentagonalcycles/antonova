@@ -53,7 +53,7 @@ Note: The "Testimonials" nav link was removed; testimonials are now embedded on 
 
 | Route | Content |
 |-------|---------|
-| `/` | Hero → "Why" paragraphs → Einstein quote → About Me → Varela quote → Book a session → Testimonials carousel |
+| `/` | Hero → "Why" paragraphs → Einstein quote → About Me → Varela quote → Learn-more panels → Book a session → Tahkamenon quote → Testimonials carousel |
 | `/about` | About Me heading + full About Me content |
 | `/what-is-energy-healing` | Energy Healing content (image above all text) |
 | `/what-is-sekhem-energy` | Sekhem Energy content (image above all text) |
@@ -91,11 +91,20 @@ Four paragraphs explaining the meaning of Temple, Embodied Soul, Remembrance, an
 Renders an `<h2>` heading "About Me" (gold, Cinzel — matching all other h2s), followed by:
 - **Intro layout:** Image only (AboutMe.jpg portrait) — no side text
 - **Body paragraphs:** Full About Me text content
-- **Cross-links:** Every occurrence of "Sekhem" in the text is a link to `/what-is-sekhem-energy`. The paragraph about session types has links for "in-person" → `/contact#session-inperson`, "distant" → `/contact#session-distant`
+- **Cross-links:** Every occurrence of "Sekhem" in the text is a turquoise italic link to `/what-is-sekhem-energy`. Every occurrence of "energy healing" is a turquoise link to `/what-is-energy-healing`. "Bi-Aura Therapy" is a turquoise link (opens in new tab) to `https://www.bi-aura.com/what-is-bi-aura-therapy`. The paragraph about session types has links for "in-person" → `/contact#session-inperson`, "distant" → `/contact#session-distant`
 
 All paragraphs are justified.
 
-### 4. Testimonials Carousel
+### 4.5 Learn-More Panels
+
+Two larger panel buttons (styled like booking cards but with gold display text) placed between the Varela quote and the Book a session section. They appear side-by-side on desktop and stack vertically on mobile:
+
+1. **"What is energy healing?"** — links to `/what-is-energy-healing`, with `WhatIsEnergyHealing.png` image below the text
+2. **"What is Sekhem energy?"** — links to `/what-is-sekhem-energy`, with `WhatIsSekhemEnergy.png` image below the text
+
+Images are sized slightly larger than the booking card images (max-width 320px). Hover effect darkens the card background and highlights the gold border.
+
+### 4.6 Testimonials Carousel
 
 **Component:** `TestimonialsCarousel` (client component)
 
@@ -112,7 +121,7 @@ Displays 8 testimonials in a horizontal sliding carousel:
 Features:
 - Left/right arrow buttons
 - Dot navigation (1 per testimonial)
-- Auto-rotation every 6 seconds (resets on user interaction)
+- Auto-rotation every 12 seconds (resets on user interaction)
 - Touch swipe support (50px minimum swipe distance)
 - Smooth CSS transition (0.5s ease)
 - Quotes styled in italic, centered text with golden vertical side bars; author names right-aligned
@@ -123,23 +132,32 @@ Features:
 
 Two blockquote elements with turquoise text, gold vertical side bars, and semi-transparent dark background:
 - Einstein quote ("There are only two ways to live your life...") between "Why" section and About Me
-- Francisco Varela quote ("When a living system is suffering...") between About Me and Book a session
+- Francisco Varela quote ("When a living system is suffering...") between About Me and Learn-More panels
 
 ### 6. Bookings Section
 
 **Component:** `BookingsSection`
 
-Displays two session types as equal-sized cards in a 2-column row:
-1. **In-Person Session** — 1.5 hours, £120 — `SessionInPerson.png`
-2. **Distant Session** — 1 hour, £80 — `SessionRemote.png`
+Displays three session types as equal-sized cards in a 3-column row:
+1. **Phone Consultation** — 15 minutes, Free — `SessionPhoneFree.png`
+2. **In-Person Session** — 1.5 hours, £120 — `SessionInPerson.png`
+3. **Distant Session** — 1 hour, £80 — `SessionRemote.png`
 
-Each card contains a square image (1:1 aspect ratio, object-contain), a title (gold h3), and a description. On mobile (<768px), cards stack vertically.
+Each card contains a clickable square image (1:1 aspect ratio, object-contain, links to `/contact?booking=...` with pre-filled message), a title (gold h3), and a description. On mobile (<768px), cards stack vertically.
 
-**Planned:** The session images will become clickable links that open a booking calendar where users can select a time slot and pay online. Implementation approach TBD (likely Stripe integration for payments + a booking calendar solution).
+Clicking a session image navigates to the Contact page with the message field pre-filled:
+- Phone Consultation → "I would like to make a booking for free phone consultation."
+- In-Person Session → "I would like to make a booking for an in-person session."
+- Distant Session → "I would like to make a booking for a distant session."
 
-## Planned: Booking & Payment System
+The pre-filled message is editable by the user. Hover effect applies a subtle opacity change to the images.
 
-**Planned:** The session images will become clickable links that open a booking calendar where users can select a time slot and pay online. Implementation approach TBD.
+### 7. Tahkamenon Quote
+
+A blockquote with turquoise text and gold vertical side bars:
+- "Love is truth. Truth is love." — Tahkamenon
+
+Placed between the Bookings section and the Testimonials carousel.
 
 ## Inner Pages
 

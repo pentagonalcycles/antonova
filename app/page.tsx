@@ -112,7 +112,7 @@ export default function HomePage() {
       </div>
       <BookingsSection />
       <blockquote className="landing-quote">
-        "Love is truth. Truth is love" — Tahkamenon
+        "Love is truth. Truth is love." — Tahkamenon
       </blockquote>
       <TestimonialsCarousel items={testimonials} />
     </>

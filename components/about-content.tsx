@@ -3,8 +3,8 @@ import { siteContent } from '@/lib/content'
 import { renderSekhemInline } from '@/lib/sekhem-links'
 
 const ABOUT_SECTION_INDEX = {
-  consultation: 6,
-  quote: 7
+  consultation: 5,
+  quote: 6
 } as const
 
 function renderConsultationLinks(paragraph: string) {

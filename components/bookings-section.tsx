@@ -1,3 +1,11 @@
+import Link from 'next/link'
+
+const BOOKING_MESSAGES: Record<string, string> = {
+  phone: 'I would like to make a booking for free phone consultation.',
+  inperson: 'I would like to make a booking for an in-person session.',
+  distant: 'I would like to make a booking for a distant session.'
+}
+
 export function BookingsSection() {
   const sessions = [
     {
@@ -5,21 +13,24 @@ export function BookingsSection() {
       alt: 'Free phone consultation',
       title: 'Phone Consultation',
       desc: '15 minutes — Free',
-      id: 'session-phone'
+      id: 'session-phone',
+      booking: 'phone'
     },
     {
       img: '/images/SessionInPerson.png',
       alt: 'In-person healing session',
       title: 'In-Person Session',
       desc: '1.5 hours — £120',
-      id: 'session-inperson'
+      id: 'session-inperson',
+      booking: 'inperson'
     },
     {
       img: '/images/SessionRemote.png',
       alt: 'Distant healing session',
       title: 'Distant Session',
       desc: '1 hour — £80',
-      id: 'session-distant'
+      id: 'session-distant',
+      booking: 'distant'
     }
   ]
 
@@ -29,7 +40,9 @@ export function BookingsSection() {
       <div className="bookings-grid">
         {sessions.map((s) => (
           <div key={s.id} id={s.id} className="booking-card">
-            <img src={s.img} alt={s.alt} className="booking-image" />
+            <Link href={`/contact?booking=${s.booking}`}>
+              <img src={s.img} alt={s.alt} className="booking-image" />
+            </Link>
             <h3>{s.title}</h3>
             <p className="booking-desc">{s.desc}</p>
           </div>

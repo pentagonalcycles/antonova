@@ -1,11 +1,27 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useSearchParams } from 'next/navigation'
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
+const BOOKING_MESSAGES: Record<string, string> = {
+  phone: 'I would like to make a booking for free phone consultation.',
+  inperson: 'I would like to make a booking for an in-person session.',
+  distant: 'I would like to make a booking for a distant session.'
+}
+
 export function ContactForm() {
   const [status, setStatus] = useState<Status>('idle')
+  const [messageValue, setMessageValue] = useState('')
+  const searchParams = useSearchParams()
+
+  useEffect(() => {
+    const booking = searchParams.get('booking')
+    if (booking && BOOKING_MESSAGES[booking]) {
+      setMessageValue(BOOKING_MESSAGES[booking])
+    }
+  }, [searchParams])
 
   async function onSubmit(formData: FormData) {
     setStatus('sending')
@@ -35,7 +51,7 @@ export function ContactForm() {
       <input id="email" name="email" type="email" required />
 
       <label htmlFor="message">Message</label>
-      <textarea id="message" name="message" required minLength={20} rows={6} />
+      <textarea id="message" name="message" required minLength={20} rows={6} value={messageValue} onChange={(e) => setMessageValue(e.target.value)} />
 
       <input type="text" name="website" className="honeypot" tabIndex={-1} autoComplete="off" aria-hidden="true" />
 

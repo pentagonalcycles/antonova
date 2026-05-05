@@ -497,6 +497,16 @@ h3 {
   border-radius: 4px;
   margin-bottom: var(--space-2);
   display: block;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.booking-card a:hover .booking-image {
+  opacity: 0.8;
+}
+
+.booking-card a:hover .booking-image {
+  opacity: 0.8;
 }
 
 .booking-card h3 {
