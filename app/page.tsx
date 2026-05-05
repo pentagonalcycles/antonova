@@ -2,6 +2,7 @@ import { HeroParallax } from '@/components/hero-parallax'
 import { AboutContent } from '@/components/about-content'
 import { TestimonialsCarousel } from '@/components/testimonials-carousel'
 import { BookingsSection } from '@/components/bookings-section'
+import { ContactForm } from '@/components/contact-form'
 import { siteContent } from '@/lib/content'
 import Link from 'next/link'
 
@@ -120,7 +121,7 @@ export default function HomePage() {
           <h2>Contact</h2>
           <p><strong>WhatsApp:</strong> <a href="tel:+447788847113">+44 77 888 47 113</a></p>
           <p><strong>Email:</strong> <a href="mailto:contact@tesoulra.com">contact@tesoulra.com</a></p>
-          <p><Link href="/contact" className="contact-cta-btn">Get in touch</Link></p>
+          <ContactForm />
         </div>
       </section>
     </>
