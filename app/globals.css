@@ -609,6 +609,41 @@ h3 {
 
 /* ========== FOOTER ========== */
 
+.landing-contact {
+  padding: var(--space-5) var(--space-3);
+  text-align: center;
+  background: rgba(10, 18, 56, 0.6);
+  border-top: 1px solid rgba(215, 182, 99, 0.25);
+  border-bottom: 1px solid rgba(215, 182, 99, 0.25);
+}
+
+.landing-contact h2 {
+  margin: 0 0 var(--space-3);
+}
+
+.landing-contact p {
+  margin: 0 0 var(--space-1);
+}
+
+.contact-cta-btn {
+  display: inline-block;
+  margin-top: var(--space-2);
+  padding: var(--space-1) var(--space-4);
+  background: var(--color-gold);
+  color: var(--color-bg-deep);
+  font-family: var(--font-display);
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.contact-cta-btn:hover {
+  background: #c4a552;
+  transform: translateY(-1px);
+}
+
 .site-footer {
   border-top: 1px solid rgba(215, 182, 99, 0.35);
   padding: var(--space-3);

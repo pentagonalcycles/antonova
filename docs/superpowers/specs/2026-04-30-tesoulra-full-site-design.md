@@ -53,7 +53,7 @@ Note: The "Testimonials" nav link was removed; testimonials are now embedded on 
 
 | Route | Content |
 |-------|---------|
-| `/` | Hero → "Why" paragraphs → Einstein quote → About Me → Varela quote → Learn-more panels → Book a session → Tahkamenon quote → Testimonials carousel |
+| `/` | Hero → "Why" paragraphs → Einstein quote → About Me → Varela quote → Learn-more panels → Book a session → Tahkamenon quote → Testimonials carousel → Contact CTA |
 | `/about` | About Me heading + full About Me content |
 | `/what-is-energy-healing` | Energy Healing content (image above all text) |
 | `/what-is-sekhem-energy` | Sekhem Energy content (image above all text) |
@@ -158,6 +158,22 @@ A blockquote with turquoise text and gold vertical side bars:
 - "Love is truth. Truth is love." — Tahkamenon
 
 Placed between the Bookings section and the Testimonials carousel.
+
+### 8. Contact CTA
+
+A lightweight section placed after the Testimonials carousel with a semi-transparent dark background and gold top/bottom borders:
+- **Heading:** "Ready to begin your healing journey?" (gold, h2)
+- WhatsApp number: `+44 77 888 47 113` (clickable `tel:` link)
+- Email: `contact@tesoulra.com` (clickable `mailto:` link)
+- Gold "Get in touch" button linking to `/contact` (with hover effect)
+
+### 8. Contact CTA
+
+A lightweight section placed after the Testimonials carousel with a semi-transparent dark background and gold top/bottom borders:
+- **Heading:** "Ready to begin your healing journey?" (gold, h2)
+- WhatsApp number: `+44 77 888 47 113` (clickable `tel:` link)
+- Email: `contact@tesoulra.com` (clickable `mailto:` link)
+- Gold "Get in touch" button linking to `/contact` (with hover effect)
 
 ## Inner Pages
 
