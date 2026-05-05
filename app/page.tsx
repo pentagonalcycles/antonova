@@ -117,7 +117,7 @@ export default function HomePage() {
       <TestimonialsCarousel items={testimonials} />
       <section className="landing-contact" aria-label="Contact">
         <div className="container narrow">
-          <h2>Ready to begin your healing journey?</h2>
+          <h2>Contact</h2>
           <p><strong>WhatsApp:</strong> <a href="tel:+447788847113">+44 77 888 47 113</a></p>
           <p><strong>Email:</strong> <a href="mailto:contact@tesoulra.com">contact@tesoulra.com</a></p>
           <p><Link href="/contact" className="contact-cta-btn">Get in touch</Link></p>

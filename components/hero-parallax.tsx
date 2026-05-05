@@ -13,7 +13,7 @@ export function HeroParallax({ title, subtitle }: { title: string; subtitle: rea
         <h1 className="hero-title-standalone" dangerouslySetInnerHTML={{ __html: renderTitle("TESoul'RA") }} />
         <div className="hero-parallax-image" aria-hidden="true" />
         <div className="hero-welcome">
-          <h2 className="hero-welcome-title">Welcome to TESoul'RA</h2>
+          <h2 className="hero-welcome-title" dangerouslySetInnerHTML={{ __html: renderTitle("Welcome to TESoul'RA") }} />
           <p className="hero-welcome-subtitle">{subtitle.map((line, i) => (
             <span key={i}>
               {line}

@@ -19,7 +19,7 @@ export function SiteHeader() {
       <nav aria-label="Main navigation" className="nav">
         <Link href="/" className="brand" aria-label="TESoul'RA home" onClick={() => setOpen(false)}>
           <img src="/images/Logo.png" alt="TESoul'RA logo" className="brand-logo" />
-          <span>TESoul'RA</span>
+          <span className="brand-text">TESoul'RA</span>
         </Link>
         <button className="burger" onClick={() => setOpen(!open)} aria-label="Toggle menu" aria-expanded={open}>
           <span></span>
