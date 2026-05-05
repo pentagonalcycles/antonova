@@ -3,6 +3,7 @@ import { AboutContent } from '@/components/about-content'
 import { TestimonialsCarousel } from '@/components/testimonials-carousel'
 import { BookingsSection } from '@/components/bookings-section'
 import { siteContent } from '@/lib/content'
+import Link from 'next/link'
 
 const testimonials = [
   {
@@ -99,6 +100,16 @@ export default function HomePage() {
       <blockquote className="landing-quote">
         "When a living system is suffering from ill health, the remedy is found by connecting with more of itself." — Francisco Varela
       </blockquote>
+      <div className="learn-more-grid">
+        <Link href="/what-is-energy-healing" className="learn-more-card">
+          What is energy healing?
+          <img src="/images/WhatIsEnergyHealing.png" alt="What is energy healing?" className="learn-more-image" />
+        </Link>
+        <Link href="/what-is-sekhem-energy" className="learn-more-card">
+          What is Sekhem energy?
+          <img src="/images/WhatIsSekhemEnergy.png" alt="What is Sekhem energy?" className="learn-more-image" />
+        </Link>
+      </div>
       <BookingsSection />
       <blockquote className="landing-quote">
         "Love is truth. Truth is love" — Tahkamenon

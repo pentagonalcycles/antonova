@@ -20,7 +20,7 @@ export function TestimonialsCarousel({ items }: { items: Testimonial[] }) {
 
   const resetTimer = useCallback(() => {
     if (timerRef.current) window.clearTimeout(timerRef.current)
-    timerRef.current = window.setTimeout(next, 6000)
+    timerRef.current = window.setTimeout(next, 12000)
   }, [next])
 
   useEffect(() => {
