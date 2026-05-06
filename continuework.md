@@ -17,9 +17,9 @@ The TESoul'RA website (Next.js 16, React 19, TypeScript) is live on the `feat/te
 2. "Why" paragraphs (italic terms in turquoise, justified, font size `clamp(1.02rem, 1.05vw, 1.08rem)`)
 3. Einstein quote divider between "Why" section and About Me
 4. About Me section (shared component with `/about` page, same font size as "Why" paragraphs)
-5. **Learn more panels** — two cards side by side linking to "What is Energy Healing?" and "What is Sekhem Energy?" (bold gold titles, full-width images, "Read more..." in turquoise)
+5. **Learn more panels** — two cards side by side linking to "What is Energy Healing?" and "What is Sekhem Energy?" (bold gold titles, full-width images, "Read more..." in turquoise below each image, same font size and bold as booking desc)
 6. Francisco Varela quote divider
-7. **Bookings section** (heading: "Book a session") — 3 session cards (Phone Consultation, In-Person, Distant) in a 3-column grid on desktop, 1-column on mobile. Card images use object-contain (no cropping). Clicking cards routes to contact form with pre-filled booking message.
+7. **Bookings section** (heading: "Book a session") — 3 session cards (Phone Consultation, In-Person, Distant) in a 3-column grid on desktop, 1-column on mobile. Card images use object-contain (no cropping). Entire card (image + title + description) is clickable, routing to contact form with pre-filled booking message.
 8. Tahkamenon quote divider between Bookings and Testimonials
 9. Testimonials carousel (13 testimonials with decorative quotation marks, turquoise dots)
 10. Footer with gold text and turquoise "Art is by Damian Nola" credit
@@ -70,47 +70,34 @@ The user will provide more details about preferred payment provider and calendar
 ## Landing Page Font & Layout Updates (May 6, 2026)
 
 - **Body text font size**: `.home-why` paragraphs now use `clamp(1.02rem, 1.05vw, 1.08rem)` (slightly larger than browser default 16px)
-- **About section on home page**: same font size applied via `.home-about .about-content p`
-- **Landing quotes**: same font size applied to `.landing-quote` (Einstein, Varela, Tahkamenon quotes)
+- **All pages synced**: `.about-content p`, `.content-section p`, `.content-section blockquote` all use same `clamp(1.02rem, 1.05vw, 1.08rem)` — uniform text size across entire site
+- **About section on home page**: same font size via `.about-content p` rule
+- **Landing quotes**: `.landing-quote` uses same font size (Einstein, Varela, Tahkamenon quotes)
 - **Welcome title "oul"**: `.hero-welcome-title small` set to `0.85em` with small-caps styling
 - **Learn more panels** ("What is Energy Healing?" / "What is Sekhem Energy?"):
   - Moved above the Francisco Varela quote (section order: Why → Einstein → About → Learn More → Varela → Bookings → Tahkamenon → Testimonials)
   - Panels now match bookings section width on desktop via `.learn-more-grid` in desktop-wide breakpoint
   - Titles: "What is Energy Healing?" and "What is Sekhem Energy?" — larger, bold, gold font
   - Images: no max-width cap, fill full card width (card padding reduced to `var(--space-3) var(--space-2)`)
-  - "Read more..." link below each image in turquoise
+  - "Read more..." below each image in turquoise, `1rem`, bold — matches booking desc styling exactly
 - **Booking messages** updated: clicking booking cards now pre-fills the contact form message with:
   - Phone: "I would like to book a free phone consultation."
   - In-Person: "I would like to book an in-person healing session."
   - Distant: "I would like to book a distant healing session."
-
-## Landing Page Font & Layout Updates (May 6, 2026)
-
-- **Body text font size**: `.home-why` paragraphs now use `clamp(1.02rem, 1.05vw, 1.08rem)` (slightly larger than browser default 16px)
-- **About section on home page**: same font size applied via `.home-about .about-content p`
-- **Landing quotes**: same font size applied to `.landing-quote` (Einstein, Varela, Tahkamenon quotes)
-- **Welcome title "oul"**: `.hero-welcome-title small` set to `0.85em` with small-caps styling
-- **Learn more panels** ("What is Energy Healing?" / "What is Sekhem Energy?"):
-  - Moved above the Francisco Varela quote (section order: Why → Einstein → About → Learn More → Varela → Bookings → Tahkamenon → Testimonials)
-  - Panels now match bookings section width on desktop via `.learn-more-grid` in desktop-wide breakpoint
-  - Titles: "What is Energy Healing?" and "What is Sekhem Energy?" — larger, bold, gold font
-  - Images: no max-width cap, fill full card width (card padding reduced to `var(--space-3) var(--space-2)`)
-  - "Read more..." link below each image in turquoise
-- **Booking messages** updated: clicking booking cards now pre-fills the contact form message with:
-  - Phone: "I would like to book a free phone consultation."
-  - In-Person: "I would like to book an in-person healing session."
-  - Distant: "I would like to book a distant healing session."
+- **Entire booking card clickable**: image, title, and description all wrapped in `<Link className="booking-link">` for full-card clickability
+- **LogoWithText.png created**: combined logo + "TESoul'RA" text (with "oul" smaller, 70% size) in gold (#d7b663) using NotoSerif-Bold, saved to `public/images/LogoWithText.png` — not yet used in production, kept as asset for potential future use
+- **Fixed null searchParams guard** in contact-form.tsx for test compatibility
 
 ## Key Files
 
-- `components/bookings-section.tsx` — booking cards component (3 cards: Phone, In-Person, Distant; to be enhanced with booking flow)
+- `components/bookings-section.tsx` — booking cards component (3 cards: Phone, In-Person, Distant; entire card is clickable via `<Link>`)
 - `components/hero-parallax.tsx` — hero section (logo, title, landscape image, welcome text)
 - `components/testimonials-carousel.tsx` — testimonials carousel (dot class name fixed)
 - `components/about-content.tsx` — shared About Me content (h2 margin normalized)
+- `components/contact-form.tsx` — contact form with booking message pre-fill from URL params
 - `lib/sekhem-links.tsx` — Sekhem inline link renderer (turquoise + italic)
 - `app/page.tsx` — landing page (hero → why → Einstein → About → Learn More → Varela → Bookings → Tahkamenon → Testimonials)
-- `app/globals.css` — all styling (body text `.home-why` at `clamp(1.02rem, 1.05vw, 1.08rem)`, `.about-content p` and `.content-section p` match, `.landing-quote` same size, learn-more panels styled, booking cards clickable)
-- `app/globals.css` — all styling (page-image max-width 480px, quote spacing normalized, hero restructured)
+- `app/globals.css` — all styling (body text at `clamp(1.02rem, 1.05vw, 1.08rem)` across all pages, learn-more panels styled, booking cards clickable, `.booking-link` for full-card links)
 - `lib/content.ts` — site text content
 
 ## Spec & Plan

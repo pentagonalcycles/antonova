@@ -527,7 +527,8 @@ h3 {
 .learn-more-read-more {
   color: var(--color-turquoise);
   font-family: var(--font-display);
-  font-size: 0.8rem;
+  font-size: 1rem;
+  font-weight: 700;
   letter-spacing: 0.05em;
   display: block;
 }
@@ -579,6 +580,7 @@ h3 {
   margin: 0;
   text-align: center;
   color: var(--color-turquoise);
+  font-weight: 700;
 }
 
 /* ========== CONTACT ========== */
