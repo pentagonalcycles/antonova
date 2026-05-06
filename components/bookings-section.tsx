@@ -40,11 +40,11 @@ export function BookingsSection() {
       <div className="bookings-grid">
         {sessions.map((s) => (
           <div key={s.id} id={s.id} className="booking-card">
-            <Link href={`/contact?booking=${s.booking}`}>
+            <Link href={`/contact?booking=${s.booking}`} className="booking-link">
               <img src={s.img} alt={s.alt} className="booking-image" />
+              <h3>{s.title}</h3>
+              <p className="booking-desc">{s.desc}</p>
             </Link>
-            <h3>{s.title}</h3>
-            <p className="booking-desc">{s.desc}</p>
           </div>
         ))}
       </div>

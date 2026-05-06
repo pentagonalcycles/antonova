@@ -109,6 +109,7 @@ The user will provide more details about preferred payment provider and calendar
 - `components/about-content.tsx` — shared About Me content (h2 margin normalized)
 - `lib/sekhem-links.tsx` — Sekhem inline link renderer (turquoise + italic)
 - `app/page.tsx` — landing page (hero → why → Einstein → About → Learn More → Varela → Bookings → Tahkamenon → Testimonials)
+- `app/globals.css` — all styling (body text `.home-why` at `clamp(1.02rem, 1.05vw, 1.08rem)`, `.about-content p` and `.content-section p` match, `.landing-quote` same size, learn-more panels styled, booking cards clickable)
 - `app/globals.css` — all styling (page-image max-width 480px, quote spacing normalized, hero restructured)
 - `lib/content.ts` — site text content
 

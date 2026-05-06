@@ -19,14 +19,16 @@ Branch: `feat/tesoulra-nextjs`
 ## Current Confirmed UI State
 
 - Landing `/`:
-  - Hero remains image-led.
-  - Post-hero shows only the canonical 5-paragraph text block:
-    - `Welcome to TESoul’RA -Temple of Embodied Soul Remembrance & Alchemy`
-    - `Why Temple? ...`
-    - `Why Embodied Soul? ...`
-    - `Why Remembrance? ...`
-    - `Why Alchemy? ...`
-  - No extra post-hero images/cards.
+  - Hero remains image-led. "oul" in small-caps at 0.85em in welcome title.
+  - Post-hero shows only the canonical 5-paragraph text block ("Why" paragraphs) with responsive font size `clamp(1.02rem, 1.05vw, 1.08rem)`.
+  - Einstein quote divider.
+  - About Me section with same font size.
+  - **Learn more panels** — two cards linking to "What is Energy Healing?" and "What is Sekhem Energy?" (bold gold titles, full-width images, "Read more..." in turquoise below each image).
+  - Francisco Varela quote divider.
+  - **Book a session** — 3 booking cards (Phone, In-Person, Distant). Entire card (image + title + description) is clickable, routing to contact form with pre-filled booking message.
+  - Tahkamenon quote divider.
+  - Testimonials carousel (13 testimonials).
+  - All body text on sub-pages (About, Energy Healing, Sekhem Energy, Contact) uses same `clamp(1.02rem, 1.05vw, 1.08rem)` font size.
 
 - Header:
   - Top-left brand (logo + TESoul'RA text) links to `/` (home).
@@ -55,7 +57,7 @@ Branch: `feat/tesoulra-nextjs`
 - Contact `/contact`:
   - Session rows and anchors exist.
   - WhatsApp/email/social links present.
-  - Enlarged logo image added at page end for detailed viewing.
+  - Booking cards on home page route here with pre-filled message (`?booking=phone|inperson|distant`).
 
 ## Important Guardrails
 
