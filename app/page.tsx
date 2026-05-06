@@ -97,20 +97,24 @@ export default function HomePage() {
       <blockquote className="landing-quote">
         "There are only two ways to live your life. One is as though nothing is a miracle. The other is as though everything is a miracle." — Albert Einstein
       </blockquote>
-      <AboutContent heading />
+      <div className="home-about">
+        <AboutContent heading />
+      </div>
+      <div className="learn-more-grid">
+        <Link href="/what-is-energy-healing" className="learn-more-card">
+          <span className="learn-more-title">What is Energy Healing?</span>
+          <img src="/images/WhatIsEnergyHealing.png" alt="What is energy healing?" className="learn-more-image" />
+          <span className="learn-more-read-more">Read more...</span>
+        </Link>
+        <Link href="/what-is-sekhem-energy" className="learn-more-card">
+          <span className="learn-more-title">What is Sekhem Energy?</span>
+          <img src="/images/WhatIsSekhemEnergy.png" alt="What is Sekhem energy?" className="learn-more-image" />
+          <span className="learn-more-read-more">Read more...</span>
+        </Link>
+      </div>
       <blockquote className="landing-quote">
         "When a living system is suffering from ill health, the remedy is found by connecting with more of itself." — Francisco Varela
       </blockquote>
-      <div className="learn-more-grid">
-        <Link href="/what-is-energy-healing" className="learn-more-card">
-          What is energy healing?
-          <img src="/images/WhatIsEnergyHealing.png" alt="What is energy healing?" className="learn-more-image" />
-        </Link>
-        <Link href="/what-is-sekhem-energy" className="learn-more-card">
-          What is Sekhem energy?
-          <img src="/images/WhatIsSekhemEnergy.png" alt="What is Sekhem energy?" className="learn-more-image" />
-        </Link>
-      </div>
       <BookingsSection />
       <blockquote className="landing-quote">
         "Love is truth. Truth is love." — Tahkamenon

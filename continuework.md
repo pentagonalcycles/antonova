@@ -13,15 +13,16 @@
 
 The TESoul'RA website (Next.js 16, React 19, TypeScript) is live on the `feat/tesoulra-nextjs` branch, deployed to Vercel. The landing page currently has:
 
-1. Hero section — large centered logo, "TESoul'RA" title (with "oul" in small-caps at 0.8em), landscape parallax image, then two golden-yellow lines: "Welcome to TESoul'RA" and "Temple of Embodied Soul / Remembrance & Alchemy"
-2. "Why" paragraphs (italic terms in turquoise, justified)
+1. Hero section — large centered logo, "TESoul'RA" title (with "oul" in small-caps at 0.85em), landscape parallax image, then two golden-yellow lines: "Welcome to TESoul'RA" and "Temple of Embodied Soul / Remembrance & Alchemy"
+2. "Why" paragraphs (italic terms in turquoise, justified, font size `clamp(1.02rem, 1.05vw, 1.08rem)`)
 3. Einstein quote divider between "Why" section and About Me
-4. About Me section (shared component with `/about` page)
-5. Francisco Varela quote divider between About Me and Book a session
-6. **Bookings section** (heading: "Book a session") — 3 session cards (Phone Consultation, In-Person, Distant) in a 3-column grid on desktop, 1-column on mobile. Card images use object-contain (no cropping). Currently informational only.
-7. Tahkamenon quote divider between Bookings and Testimonials
-8. Testimonials carousel (9 testimonials with decorative quotation marks, turquoise dots)
-9. Footer with gold text and turquoise "Art is by Damian Nola" credit
+4. About Me section (shared component with `/about` page, same font size as "Why" paragraphs)
+5. **Learn more panels** — two cards side by side linking to "What is Energy Healing?" and "What is Sekhem Energy?" (bold gold titles, full-width images, "Read more..." in turquoise)
+6. Francisco Varela quote divider
+7. **Bookings section** (heading: "Book a session") — 3 session cards (Phone Consultation, In-Person, Distant) in a 3-column grid on desktop, 1-column on mobile. Card images use object-contain (no cropping). Clicking cards routes to contact form with pre-filled booking message.
+8. Tahkamenon quote divider between Bookings and Testimonials
+9. Testimonials carousel (13 testimonials with decorative quotation marks, turquoise dots)
+10. Footer with gold text and turquoise "Art is by Damian Nola" credit
 
 Landing page color scheme: dark lapis lazuli texture background (fixed, full-bleed, no overlay), turquoise for menu text and "Why" terms, gold for headings and quote frame bars. Responsive burger menu in gold for mobile (≤768px).
 
@@ -44,8 +45,7 @@ The user will provide more details about preferred payment provider and calendar
 - **Burger menu**: golden yellow for mobile (≤768px)
 - **Section order**: Bookings before Testimonials
 - **Heading**: "Book a session"
-- **Phone Consultation card** added back to bookings (3-column grid on desktop, 1-column on mobile)
-- **Booking images**: object-contain (no cropping)
+- **Phone Consultation card** added back to bookings (3-column grid on desktop, 1-column on mobile). Card images use object-contain (no cropping). Currently informational only.
 - **Einstein quote**: moved to landing page (removed from About page); typo fixed (Elbert → Albert)
 - **Francisco Varela quote**: added between About Me and Book a session
 - **Tahkamenon quote**: "Love is truth. Truth is love" — added between Bookings and Testimonials
@@ -67,6 +67,40 @@ The user will provide more details about preferred payment provider and calendar
 - **Testimonials carousel**: added Lee E testimonial (9 total)
 - **Background**: replaced gradient with lapis lazuli texture (`BackgroundChatGPT05.jpeg`), fixed full-bleed, no CSS overlay
 
+## Landing Page Font & Layout Updates (May 6, 2026)
+
+- **Body text font size**: `.home-why` paragraphs now use `clamp(1.02rem, 1.05vw, 1.08rem)` (slightly larger than browser default 16px)
+- **About section on home page**: same font size applied via `.home-about .about-content p`
+- **Landing quotes**: same font size applied to `.landing-quote` (Einstein, Varela, Tahkamenon quotes)
+- **Welcome title "oul"**: `.hero-welcome-title small` set to `0.85em` with small-caps styling
+- **Learn more panels** ("What is Energy Healing?" / "What is Sekhem Energy?"):
+  - Moved above the Francisco Varela quote (section order: Why → Einstein → About → Learn More → Varela → Bookings → Tahkamenon → Testimonials)
+  - Panels now match bookings section width on desktop via `.learn-more-grid` in desktop-wide breakpoint
+  - Titles: "What is Energy Healing?" and "What is Sekhem Energy?" — larger, bold, gold font
+  - Images: no max-width cap, fill full card width (card padding reduced to `var(--space-3) var(--space-2)`)
+  - "Read more..." link below each image in turquoise
+- **Booking messages** updated: clicking booking cards now pre-fills the contact form message with:
+  - Phone: "I would like to book a free phone consultation."
+  - In-Person: "I would like to book an in-person healing session."
+  - Distant: "I would like to book a distant healing session."
+
+## Landing Page Font & Layout Updates (May 6, 2026)
+
+- **Body text font size**: `.home-why` paragraphs now use `clamp(1.02rem, 1.05vw, 1.08rem)` (slightly larger than browser default 16px)
+- **About section on home page**: same font size applied via `.home-about .about-content p`
+- **Landing quotes**: same font size applied to `.landing-quote` (Einstein, Varela, Tahkamenon quotes)
+- **Welcome title "oul"**: `.hero-welcome-title small` set to `0.85em` with small-caps styling
+- **Learn more panels** ("What is Energy Healing?" / "What is Sekhem Energy?"):
+  - Moved above the Francisco Varela quote (section order: Why → Einstein → About → Learn More → Varela → Bookings → Tahkamenon → Testimonials)
+  - Panels now match bookings section width on desktop via `.learn-more-grid` in desktop-wide breakpoint
+  - Titles: "What is Energy Healing?" and "What is Sekhem Energy?" — larger, bold, gold font
+  - Images: no max-width cap, fill full card width (card padding reduced to `var(--space-3) var(--space-2)`)
+  - "Read more..." link below each image in turquoise
+- **Booking messages** updated: clicking booking cards now pre-fills the contact form message with:
+  - Phone: "I would like to book a free phone consultation."
+  - In-Person: "I would like to book an in-person healing session."
+  - Distant: "I would like to book a distant healing session."
+
 ## Key Files
 
 - `components/bookings-section.tsx` — booking cards component (3 cards: Phone, In-Person, Distant; to be enhanced with booking flow)
@@ -74,7 +108,7 @@ The user will provide more details about preferred payment provider and calendar
 - `components/testimonials-carousel.tsx` — testimonials carousel (dot class name fixed)
 - `components/about-content.tsx` — shared About Me content (h2 margin normalized)
 - `lib/sekhem-links.tsx` — Sekhem inline link renderer (turquoise + italic)
-- `app/page.tsx` — landing page (hero → why → Einstein quote → About → Varela quote → Bookings → Tahkamenon quote → Testimonials)
+- `app/page.tsx` — landing page (hero → why → Einstein → About → Learn More → Varela → Bookings → Tahkamenon → Testimonials)
 - `app/globals.css` — all styling (page-image max-width 480px, quote spacing normalized, hero restructured)
 - `lib/content.ts` — site text content
 

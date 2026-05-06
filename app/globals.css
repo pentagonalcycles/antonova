@@ -218,6 +218,20 @@ h3 {
   line-height: 1.4;
 }
 
+.hero-welcome-title small {
+  font-size: 0.85em;
+  text-transform: none;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.05em;
+}
+
+.hero-welcome-title small {
+  font-size: 0.85em;
+  text-transform: none;
+  font-variant-caps: small-caps;
+  letter-spacing: 0.05em;
+}
+
 .home-body {
   padding: var(--space-4) var(--space-3) 0;
   margin: 0 auto;
@@ -227,6 +241,7 @@ h3 {
   text-align: justify;
   margin: 0 0 var(--space-2);
   line-height: 1.7;
+  font-size: clamp(1.02rem, 1.05vw, 1.08rem);
 }
 
 .home-why:last-of-type {
@@ -244,6 +259,14 @@ h3 {
   box-sizing: border-box;
   padding: 0 var(--space-3) var(--space-5);
   margin: 0 auto;
+}
+
+.home-about .about-content p {
+  font-size: clamp(1.02rem, 1.05vw, 1.08rem);
+}
+
+.home-about .about-content p {
+  font-size: clamp(1.02rem, 1.05vw, 1.08rem);
 }
 
 .about-content > :first-child {
@@ -273,6 +296,7 @@ h3 {
   border-right: 3px solid var(--color-gold);
   background: rgba(26, 45, 102, 0.5);
   color: var(--color-turquoise);
+  font-size: clamp(1.02rem, 1.05vw, 1.08rem);
 }
 
 .bookings-section + .landing-quote {
@@ -463,16 +487,17 @@ h3 {
 
 .learn-more-card {
   text-align: center;
-  padding: var(--space-5) var(--space-4);
+  padding: var(--space-3) var(--space-2);
   background: rgba(26, 45, 102, 0.5);
   border: 1px solid rgba(215, 182, 99, 0.25);
   border-radius: 8px;
   color: var(--color-gold);
   font-family: var(--font-display);
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  letter-spacing: 0.04em;
   text-decoration: none;
   transition: background 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .learn-more-card:hover {
@@ -480,13 +505,28 @@ h3 {
   border-color: rgba(215, 182, 99, 0.5);
 }
 
+.learn-more-title {
+  font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
 .learn-more-image {
   width: 100%;
-  max-width: 320px;
   aspect-ratio: 1;
   object-fit: contain;
   border-radius: 4px;
-  margin-bottom: var(--space-2);
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.learn-more-read-more {
+  color: var(--color-turquoise);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
   display: block;
 }
 
@@ -733,10 +773,10 @@ h3 {
   .about-content,
   .testimonials-section,
   .bookings-section,
+  .learn-more-grid,
   .container.narrow {
     max-width: min(1024px, 92vw);
   }
-}
 
 /* ========== REDUCED MOTION ========== */
 

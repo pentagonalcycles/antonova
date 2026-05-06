@@ -6,9 +6,9 @@ import { useSearchParams } from 'next/navigation'
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
 const BOOKING_MESSAGES: Record<string, string> = {
-  phone: 'I would like to make a booking for free phone consultation.',
-  inperson: 'I would like to make a booking for an in-person session.',
-  distant: 'I would like to make a booking for a distant session.'
+  phone: 'I would like to book a free phone consultation.',
+  inperson: 'I would like to book an in-person healing session.',
+  distant: 'I would like to book a distant healing session.'
 }
 
 export function ContactForm() {
@@ -17,6 +17,7 @@ export function ContactForm() {
   const searchParams = useSearchParams()
 
   useEffect(() => {
+    if (!searchParams) return
     const booking = searchParams.get('booking')
     if (booking && BOOKING_MESSAGES[booking]) {
       setMessageValue(BOOKING_MESSAGES[booking])
