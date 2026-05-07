@@ -266,7 +266,7 @@ h3 {
   width: 100%;
   max-width: 760px;
   box-sizing: border-box;
-  padding: 0 var(--space-3) var(--space-5);
+  padding: 0;
   margin: 0 auto;
 }
 
@@ -799,10 +799,7 @@ h3 {
     max-width: min(1024px, 92vw);
   }
 
-  .container.narrow .about-content {
-    padding-left: 0;
-    padding-right: 0;
-  }
+
 }
 
 /* ========== REDUCED MOTION ========== */
