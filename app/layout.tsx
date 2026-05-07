@@ -9,6 +9,12 @@ export const metadata = {
   description: 'Temple of Embodied Soul Remembrance & Alchemy'
 }
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover'
+}
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const device = await getDevice()
   return (
