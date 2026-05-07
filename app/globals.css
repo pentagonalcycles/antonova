@@ -27,20 +27,13 @@ body {
 body {
   min-height: 100dvh;
   color: var(--color-text);
-  background: transparent;
+  background: url('/images/BackgroundChatGPT05.jpeg') center / cover no-repeat fixed;
   font-family: var(--font-body);
   line-height: 1.7;
 }
 
 .fixed-background {
-  position: fixed;
-  inset: 0;
-  bottom: env(safe-area-inset-bottom);
-  z-index: -1;
-  background: url('/images/BackgroundChatGPT05.jpeg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  display: none;
 }
 
 a {
