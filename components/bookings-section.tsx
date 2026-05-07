@@ -35,7 +35,7 @@ export function BookingsSection() {
   ]
 
   return (
-    <section className="bookings-section" aria-label="Bookings">
+    <section className="bookings-section" id="bookings" aria-label="Bookings">
       <h2>Book a session</h2>
       <div className="bookings-grid">
         {sessions.map((s) => (

@@ -13,14 +13,14 @@ function renderConsultationLinks(paragraph: string) {
     .map((part, index) => {
       if (/^in-person$/i.test(part)) {
         return (
-          <Link key={`${part}-${index}`} href="/contact#session-inperson">
+          <Link key={`${part}-${index}`} href="/#session-inperson" style={{ textDecoration: 'none' }}>
             {part}
           </Link>
         )
       }
       if (/^distant$/i.test(part)) {
         return (
-          <Link key={`${part}-${index}`} href="/contact#session-distant">
+          <Link key={`${part}-${index}`} href="/#session-distant" style={{ textDecoration: 'none' }}>
             {part}
           </Link>
         )

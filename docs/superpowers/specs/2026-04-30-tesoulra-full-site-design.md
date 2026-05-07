@@ -91,7 +91,7 @@ Four paragraphs explaining the meaning of Temple, Embodied Soul, Remembrance, an
 Renders an `<h2>` heading "About Me" (gold, Cinzel — matching all other h2s), followed by:
 - **Intro layout:** Image only (AboutMe.jpg portrait) — no side text
 - **Body paragraphs:** Full About Me text content
-- **Cross-links:** Every occurrence of "Sekhem" in the text is a turquoise italic link to `/what-is-sekhem-energy`. Every occurrence of "energy healing" is a turquoise link to `/what-is-energy-healing`. "Bi-Aura Therapy" is a turquoise link (opens in new tab) to `https://www.bi-aura.com/what-is-bi-aura-therapy`. The paragraph about session types has links for "in-person" → `/contact#session-inperson`, "distant" → `/contact#session-distant`
+- **Cross-links:** Every occurrence of "Sekhem" in the text is a turquoise italic link to `/what-is-sekhem-energy`. "Bi-Aura Therapy" is a turquoise link (opens in new tab) to `https://www.bi-aura.com/what-is-bi-aura-therapy`. "energy healing" renders as plain unstyled text (no link, no colour). The paragraph about session types has links for "in-person" → `/#session-inperson`, "distant" → `/#session-distant` (both scroll to the specific booking card on the home page, no underline, turquoise colour retained)
 
 All paragraphs are justified.
 
@@ -121,7 +121,7 @@ Displays 8 testimonials in a horizontal sliding carousel:
 Features:
 - Left/right arrow buttons
 - Dot navigation (1 per testimonial)
-- Auto-rotation every 12 seconds (resets on user interaction)
+- Manual navigation only — no auto-rotation timer
 - Touch swipe support (50px minimum swipe distance)
 - Smooth CSS transition (0.5s ease)
 - Quotes styled in italic, centered text with golden vertical side bars; author names right-aligned

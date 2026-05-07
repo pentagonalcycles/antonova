@@ -1,13 +1,12 @@
 'use client'
 
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useCallback, useRef } from 'react'
 
 type Testimonial = { quote: string; author: string }
 
 export function TestimonialsCarousel({ items }: { items: Testimonial[] }) {
   const [active, setActive] = useState(0)
   const touchRef = useRef<{ start: number; end: number }>({ start: 0, end: 0 })
-  const timerRef = useRef<number | null>(null)
   const minSwipe = 50
 
   const next = useCallback(() => {
@@ -17,18 +16,6 @@ export function TestimonialsCarousel({ items }: { items: Testimonial[] }) {
   const prev = useCallback(() => {
     setActive((p) => (p - 1 + items.length) % items.length)
   }, [items.length])
-
-  const resetTimer = useCallback(() => {
-    if (timerRef.current) window.clearTimeout(timerRef.current)
-    timerRef.current = window.setTimeout(next, 12000)
-  }, [next])
-
-  useEffect(() => {
-    resetTimer()
-    return () => {
-      if (timerRef.current) window.clearTimeout(timerRef.current)
-    }
-  }, [resetTimer])
 
   const handleTouchStart = (e: React.TouchEvent) => {
     touchRef.current.start = e.targetTouches[0].clientX
@@ -40,8 +27,8 @@ export function TestimonialsCarousel({ items }: { items: Testimonial[] }) {
     const { start, end } = touchRef.current
     if (!start || !end) return
     const diff = start - end
-    if (diff > minSwipe) { next(); resetTimer() }
-    else if (diff < -minSwipe) { prev(); resetTimer() }
+    if (diff > minSwipe) next()
+    else if (diff < -minSwipe) prev()
     touchRef.current = { start: 0, end: 0 }
   }
 
@@ -67,11 +54,11 @@ export function TestimonialsCarousel({ items }: { items: Testimonial[] }) {
 
         {items.length > 1 && (
           <>
-            <button className="carousel-btn prev" onClick={() => { prev(); resetTimer() }} aria-label="Previous">&#9664;</button>
-            <button className="carousel-btn next" onClick={() => { next(); resetTimer() }} aria-label="Next">&#9654;</button>
+            <button className="carousel-btn prev" onClick={prev} aria-label="Previous">&#9664;</button>
+            <button className="carousel-btn next" onClick={next} aria-label="Next">&#9654;</button>
             <div className="carousel-dots" role="tablist">
               {items.map((_, i) => (
-                <button key={i} className={`carousel-dot${i === active ? ' active' : ''}`} onClick={() => { setActive(i); resetTimer() }} role="tab" aria-selected={i === active} aria-label={`Go to testimonial ${i + 1}`} />
+                <button key={i} className={`carousel-dot${i === active ? ' active' : ''}`} onClick={() => setActive(i)} role="tab" aria-selected={i === active} aria-label={`Go to testimonial ${i + 1}`} />
               ))}
             </div>
           </>
