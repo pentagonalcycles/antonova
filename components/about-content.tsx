@@ -1,33 +1,10 @@
-import Link from 'next/link'
 import { siteContent } from '@/lib/content'
-import { renderSekhemInline } from '@/lib/sekhem-links'
+import { renderSekhemInline, renderConsultationLinks } from '@/lib/sekhem-links'
 
 const ABOUT_SECTION_INDEX = {
   consultation: 5,
   quote: 6
 } as const
-
-function renderConsultationLinks(paragraph: string) {
-  return paragraph
-    .split(/(in-person|distant)/gi)
-    .map((part, index) => {
-      if (/^in-person$/i.test(part)) {
-        return (
-          <Link key={`${part}-${index}`} href="/#session-inperson" style={{ textDecoration: 'none' }}>
-            {part}
-          </Link>
-        )
-      }
-      if (/^distant$/i.test(part)) {
-        return (
-          <Link key={`${part}-${index}`} href="/#session-distant" style={{ textDecoration: 'none' }}>
-            {part}
-          </Link>
-        )
-      }
-      return part
-    })
-}
 
 export function AboutContent({ heading = false }: { heading?: boolean }) {
   const about = siteContent.about

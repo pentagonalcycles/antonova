@@ -1,5 +1,6 @@
 import { ContentSection } from '@/components/content-section'
 import { siteContent } from '@/lib/content'
+import { renderConsultationLinks } from '@/lib/sekhem-links'
 
 export default function EnergyHealingPage() {
   const page = siteContent.energyHealing
@@ -12,7 +13,7 @@ export default function EnergyHealingPage() {
         className="page-image"
       />
       {page.sections.map((paragraph) => (
-        <p key={paragraph}>{paragraph}</p>
+        <p key={paragraph}>{renderConsultationLinks(paragraph)}</p>
       ))}
     </ContentSection>
   )

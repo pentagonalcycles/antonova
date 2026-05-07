@@ -1,5 +1,27 @@
 import Link from 'next/link'
 
+export function renderConsultationLinks(text: string) {
+  return text
+    .split(/(in-person|distant)/gi)
+    .map((part, index) => {
+      if (/^in-person$/i.test(part)) {
+        return (
+          <Link key={`${part}-${index}`} href="/#session-inperson" style={{ color: 'var(--color-turquoise)', textDecoration: 'none' }}>
+            {part}
+          </Link>
+        )
+      }
+      if (/^distant$/i.test(part)) {
+        return (
+          <Link key={`${part}-${index}`} href="/#session-distant" style={{ color: 'var(--color-turquoise)', textDecoration: 'none' }}>
+            {part}
+          </Link>
+        )
+      }
+      return part
+    })
+}
+
 export function renderSekhemInline(text: string) {
   const parts = text.split(/(\bSekhem\b|\bBi-Aura Therapy\b)/gi)
   return parts.map((part, index) => {
