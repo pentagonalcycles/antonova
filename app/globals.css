@@ -798,6 +798,11 @@ h3 {
   .container.narrow {
     max-width: min(1024px, 92vw);
   }
+
+  .container.narrow .about-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 /* ========== REDUCED MOTION ========== */
