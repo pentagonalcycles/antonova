@@ -8,7 +8,7 @@ export default function ContactPage() {
       <p><strong>WhatsApp:</strong> <a href="tel:+447788847113">+44 77 888 47 113</a></p>
       <p><strong>Email:</strong> <a href="mailto:contact@tesoulra.com">contact@tesoulra.com</a></p>
       <p className="social-links-inline">
-        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+        <a href="https://www.facebook.com/profile.php?id=61589785555048" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18">
             <path
               fill="currentColor"
@@ -17,7 +17,7 @@ export default function ContactPage() {
           </svg>{' '}
           Facebook
         </a>{' '}
-        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+        <a href="https://www.instagram.com/tesoulra/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
           <svg aria-hidden="true" viewBox="0 0 24 24" width="18" height="18">
             <path
               fill="currentColor"
