@@ -7,7 +7,7 @@ The TESoul'RA website (Next.js 16, React 19, TypeScript) is live on the `feat/te
 1. Hero section (logo, "WELCOME TO TESoul'RA" with "oul" in small-caps at 0.8em, two-line subtitle)
 2. "Why" paragraphs (italic terms in turquoise, justified)
 3. Einstein quote divider between "Why" section and About Me
-4. About Me section (shared component with `/about` page)
+4. About Me section (`AboutContent` component — used on landing page only; `/about` page is now decoupled and renders independently via `ContentSection`)
 5. Francisco Varela quote divider between About Me and Book a session
 6. **Bookings section** (heading: "Book a session") — 2 session cards (In-Person, Distant) with egg images using object-contain (no cropping). Currently informational only.
 7. Testimonials carousel (8 testimonials with decorative quotation marks, turquoise dots)
@@ -53,6 +53,13 @@ The user will provide more details about preferred payment provider and calendar
 - Contact page logo: centered and enlarged
 - Energy Healing page: text moved below image (no side text)
 - Sekhem Energy page: quote removed, text moved below image
+
+## Landing Page Updates Completed (May 14, 2026)
+
+- About Me page (`/about`): decoupled from shared `AboutContent` component; now renders independently via `ContentSection` matching Energy Healing / Sekhem Energy page pattern
+- About Me page, Energy Healing page, Sekhem Energy page: reduced `content-section` top/bottom padding from 3rem to 1rem (horizontal padding remains 1.5rem)
+- Home page About Me section: added 1.5rem horizontal padding on mobile (`≤768px`) to prevent text touching screen edges
+- Content: "pure" in Remembrance paragraph (`lib/content.ts`) — removed and restored after evaluation
 
 ## Key Files
 

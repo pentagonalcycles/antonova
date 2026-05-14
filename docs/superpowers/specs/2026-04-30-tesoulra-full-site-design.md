@@ -84,14 +84,14 @@ Four paragraphs explaining the meaning of Temple, Embodied Soul, Remembrance, an
 
 ### 3. About Me Section
 
-**Component:** `AboutContent` (shared with `/about` page)
+**Component:** `AboutContent` (used on landing page only)
 
 Renders an `<h2>` heading "About Me" (gold, Cinzel — matching all other h2s), followed by:
 - **Intro layout:** Two-column grid — AboutMe.jpg portrait on the left, Einstein quote (styled with gold left border accent) on the right
 - **Body paragraphs:** Full About Me text content
 - **Cross-links:** Every occurrence of "Sekhem" in the text is a link to `/what-is-sekhem-energy`. The paragraph about session types has links for "in-person" → `/contact#session-inperson`, "distant" → `/contact#session-distant`, "free 15" → `/contact#session-free`
 
-All paragraphs are justified.
+All paragraphs are justified. On mobile (`≤768px`), the section has 1.5rem horizontal padding to prevent text touching screen edges.
 
 ### 4. Testimonials Carousel
 
@@ -131,7 +131,12 @@ Each card contains a square image (1:1 aspect ratio), a title (gold h3), and a d
 
 ### About Page (`/about`)
 
-Uses the same `AboutContent` component but renders with an `<h1>` "About Me" heading inside a `content-section` wrapper (narrow container, 760px max). The shared component omits the heading (`heading={false}` by default) when embedded on the landing page.
+Renders independently via `ContentSection` (matching the Energy Healing and Sekhem Energy page patterns). Contains:
+- `<h2>` "About Me" heading
+- AboutMe.jpg portrait image
+- Full About Me body paragraphs with Sekhem inline links and consultation links
+
+Uses `about-page` wrapper class with `content-section` top/bottom padding set to 1rem (horizontal padding remains 1.5rem).
 
 ### Energy Healing Page (`/what-is-energy-healing`)
 
@@ -139,6 +144,7 @@ Uses the same `AboutContent` component but renders with an `<h1>` "About Me" hea
 - Hero image: `WhatIsEnergyHealing.jpg` (JPG, not PNG) alongside the intro paragraph
 - Remaining paragraphs below
 - All text justified
+- Uses `energy-healing-page` wrapper class with `content-section` top/bottom padding set to 1rem
 
 ### Sekhem Energy Page (`/what-is-sekhem-energy`)
 
@@ -147,6 +153,7 @@ Uses the same `AboutContent` component but renders with an `<h1>` "About Me" hea
 - Quote styled with gold left border accent
 - Remaining paragraphs below
 - All text justified
+- Uses `sekhem-energy-page` wrapper class with `content-section` top/bottom padding set to 1rem
 
 ### Contact Page (`/contact`)
 
