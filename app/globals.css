@@ -261,9 +261,13 @@ h3 {
   font-style: italic;
 }
 
-  .home-body .about-content {
-    padding: 0 var(--space-3);
-  }
+.about-content {
+  width: 100%;
+  max-width: 760px;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0 auto;
+}
 
 .about-content > :first-child {
   margin-top: 0;
@@ -731,10 +735,6 @@ h3 {
 
   .hero-welcome-subtitle {
     font-size: clamp(0.7rem, 4vw, 1.1rem);
-  }
-
-  .home-body .about-content {
-    padding: 0 var(--space-3);
   }
 
   .bookings-grid {
