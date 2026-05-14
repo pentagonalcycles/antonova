@@ -737,6 +737,10 @@ h3 {
     font-size: clamp(0.7rem, 4vw, 1.1rem);
   }
 
+  .about-content {
+    padding: 0 var(--space-3);
+  }
+
   .bookings-grid {
     grid-template-columns: 1fr;
   }
