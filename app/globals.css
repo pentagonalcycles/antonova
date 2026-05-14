@@ -318,6 +318,10 @@ h3 {
   padding: var(--space-5) var(--space-3);
 }
 
+.about-page .content-section {
+  padding: var(--space-4) var(--space-3);
+}
+
 .content-section p,
 .content-section blockquote {
   text-align: justify;
