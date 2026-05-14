@@ -6,15 +6,17 @@ export default function EnergyHealingPage() {
   const page = siteContent.energyHealing
 
   return (
-    <ContentSection title={page.title}>
-      <img
-        src="/images/WhatIsEnergyHealing.jpg"
-        alt="What is energy healing visual"
-        className="page-image"
-      />
-      {page.sections.map((paragraph) => (
-        <p key={paragraph}>{renderConsultationLinks(paragraph)}</p>
-      ))}
-    </ContentSection>
+    <div className="energy-healing-page">
+      <ContentSection title={page.title}>
+        <img
+          src="/images/WhatIsEnergyHealing.jpg"
+          alt="What is energy healing visual"
+          className="page-image"
+        />
+        {page.sections.map((paragraph) => (
+          <p key={paragraph}>{renderConsultationLinks(paragraph)}</p>
+        ))}
+      </ContentSection>
+    </div>
   )
 }

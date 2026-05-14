@@ -6,15 +6,17 @@ export default function SekhemPage() {
   const page = siteContent.sekhemEnergy
 
   return (
-    <ContentSection title={page.title}>
-      <img
-        src="/images/WhatIsSekhemEnergy.jpg"
-        alt="What is sekhem energy visual"
-        className="page-image"
-      />
-      {page.sections.map((paragraph) => (
-        <p key={paragraph}>{renderSekhemInline(paragraph)}</p>
-      ))}
-    </ContentSection>
+    <div className="sekhem-energy-page">
+      <ContentSection title={page.title}>
+        <img
+          src="/images/WhatIsSekhemEnergy.jpg"
+          alt="What is sekhem energy visual"
+          className="page-image"
+        />
+        {page.sections.map((paragraph) => (
+          <p key={paragraph}>{renderSekhemInline(paragraph)}</p>
+        ))}
+      </ContentSection>
+    </div>
   )
 }
