@@ -319,7 +319,7 @@ h3 {
 }
 
 .about-page .content-section {
-  padding: var(--space-4) var(--space-3);
+  padding: 1.8rem var(--space-3);
 }
 
 .content-section p,
