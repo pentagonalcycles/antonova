@@ -320,7 +320,8 @@ h3 {
 
 .about-page .content-section,
 .energy-healing-page .content-section,
-.sekhem-energy-page .content-section {
+.sekhem-energy-page .content-section,
+.contact-page .content-section {
   padding: 1rem var(--space-3);
 }
 
