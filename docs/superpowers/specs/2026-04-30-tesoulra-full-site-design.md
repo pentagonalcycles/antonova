@@ -120,12 +120,11 @@ Features:
 
 **Component:** `BookingsSection`
 
-Displays three session types as equal-sized cards in a 3-column row:
-1. **Free Consultation** — 15 minutes, Free — `SessionPhoneFree.png`
-2. **In-Person Session** — 1.5 hours, £120 — `SessionInPerson.png`
-3. **Distant Session** — 1 hour, £80 — `SessionRemote.png`
+Displays two session types as equal-sized cards in a 2-column row:
+1. **In-Person Session** — 1.5 hours, £120 — `SessionInPerson.png`
+2. **Distant Session** — 1 hour, £80 — `SessionRemote.png`
 
-Each card contains a square image (1:1 aspect ratio), a title (gold h3), and a description. On mobile (<768px), cards stack vertically.
+Each card contains a square image (1:1 aspect ratio, object-contain), a title (gold h3), and a description. On mobile (<768px), cards stack vertically. Informational only (no booking/payment integration).
 
 ## Inner Pages
 
@@ -166,6 +165,7 @@ Uses `about-page` wrapper class with `content-section` top/bottom padding set to
 - Social links: Facebook, Instagram (inline with SVG icons)
 - Contact form (client component) with honeypot spam protection
 - Logo detailed view image at the bottom
+- Uses `contact-page` wrapper class with `content-section` top/bottom padding set to 1rem
 
 ## Device Detection
 

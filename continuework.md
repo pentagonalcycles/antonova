@@ -1,4 +1,4 @@
-# Next Session — Booking & Payment Integration
+# TESoul'RA — Site Status & Session Notes
 
 ## Context
 
@@ -16,15 +16,6 @@ The TESoul'RA website (Next.js 16, React 19, TypeScript) is live on the `feat/te
 Landing page color scheme: dark navy-to-lapis gradient background, turquoise for menu text and "Why" terms, gold for headings and quote frame bars. Responsive burger menu in gold for mobile (≤768px).
 
 All 16 unit tests pass. CSS is clean (`globals.css`).
-
-## Next Task: Booking & Payment Integration
-
-The user wants the two session images in the Bookings section (`SessionInPerson.png`, `SessionRemote.png`) to be clickable, leading to a booking flow where users can:
-
-1. **Book a session on a calendar** — select date/time from an appointments calendar (e.g., Calendly, Cal.com, or custom solution)
-2. **Pay for the session** — handle payment transactions (Stripe, PayPal, or similar)
-
-The user will provide more details about preferred payment provider and calendar integration modality.
 
 ## Landing Page Updates Completed (May 1, 2026)
 
@@ -61,9 +52,14 @@ The user will provide more details about preferred payment provider and calendar
 - Home page About Me section: added 1.5rem horizontal padding on mobile (`≤768px`) to prevent text touching screen edges
 - Content: "pure" in Remembrance paragraph (`lib/content.ts`) — removed and restored after evaluation
 
+## Landing Page Updates Completed (May 16, 2026)
+
+- Contact page: Facebook link updated to `id=61589769843924`
+- Contact page (`/contact`): added `contact-page` wrapper class; reduced `content-section` top/bottom padding from 3rem to 1rem (matching About, Energy Healing, Sekhem Energy pages)
+
 ## Key Files
 
-- `components/bookings-section.tsx` — booking cards component (to be enhanced with booking flow)
+- `components/bookings-section.tsx` — booking cards component (informational only)
 - `components/testimonials-carousel.tsx` — testimonials carousel (dot class name fixed)
 - `components/about-content.tsx` — shared About Me content
 - `lib/sekhem-links.tsx` — Sekhem inline link renderer (turquoise + italic)
@@ -74,8 +70,6 @@ The user will provide more details about preferred payment provider and calendar
 ## Spec & Plan
 
 - Full design spec: `docs/superpowers/specs/2026-04-30-tesoulra-full-site-design.md`
-- Use the brainstorming skill before implementation to discuss booking/payment approach
-- Use writing-plans before coding
 
 ## Working Directory & Branch
 
