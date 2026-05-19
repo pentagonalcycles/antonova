@@ -1,6 +1,12 @@
 import { ContactForm } from '@/components/contact-form'
 import { ContentSection } from '@/components/content-section'
 import { siteContent } from '@/lib/content'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Contact — Book a Healing Session',
+  description: 'Book an in-person or distant Sekhem energy healing session with T\'iam\'arhat in London, United Kingdom, or online. WhatsApp, email, and contact form available.'
+}
 
 export default function ContactPage() {
   return (

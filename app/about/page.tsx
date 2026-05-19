@@ -1,6 +1,12 @@
 import { ContentSection } from '@/components/content-section'
 import { siteContent } from '@/lib/content'
 import { renderSekhemInline, renderConsultationLinks } from '@/lib/sekhem-links'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'About T\'iam\'arhat — Energy Healer & Sekhem Practitioner',
+  description: 'Meet T\'iam\'arhat, an energy healer, channel of sound and light language, metaphysics teacher, and Sekhem energy practitioner offering bespoke healing sessions in London and online.'
+}
 
 const ABOUT_SECTION_INDEX = {
   consultation: 5,

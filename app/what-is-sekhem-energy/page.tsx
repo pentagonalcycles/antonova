@@ -1,6 +1,12 @@
 import { ContentSection } from '@/components/content-section'
 import { siteContent } from '@/lib/content'
 import { renderSekhemInline } from '@/lib/sekhem-links'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'What is Sekhem Energy?',
+  description: 'Discover Sekhem — the ancient Egyptian universal life-force energy connected to the goddess Sekhmet. Learn how Sekhem energy healing uses turquoise light frequencies, symbols, and divine guidance for transformation and renewal.'
+}
 
 export default function SekhemPage() {
   const page = siteContent.sekhemEnergy

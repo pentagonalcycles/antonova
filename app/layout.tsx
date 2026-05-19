@@ -5,8 +5,15 @@ import { DeviceProvider } from '@/components/device-provider'
 import { getDevice } from '@/lib/device'
 
 export const metadata = {
-  title: "TESoul'RA",
-  description: 'Temple of Embodied Soul Remembrance & Alchemy'
+  title: {
+    default: "TESoul'RA — Sekhem Energy Healing | Spiritual Awakening | Embodied Soul Remembrance & Alchemy",
+    template: "%s | TESoul'RA"
+  },
+  description: 'TESoul\'RA offers body, mind and spirit healing using Sekhem energy and sound resonance to support spiritual awakening and inner transformation through nervous system regulation, chakra clearing and balancing, energetic realignment, coherence restoration, and reconnection with one\'s Essence Self in London, United Kingdom, and online.',
+  icons: {
+    icon: '/images/Logo.png',
+    apple: '/images/Logo.png',
+  }
 }
 
 export const viewport = {

@@ -2,7 +2,7 @@ export function ContentSection({ title, children }: { title: string; children: R
   return (
     <section className="content-section" aria-label={title}>
       <div className="container narrow">
-        <h2>{title}</h2>
+        <h1>{title}</h1>
         {children}
       </div>
     </section>
