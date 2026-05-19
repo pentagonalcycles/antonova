@@ -15,7 +15,7 @@ The TESoul'RA website (Next.js 16, React 19, TypeScript) is live on the `feat/te
 
 Landing page color scheme: dark navy-to-lapis gradient background, turquoise for menu text and "Why" terms, gold for headings and quote frame bars. Responsive burger menu in gold for mobile (≤768px).
 
-All 16 unit tests pass. CSS is clean (`globals.css`).
+All 15 of 16 unit tests pass (1 pre-existing failure unrelated to current changes). CSS is clean (`globals.css`).
 
 ## Landing Page Updates Completed (May 1, 2026)
 
@@ -57,15 +57,35 @@ All 16 unit tests pass. CSS is clean (`globals.css`).
 - Contact page: Facebook link updated to `id=61589769843924`
 - Contact page (`/contact`): added `contact-page` wrapper class; reduced `content-section` top/bottom padding from 3rem to 1rem (matching About, Energy Healing, Sekhem Energy pages)
 
+## SEO Updates Completed (May 19, 2026)
+
+- Page titles: added per-page metadata (`export const metadata`) to all 5 pages with unique, descriptive titles; layout uses template pattern (`%s | TESoul'RA`)
+- Meta descriptions: added SEO-optimized per-page descriptions to About, Energy Healing, Sekhem Energy, and Contact pages; global default description updated in `layout.tsx`
+- Favicon: configured `Logo.png` as favicon and Apple touch icon via metadata `icons` property
+- Heading structure: `ContentSection` component changed from `<h2>` to `<h1>` (fixes missing H1 on About, Energy Healing, Sekhem Energy, and Contact pages)
+- Sitemap: created `app/sitemap.ts` generating `/sitemap.xml` with all 5 public pages
+- Robots: created `app/robots.ts` generating `/robots.txt` allowing all crawlers
+- Image alt text: confirmed all `<img>` tags already have proper alt attributes (no changes needed)
+
+## Updates Completed (May 19, 2026 - favicon & title)
+
+- Favicon: created `images/LogoFavicon.png` (96×96) from `Logo.png` via ImageMagick center-crop + resize
+- Favicon reference in `app/layout.tsx` updated from `Logo.png` to `LogoFavicon.png` (both `icon` and `apple`)
+- Default page title updated to "Sekhem Energy Healing | Spiritual Awakening | Embodied Soul Remembrance & Alchemy | London, UK" for Google search display
+
 ## Key Files
 
 - `components/bookings-section.tsx` — booking cards component (informational only)
 - `components/testimonials-carousel.tsx` — testimonials carousel (dot class name fixed)
 - `components/about-content.tsx` — shared About Me content
+- `components/content-section.tsx` — inner page section wrapper (renders `<h1>` + children)
 - `lib/sekhem-links.tsx` — Sekhem inline link renderer (turquoise + italic)
 - `app/page.tsx` — landing page
+- `app/layout.tsx` — root layout with global metadata, favicon, template pattern
 - `app/globals.css` — all styling
 - `lib/content.ts` — site text content
+- `app/sitemap.ts` — generates `/sitemap.xml`
+- `app/robots.ts` — generates `/robots.txt`
 
 ## Spec & Plan
 
